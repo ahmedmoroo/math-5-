@@ -1,0 +1,1429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Math 5 Midterm Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+.paper .ex-h{font:800 16px/32px var(--f-body);color:var(--ink);margin:14px 0 0}
+.paper .ex-h:first-child{margin-top:0}
+.paper .pl.plain{font-weight:400;color:var(--ink)}
+.paper p.txt{margin:0;line-height:32px}
+.paper p.txt .n{display:inline-block;min-width:22px;color:var(--red);font-weight:700}
+.paper p.txt b,.paper .pl.plain b{border:2px solid var(--ink);border-radius:4px;padding:0 5px;font-weight:700}
+.paper .final{margin-top:8px}
+
+:root{--ruled:#e4e9f3;--margin:#e3a1a6;--paper-sheet:#ffffff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ruled:#26304a;--margin:#6b3a42;--paper-sheet:#131a2c}}
+:root[data-theme="dark"]{--ruled:#26304a;--margin:#6b3a42;--paper-sheet:#131a2c}
+.theme-toggle{position:absolute;top:36px;right:0;
+  font:600 13px/1 var(--f-body);color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:99px;padding:9px 14px;cursor:pointer;}
+@media (max-width:640px){.theme-toggle{position:static;margin-bottom:14px}}
+.theme-toggle:hover{border-color:var(--blue);color:var(--blue)}
+.theme-toggle:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.paper{position:relative;background-color:var(--paper-sheet);
+  background-image:linear-gradient(to right,transparent 30px,var(--margin) 30px,var(--margin) 31.5px,transparent 31.5px),repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--ruled) 31px,var(--ruled) 32px);
+  border:1px solid var(--rule);border-radius:8px;padding:14px 16px 18px 46px;margin-top:10px;line-height:32px}
+details > div.paper,.worked details > div.paper{padding:14px 18px 18px 48px;border:1px solid var(--rule);border-top:1px solid var(--rule);margin-top:10px}
+.paper .pl{margin:6px 0 0;font-weight:700;color:var(--blue);line-height:32px}
+.paper .pl .n{display:inline-block;min-width:22px;color:var(--red)}
+.paper mjx-container[display="true"]{margin:4px 0 4px 8px !important}
+.paper .tbl{background:var(--paper-sheet);line-height:1.4}
+.paper .note{font-size:14px;color:var(--muted);line-height:1.5;margin:8px 0}
+.final{display:inline-block;margin:14px 0 4px;padding:8px 16px;border:2.5px solid var(--ink);border-radius:6px;background:var(--paper-sheet);font-weight:700;line-height:1.5}
+.final .lab{font:600 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:4px}
+
+details.sol{margin:6px 0 18px;border-color:var(--blue)}
+details.sol > summary{color:var(--blue)}
+.sol-link{margin-top:-4px}
+
+.worked{border:2px solid var(--blue);border-radius:12px;padding:16px 18px;margin:24px 0;background:var(--panel)}
+.wk-tag{font:600 11px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.wk-title{font:800 19px/1.3 var(--f-display);margin:8px 0 2px}
+.wk-seen{font-size:13px;color:var(--muted);margin:0 0 10px}
+.wk-problem{background:var(--blue-soft);border-radius:8px;padding:10px 14px}
+.worked details{border:0;background:transparent;margin:12px 0 0}
+.worked details > summary{padding:8px 0;color:var(--blue)}
+.worked details > div{padding:4px 0 0;border-top:1px dashed var(--rule)}
+ol.wk-steps{padding-left:24px;margin:10px 0}
+ol.wk-steps li{margin:8px 0;padding-left:4px}
+.wk-ans{font-weight:700;margin-top:12px}
+
+.box.plain{background:var(--blue-soft);border-color:transparent}
+.box.plain > b:first-child{display:block;color:var(--blue);font:600 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+figure.fig{margin:20px 0;background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:14px 14px 12px}
+figure.fig svg{display:block;width:100%;height:auto;max-width:100%}
+figure.fig figcaption{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.5}
+figure.fig figcaption b{color:var(--ink)}
+.fig text{fill:var(--muted);font:12px var(--f-mono)}
+.fig text.lbl{fill:var(--ink);font:12px var(--f-body)}
+.fig text.red{fill:var(--red)} .fig text.blue{fill:var(--blue)}
+.fig .ax{stroke:var(--muted);stroke-width:1}
+.fig .cv{stroke:var(--blue);stroke-width:2.5;fill:none}
+.fig .cvr{stroke:var(--red);stroke-width:2;fill:none}
+.fig .cvd{stroke:var(--red);stroke-width:2;fill:none;stroke-dasharray:6 4}
+.fig .cvo{stroke:var(--amber);stroke-width:2;fill:none}
+.fig .cvg{stroke:var(--green);stroke-width:2;fill:none}
+.fig .cvrd{fill:var(--red)} .fig .cvod{fill:var(--amber)} .fig .cvgd{fill:var(--green)}
+.fig .pt{fill:var(--ink)} .fig .pr{fill:var(--red)} .fig .pb{fill:var(--blue)}
+.fig .new{fill:var(--red)} .fig .root{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.fig .res{stroke:var(--red);stroke-width:2;stroke-dasharray:4 3}
+.fig .guide{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3}
+.fig .chord{stroke:var(--red);stroke-width:2}
+.fig .brk{stroke:var(--blue);stroke-width:5;stroke-linecap:round}
+.fig .trap{fill:var(--blue-soft);stroke:var(--blue);stroke-width:1}
+table.dt td{text-align:center}
+table.dt td.fw{background:var(--blue-soft);color:var(--blue);font-weight:600}
+table.dt td.bw{background:var(--red-soft);color:var(--red);font-weight:600}
+table.gl td:first-child{font-weight:700;white-space:nowrap}
+
+/* Layout: ruled-notebook study sheet; sticky contents rail on wide screens, one reading column; blue-pen work, red-pen headings like the lecture notes */
+:root{
+  --paper:#e6eaf2; --sheet:#ffffff; --panel:#f5f7fb; --ink:#111a33; --muted:#424c68; --rule:#c8d0e1;
+  --blue:#1d3ca6; --blue-soft:#e2e8fa; --red:#b0232d; --red-soft:#fae6e7;
+  --green:#17683f; --green-soft:#dff1e6; --amber:#8a5700; --amber-soft:#f9edd2;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0b101c; --sheet:#141b2d; --panel:#1a2238; --ink:#e6eaf5; --muted:#9ba4c2; --rule:#28314b;
+  --blue:#8ea7ff; --blue-soft:#1c2747; --red:#ff7b83; --red-soft:#3a1d24;
+  --green:#6fd49c; --green-soft:#16302a; --amber:#f0b955; --amber-soft:#33291a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0b101c; --sheet:#141b2d; --panel:#1a2238; --ink:#e6eaf5; --muted:#9ba4c2; --rule:#28314b;
+  --blue:#8ea7ff; --blue-soft:#1c2747; --red:#ff7b83; --red-soft:#3a1d24;
+  --green:#6fd49c; --green-soft:#16302a; --amber:#f0b955; --amber-soft:#33291a; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:16px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)} nav.toc{display:none}}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-top:40px;font-size:14px;max-height:100vh;overflow:auto}
+nav.toc a{display:block;color:var(--muted);text-decoration:none;padding:4px 0 4px 12px;border-left:2px solid var(--rule)}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--blue);border-left-color:var(--blue)}
+nav.toc .grp{font:600 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin:18px 0 6px}
+main{min-width:0;max-width:980px;background:var(--sheet);border:1px solid var(--rule);border-radius:16px;box-shadow:0 1px 2px rgba(17,26,51,.06),0 10px 30px rgba(17,26,51,.08);padding:4px 44px 48px;margin-top:24px}
+@media (max-width:640px){main{padding:4px 18px 32px;border-radius:12px}}
+header.top{position:relative;padding-top:40px;padding-bottom:8px;border-bottom:2px solid var(--red)}
+.eyebrow{font:600 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+h1{font:800 clamp(34px,6vw,52px)/1.05 var(--f-display);margin:10px 0 12px;text-wrap:balance;letter-spacing:-.01em}
+h2{font:800 28px/1.15 var(--f-display);margin:56px 0 6px;text-wrap:balance;color:var(--ink)}
+h2 .lec{display:block;font:600 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+h3{font:700 19px/1.3 var(--f-body);margin:30px 0 6px;color:var(--blue)}
+p{margin:10px 0}
+.lede{font-size:18px;color:var(--muted);max-width:62ch}
+a{color:var(--blue)}
+code,.mono{font-family:var(--f-mono);font-size:.92em}
+.box{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;margin:16px 0}
+.box.formula{border-left:4px solid var(--blue)}
+.box.trap{background:var(--red-soft);border-color:transparent}
+.box.trap b:first-child{color:var(--red)}
+.box.tip{background:var(--green-soft);border-color:transparent}
+.box.tip b:first-child{color:var(--green)}
+.box.warn{background:var(--amber-soft);border-color:transparent}
+.box.warn b:first-child{color:var(--amber)}
+ol.steps,ul.list{padding-left:22px;margin:8px 0}
+ol.steps li,ul.list li{margin:5px 0}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;font:14px/1.4 var(--f-mono);font-variant-numeric:tabular-nums;min-width:100%}
+th,td{border-bottom:1px solid var(--rule);padding:8px 10px;text-align:left;white-space:nowrap;color:var(--ink)}
+table.wide,table.gl{font:15px/1.5 var(--f-body)}
+th{font:700 12px/1.2 var(--f-body);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:2px solid var(--rule)}
+table.wide td{white-space:normal}
+.pill{display:inline-block;font:600 11px/1 var(--f-mono);letter-spacing:.05em;text-transform:uppercase;padding:5px 8px;border-radius:99px;white-space:nowrap}
+.p-vh{background:var(--red-soft);color:var(--red)}
+.p-h{background:var(--blue-soft);color:var(--blue)}
+.p-c{background:var(--amber-soft);color:var(--amber)}
+.p-s{background:var(--rule);color:var(--muted)}
+.plan{display:grid;gap:12px;margin:16px 0;counter-reset:step}
+.plan > div{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:14px 16px 14px 56px;position:relative}
+.plan > div::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;font:800 22px/1 var(--f-display);color:var(--red)}
+.plan b{display:block;font-size:17px;margin-bottom:2px}
+details{background:var(--panel);border:1px solid var(--rule);border-radius:10px;margin:10px 0}
+details > summary{cursor:pointer;padding:12px 16px;font-weight:700;list-style:none}
+details > summary::-webkit-details-marker{display:none}
+details > summary::before{content:"+";font-family:var(--f-mono);color:var(--blue);margin-right:10px}
+details[open] > summary::before{content:"−"}
+details > div{padding:0 16px 14px;border-top:1px dashed var(--rule)}
+summary:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.ans{color:var(--green);font-weight:700}
+.q{font-weight:400}
+.q b{font-weight:700}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%;padding:2px 0}
+.small{font-size:14px;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<script>
+window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global",displayAlign:"left",displayIndent:"0"},options:{skipHtmlTags:["script","style","code","pre"]}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js" defer></script>
+</head>
+<body>
+
+
+<div class="wrap">
+<nav class="toc" aria-label="Contents">
+  <div class="grp">Start here</div>
+  <a href="#big">The big picture</a>
+  <a href="#now">What to do now</a>
+  <a href="#map">Priority map</a>
+  <a href="#exams">What the past exams tell you</a>
+  <div class="grp">Lectures</div>
+  <a href="#l1">1 · Curve fitting</a>
+  <a href="#l2">2 · Roots of equations</a>
+  <a href="#l3">3 · Linear systems</a>
+  <a href="#l4">4 · Interpolation</a>
+  <a href="#l5">5 · Numerical integration</a>
+  <a href="#l6">6 · ODEs</a>
+  <a href="#l7">7 · Higher-order ODEs</a>
+  <div class="grp">Practice</div>
+  <a href="#mid">2022-23 midterm, solved</a>
+  <a href="#mid2">2021-22 MCQ midterm, solved</a>
+  <a href="#mid3">2021-22 written midterm</a>
+  <a href="#theory">Theory quick-fire</a>
+  <a href="#rev">Revision sheet, solved</a>
+  <a href="#practice">Practice set + answers</a>
+  <a href="#prob">Counting &amp; probability</a>
+  <a href="#errata">Mistakes in the notes</a>
+  <a href="#calc">Calculator drill</a>
+</nav>
+
+<main>
+<header class="top">
+<button id="theme-toggle" class="theme-toggle" type="button">Light / Dark</button>
+  <div class="eyebrow">MPH122 · Mathematics (5) · Dr. Reham Abo Khadra</div>
+  <h1>Math 5 Midterm Guide</h1>
+  <p class="lede">The one page you need. Every method from your seven lectures, the revision sheet, and four past midterms: the formula to memorise, the steps the doctor expects, the traps, and a verified answer for every example, so you can check your hand work against it.</p>
+</header>
+
+<!-- ============ BIG PICTURE ============ -->
+<h2 id="big"><span class="lec">New to this? Read first</span>The big picture</h2>
+<p>This course is called <b>numerical methods</b>. Normal maths gives exact answers with algebra: solve x² = 9 and you get x = 3. But most real engineering problems have no neat algebraic answer. Try solving x² + ln x = 0 by algebra: you can't. A numerical method gets a very good <em>approximate</em> answer using only arithmetic, usually by repeating a simple step until the number stops changing. That's why your calculator is your main tool here.</p>
+<p>Every lecture answers one practical question:</p>
+<div class="tbl"><table class="wide">
+<thead><tr><th>You have…</th><th>You want…</th><th>Lecture</th></tr></thead>
+<tbody>
+<tr><td>measured data that's a bit noisy</td><td>a simple formula that follows it</td><td>1 · Curve fitting</td></tr>
+<tr><td>an equation f(x) = 0 you can't solve by algebra</td><td>the value of x that makes it zero (the "root")</td><td>2 · Roots</td></tr>
+<tr><td>several equations with several unknowns</td><td>all the unknowns</td><td>3 · Linear systems</td></tr>
+<tr><td>a table of values</td><td>a value <em>between</em> the table entries</td><td>4 · Interpolation</td></tr>
+<tr><td>a function or a table</td><td>the area under it (the integral)</td><td>5 · Integration</td></tr>
+<tr><td>a rule for how y changes (y′ = …) and a starting value</td><td>y further along</td><td>6 &amp; 7 · ODEs</td></tr>
+</tbody></table></div>
+
+<h3>Words and symbols you'll see everywhere</h3>
+<div class="tbl"><table class="wide gl">
+<tbody>
+<tr><td>Σ (sigma)</td><td>"add them all up". Σx means x₁ + x₂ + … ; Σxy means multiply each x by its y, then add.</td></tr>
+<tr><td>n</td><td>how many data points (or, in integration, read the question: points or strips).</td></tr>
+<tr><td>Root</td><td>a value of x where f(x) = 0, i.e. where the graph crosses the x-axis.</td></tr>
+<tr><td>Iteration</td><td>one round of a repeated step. "Three iterations" = do the step three times.</td></tr>
+<tr><td>x₀, x₁, x₂ …</td><td>the guess at round 0, round 1, round 2. The little number is the round, not a power.</td></tr>
+<tr><td>f′(x)</td><td>the derivative: the slope of the curve at x.</td></tr>
+<tr><td>h</td><td>the step size: the equal gap between neighbouring x values.</td></tr>
+<tr><td>Δy (delta)</td><td>a difference: next y minus this y.</td></tr>
+<tr><td>ε (epsilon), tolerance</td><td>how accurate the answer must be, e.g. stop when the change is below 0.0001.</td></tr>
+<tr><td>y′ = f(x, y)</td><td>a differential equation: a rule telling you the slope of y at any point.</td></tr>
+<tr><td>Converge</td><td>the answers settle down to one value as you repeat.</td></tr>
+</tbody></table></div>
+<div class="box tip"><b>How to study each method:</b> read the "In plain words" box, look at the graph until the picture makes sense, then learn the formula, then do the example on paper with the answer covered. The picture is what lets you rebuild the formula if you forget it in the exam.</div>
+
+<!-- ============ WHAT TO DO NOW ============ -->
+<h2 id="now"><span class="lec">Start here</span>What to do now</h2>
+<div class="plan">
+  <div><b>Know the scope: Lectures 1–7, all of them</b>The midterm covers every lecture on this page, including Lecture 7 (higher-order ODEs). Give each lecture equal attention. Counting &amp; probability isn't in any of your lectures, so skip it unless you're told otherwise. The <a href="#rev">revision sheet</a> only practises Lectures 1–4, so use the lecture examples and the past midterms on this page to cover 5–7.</div>
+  <div><b>Write your own one-page formula sheet</b>Copy every blue "formula" box below by hand. Writing them once is how they stick. The exam gives you no formulas.</div>
+  <div><b>Redo every example on this page with the answer covered</b>This is the highest-value step. The 2022-23 midterm Q24 and Q25 were the <em>exact</em> lecture examples (same table, same numbers). Work each one on paper, then compare with the green answer. Each method also ends with a blue <b>"Solve it yourself · exam pick"</b> box: a real past-exam question. Solve it on paper first, then open the line-by-line solution and check every step, not just the final number. You've finished a lecture only when you've solved all its boxes.</div>
+  <div><b>Solve the revision sheet</b>Seven exam-length problems the course itself handed out. Try each before opening the <a href="#rev">worked solution</a>.</div>
+  <div><b>Drill the calculator</b>Radian mode for anything with sin/cos, store intermediate values instead of rounding, and use the table mode for f(x) values. See the <a href="#calc">calculator drill</a>.</div>
+  <div><b>Sit the 2021-22 MCQ midterm as a mock</b>It's fully numerical and the closest match to your course: 30 questions in 60 minutes, then check against the <a href="#mid2">answer key</a>. Then do the <a href="#mid">2022-23 numerical questions</a> and the <a href="#practice">practice set</a>.</div>
+  <div><b>Learn the theory one-liners</b>About a third of her MCQ paper was facts like "which method is direct" or "Jacobi is faster: true/false". The <a href="#theory">quick-fire list</a> is ten minutes of easy marks.</div>
+  <div><b>If probability is in scope, do the crash sheet last</b>The <a href="#prob">counting &amp; probability</a> section covers exactly the question types she asked last year.</div>
+</div>
+
+<!-- ============ PRIORITY MAP ============ -->
+<h2 id="map"><span class="lec">Start here</span>Priority map</h2>
+<p>Ranked by how often each method shows up in the four past papers in your file (2021 final, 2021-22 final, 2022-23 final, 2022-23 midterm) and how much work it is.</p>
+<div class="tbl"><table class="wide">
+<thead><tr><th>Topic</th><th>Lecture</th><th>Seen in past exams as</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td>Least squares: straight line, \(ae^{bx}\), \(ab^x\), \(ax^b\), quadratic</td><td>1</td><td>Every paper. Midterm Q21, Q22, Q25; finals "fit \(y=ab^x\)"</td><td><span class="pill p-vh">Very high</span></td></tr>
+<tr><td>Newton forward / backward, Lagrange</td><td>4</td><td>Midterm Q23, Q24; final MCQs on Lagrange &amp; backward formula</td><td><span class="pill p-vh">Very high</span></td></tr>
+<tr><td>Bisection, False position, Newton–Raphson, Secant</td><td>2</td><td>Every final (bisection x − cos x, Newton x² = 3, false position)</td><td><span class="pill p-h">High</span></td></tr>
+<tr><td>Jacobi, Gauss–Seidel, Gauss elimination + pivoting</td><td>3</td><td>Gauss–Seidel in every final; Jacobi MCQ</td><td><span class="pill p-h">High</span></td></tr>
+<tr><td>Trapezoidal, Simpson 1/3, Simpson 3/8</td><td>5</td><td>Every final, plus "can you use Simpson? give reason"</td><td><span class="pill p-h">High</span></td></tr>
+<tr><td>Taylor, Euler, Modified Euler, Runge–Kutta 4</td><td>6</td><td>RK4 written question; Euler/Modified Euler/Taylor MCQs</td><td><span class="pill p-h">High</span></td></tr>
+<tr><td>Higher-order ODEs: Taylor with y and y′ together, Euler via y′ = z</td><td>7</td><td>Not in any past paper (new material), but confirmed in your midterm scope</td><td><span class="pill p-h">High</span></td></tr>
+<tr><td>Theory one-liners (direct vs iterative, which formula is which, true/false)</td><td>1–6</td><td>About 12 of 30 questions on the 2021-22 MCQ midterm</td><td><span class="pill p-vh">Very high</span></td></tr>
+<tr><td>Counting &amp; probability</td><td>—</td><td>Only the 2022-23 midterm (20 of 25); none on either 2021-22 midterm</td><td><span class="pill p-s">Not in your scope</span></td></tr>
+<tr><td>Stirling, LU, divided differences, splines, PDEs, finite-difference BVP</td><td>—</td><td>Old finals only; not in your notes</td><td><span class="pill p-s">Skip for midterm</span></td></tr>
+</tbody></table></div>
+
+<!-- ============ PAST EXAMS ============ -->
+<h2 id="exams"><span class="lec">Start here</span>What the past exams tell you</h2>
+<p>You now have three of her past midterms. All are 1 hour, 30 marks.</p>
+<div class="tbl"><table class="wide">
+<thead><tr><th>Midterm</th><th>Format</th><th>What it tested</th></tr></thead>
+<tbody>
+<tr><td>2021-22, 1st semester</td><td>Written, 2 questions, 5 parts</td><td>Linearise y = a + bxy and fit; Newton (3 iterations); Newton forward/backward for sin 30.2°, sin 31.3°; ∫ln x by Simpson 1/3, 3/8 and trapezoidal; Modified Euler. <b>All numerical, lectures 1, 2, 4, 5, 6.</b></td></tr>
+<tr><td>2021-22, 2nd semester (model A)</td><td>30 MCQs</td><td>Every lecture 1–6, about half calculation and half theory (direct vs iterative, formulas, true/false). <b>All numerical.</b></td></tr>
+<tr><td>2022-23, 1st semester (model A)</td><td>25 MCQs</td><td>20 counting/probability + 5 numerical (fitting, Lagrange, Newton forward).</td></tr>
+<tr><td>This term's revision sheet</td><td>7 written problems</td><td>Fit y = x/(a+bx); Lagrange; difference table + Newton; bisection to ε; 4×4 Jacobi &amp; Gauss–Seidel; Newton to ε (twice); false position. <b>Lectures 1–4 only.</b></td></tr>
+</tbody></table></div>
+<ul class="list">
+  <li><b>The pattern:</b> numerical methods appear in every midterm; probability appeared in only one. Integration and ODEs were on both 2021-22 midterms, so don't assume the midterm stops early in the course.</li>
+  <li><b>MCQ options:</b> a/b/c/"d – other". "Other" is sometimes right, so don't force a match when your number disagrees.</li>
+  <li><b>Theory questions are free marks.</b> A third of the 2021-22 MCQ paper was one-line facts. See the <a href="#theory">theory quick-fire list</a>.</li>
+  <li><b>She reuses lecture examples.</b> Midterm Q24 (find y at x = 0.15) and Q25 (the parabola through (0, 1.005)…(2, 6.108)) are word-for-word lecture examples. Know every example in your notes cold.</li>
+  <li><b>MCQ chains:</b> "In the previous problem…" questions reuse your earlier result. One early mistake costs two or three marks, so double-check the first one.</li>
+  <li><b>Finals mix written and MCQ.</b> Written questions ask for a fixed number of iterations ("three iterations"), so show a clean table.</li>
+  <li><b>Take it with a grain of salt:</b> these are previous years. A new paper can weight topics differently, so cover every lecture before going deep on any one.</li>
+</ul>
+
+<!-- ============ L1 ============ -->
+<h2 id="l1"><span class="lec">Lecture 1</span>Curve fitting (least squares)</h2>
+<p>You have data points that don't lie exactly on a curve. Least squares picks the line (or curve) that makes the sum of squared vertical errors as small as possible. For a straight line that gives two "normal equations" you solve for \(a_0, a_1\).</p>
+
+<div class="box plain"><b>In plain words</b>You measured some points and they <em>almost</em> make a straight line, but not quite. You want the single line that best represents them, so you can use a formula instead of a table. "Best" has a precise meaning: the line where the total of the squared errors is smallest. That's why it's called <em>least squares</em>.</div>
+<figure class="fig"><svg viewBox="0 0 600 300" role="img" aria-label="least squares line"><line class="ax" x1="50" y1="260.0" x2="580" y2="260.0"/><line class="ax" x1="50" y1="20" x2="50" y2="260"/><line class="ax" x1="50.0" y1="260.0" x2="50.0" y2="264.0"/><text x="50.0" y="277.0" text-anchor="middle">0</text><line class="ax" x1="138.3" y1="260.0" x2="138.3" y2="264.0"/><text x="138.3" y="277.0" text-anchor="middle">1</text><line class="ax" x1="226.7" y1="260.0" x2="226.7" y2="264.0"/><text x="226.7" y="277.0" text-anchor="middle">2</text><line class="ax" x1="315.0" y1="260.0" x2="315.0" y2="264.0"/><text x="315.0" y="277.0" text-anchor="middle">3</text><line class="ax" x1="403.3" y1="260.0" x2="403.3" y2="264.0"/><text x="403.3" y="277.0" text-anchor="middle">4</text><line class="ax" x1="491.7" y1="260.0" x2="491.7" y2="264.0"/><text x="491.7" y="277.0" text-anchor="middle">5</text><line class="ax" x1="580.0" y1="260.0" x2="580.0" y2="264.0"/><text x="580.0" y="277.0" text-anchor="middle">6</text><line class="ax" x1="46" y1="260.0" x2="50" y2="260.0"/><text x="42" y="264.0" text-anchor="end">0</text><line class="ax" x1="46" y1="212.0" x2="50" y2="212.0"/><text x="42" y="216.0" text-anchor="end">2</text><line class="ax" x1="46" y1="164.0" x2="50" y2="164.0"/><text x="42" y="168.0" text-anchor="end">4</text><line class="ax" x1="46" y1="116.0" x2="50" y2="116.0"/><text x="42" y="120.0" text-anchor="end">6</text><line class="ax" x1="46" y1="68.0" x2="50" y2="68.0"/><text x="42" y="72.0" text-anchor="end">8</text><line class="ax" x1="46" y1="20.0" x2="50" y2="20.0"/><text x="42" y="24.0" text-anchor="end">10</text><text x="580" y="252.0" text-anchor="end" class="lbl">x</text><text x="58" y="24" class="lbl">y</text><path class="cv" d="M67.7,236.9 L71.8,235.2 L75.9,233.5 L80.0,231.8 L84.2,230.1 L88.3,228.4 L92.4,226.6 L96.5,224.9 L100.6,223.2 L104.8,221.5 L108.9,219.8 L113.0,218.1 L117.1,216.4 L121.3,214.7 L125.4,213.0 L129.5,211.3 L133.6,209.6 L137.7,207.9 L141.9,206.2 L146.0,204.5 L150.1,202.8 L154.2,201.1 L158.4,199.4 L162.5,197.7 L166.6,196.0 L170.7,194.3 L174.8,192.6 L179.0,190.9 L183.1,189.2 L187.2,187.5 L191.3,185.8 L195.5,184.1 L199.6,182.4 L203.7,180.7 L207.8,179.0 L211.9,177.3 L216.1,175.6 L220.2,173.9 L224.3,172.2 L228.4,170.5 L232.6,168.8 L236.7,167.1 L240.8,165.4 L244.9,163.7 L249.0,162.0 L253.2,160.3 L257.3,158.6 L261.4,156.9 L265.5,155.1 L269.7,153.4 L273.8,151.7 L277.9,150.0 L282.0,148.3 L286.1,146.6 L290.3,144.9 L294.4,143.2 L298.5,141.5 L302.6,139.8 L306.8,138.1 L310.9,136.4 L315.0,134.7 L319.1,133.0 L323.2,131.3 L327.4,129.6 L331.5,127.9 L335.6,126.2 L339.7,124.5 L343.9,122.8 L348.0,121.1 L352.1,119.4 L356.2,117.7 L360.3,116.0 L364.5,114.3 L368.6,112.6 L372.7,110.9 L376.8,109.2 L381.0,107.5 L385.1,105.8 L389.2,104.1 L393.3,102.4 L397.4,100.7 L401.6,99.0 L405.7,97.3 L409.8,95.6 L413.9,93.9 L418.1,92.2 L422.2,90.5 L426.3,88.8 L430.4,87.1 L434.5,85.4 L438.7,83.6 L442.8,81.9 L446.9,80.2 L451.0,78.5 L455.2,76.8 L459.3,75.1 L463.4,73.4 L467.5,71.7 L471.6,70.0 L475.8,68.3 L479.9,66.6 L484.0,64.9 L488.1,63.2 L492.3,61.5 L496.4,59.8 L500.5,58.1 L504.6,56.4 L508.7,54.7 L512.9,53.0 L517.0,51.3 L521.1,49.6 L525.2,47.9 L529.4,46.2 L533.5,44.5 L537.6,42.8 L541.7,41.1 L545.8,39.4 L550.0,37.7 L554.1,36.0 L558.2,34.3 L562.3,32.6"/><line class="res" x1="138.3" y1="209.6" x2="138.3" y2="207.7"/><circle class="pt" cx="138.3" cy="209.6" r="4.5"/><line class="res" x1="226.7" y1="166.4" x2="226.7" y2="171.2"/><circle class="pt" cx="226.7" cy="166.4" r="4.5"/><line class="res" x1="315.0" y1="137.6" x2="315.0" y2="134.7"/><circle class="pt" cx="315.0" cy="137.6" r="4.5"/><line class="res" x1="403.3" y1="99.2" x2="403.3" y2="98.2"/><circle class="pt" cx="403.3" cy="99.2" r="4.5"/><line class="res" x1="491.7" y1="60.8" x2="491.7" y2="61.8"/><circle class="pt" cx="491.7" cy="60.8" r="4.5"/><text x="566.8" y="29.6" class="lbl blue" text-anchor="end">best-fit line y = 0.66 + 1.52x</text><text x="323.8" y="154.4" class="lbl red" text-anchor="start">red = error at each point</text></svg><figcaption><b>Least squares, Lecture 1 example.</b> The dots are your data; no straight line passes through all of them. The red gaps are the errors. Least squares picks the one line that makes the <em>sum of the squared red gaps</em> as small as possible, and the two normal equations are the shortcut that finds it.</figcaption></figure><h3>1. Straight line \(y = a_0 + a_1x\)</h3>
+<div class="box formula">
+\[ n\,a_0 + a_1\sum x = \sum y \qquad\qquad a_0\sum x + a_1\sum x^2 = \sum xy \]
+</div>
+<ol class="steps">
+  <li>Build a table with columns \(x,\ y,\ x^2,\ xy\) and sum each column.</li>
+  <li>Plug the sums into the two equations. \(n\) is the number of points.</li>
+  <li>Solve the 2×2 system (calculator EQN mode).</li>
+</ol>
+<p><b>Lecture example:</b> x = 1…5, y = 2.1, 3.9, 5.1, 6.7, 8.3. Sums: Σx = 15, Σy = 26.1, Σx² = 55, Σxy = 93.5.<br>
+\(5a_0 + 15a_1 = 26.1,\ \ 15a_0 + 55a_1 = 93.5\ \Rightarrow\ \) <span class="ans">y = 0.66 + 1.52x</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>Make the table</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>x²</th><th>xy</th></tr></thead><tbody><tr><td>1</td><td>2.1</td><td>1</td><td>2.1</td></tr><tr><td>2</td><td>3.9</td><td>4</td><td>7.8</td></tr><tr><td>3</td><td>5.1</td><td>9</td><td>15.3</td></tr><tr><td>4</td><td>6.7</td><td>16</td><td>26.8</td></tr><tr><td>5</td><td>8.3</td><td>25</td><td>41.5</td></tr><tr><td>Σx = 15</td><td>Σy = 26.1</td><td>Σx² = 55</td><td>Σxy = 93.5</td></tr></tbody></table></div>
+<p class="pl"><span class="n">2.</span>Normal equations (n = 5)</p>
+\[\begin{aligned} 5a_0 + 15a_1 &= 26.1 &\quad&(1)\\ 15a_0 + 55a_1 &= 93.5 &&(2) \end{aligned}\]
+<p class="pl"><span class="n">3.</span>Eliminate a₀: multiply (1) by 3, subtract from (2)</p>
+\[\begin{aligned} 15a_0 + 45a_1 &= 78.3\\ (2) - 3\times(1):\quad 10a_1 &= 15.2\\ a_1 &= 1.52 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Back into (1)</p>
+\[\begin{aligned} 5a_0 &= 26.1 - 15(1.52)\\ &= 26.1 - 22.8\\ &= 3.3\\ a_0 &= 0.66 \end{aligned}\]
+<div class="final"><span class="lab">Answer</span>\(y = 0.66 + 1.52x\)</div></div></details>
+
+<p><b>Square error</b> (asked on the midterm): \(S = \sum (y_i - a_0 - a_1x_i)^2\). Compute the fitted value at each x, subtract, square, add.</p>
+
+<h3>2. Linearising curves: turn it into a line, then use the same two equations</h3>
+<p>The whole trick: take logs or reciprocals so the model becomes \(Y = a_0 + a_1X\). Fit the line on the transformed columns, then convert back.</p>
+<div class="tbl"><table>
+<thead><tr><th>Model</th><th>Transform</th><th>Y</th><th>X</th><th>Convert back</th></tr></thead>
+<tbody>
+<tr><td>\(y = ae^{bx}\)</td><td>\(\ln y = \ln a + bx\)</td><td>ln y</td><td>x</td><td>\(a = e^{a_0},\ b = a_1\)</td></tr>
+<tr><td>\(y = ab^{x}\)</td><td>\(\log y = \log a + x\log b\)</td><td>log y</td><td>x</td><td>\(a = 10^{a_0},\ b = 10^{a_1}\)</td></tr>
+<tr><td>\(y = ax^{b}\)</td><td>\(\log y = \log a + b\log x\)</td><td>log y</td><td>log x</td><td>\(a = 10^{a_0},\ b = a_1\)</td></tr>
+<tr><td>\(y = \dfrac{ax}{b+x}\)</td><td>\(\dfrac1y = \dfrac1a + \dfrac ba\cdot\dfrac1x\)</td><td>1/y</td><td>1/x</td><td>\(a = 1/a_0,\ b = a_1/a_0\)</td></tr>
+<tr><td>\(y = \dfrac{x}{a+bx}\)</td><td>\(\dfrac1y = b + a\cdot\dfrac1x\)</td><td>1/y</td><td>1/x</td><td>\(b = a_0,\ a = a_1\)</td></tr>
+<tr><td>\(y = \dfrac{1}{b+ax}\)</td><td>\(\dfrac1y = b + ax\)</td><td>1/y</td><td>x</td><td>\(b = a_0,\ a = a_1\)</td></tr>
+<tr><td>\(y = a + bxy\)</td><td>already linear in X = xy</td><td>y</td><td>xy</td><td>\(a = a_0,\ b = a_1\)</td></tr>
+</tbody></table></div>
+<figure class="fig"><svg viewBox="0 0 600 270" role="img" aria-label="linearising"><line class="ax" x1="45" y1="250.0" x2="285" y2="250.0"/><line class="ax" x1="45" y1="30" x2="45" y2="250"/><line class="ax" x1="45.0" y1="250.0" x2="45.0" y2="254.0"/><text x="45.0" y="267.0" text-anchor="middle">0</text><line class="ax" x1="88.6" y1="250.0" x2="88.6" y2="254.0"/><text x="88.6" y="267.0" text-anchor="middle">1</text><line class="ax" x1="132.3" y1="250.0" x2="132.3" y2="254.0"/><text x="132.3" y="267.0" text-anchor="middle">2</text><line class="ax" x1="175.9" y1="250.0" x2="175.9" y2="254.0"/><text x="175.9" y="267.0" text-anchor="middle">3</text><line class="ax" x1="219.5" y1="250.0" x2="219.5" y2="254.0"/><text x="219.5" y="267.0" text-anchor="middle">4</text><line class="ax" x1="263.2" y1="250.0" x2="263.2" y2="254.0"/><text x="263.2" y="267.0" text-anchor="middle">5</text><line class="ax" x1="41" y1="250.0" x2="45" y2="250.0"/><text x="37" y="254.0" text-anchor="end">0</text><line class="ax" x1="41" y1="150.0" x2="45" y2="150.0"/><text x="37" y="154.0" text-anchor="end">1</text><line class="ax" x1="41" y1="50.0" x2="45" y2="50.0"/><text x="37" y="54.0" text-anchor="end">2</text><text x="285" y="242.0" text-anchor="end" class="lbl">x</text><text x="53" y="34" class="lbl">y</text><line class="ax" x1="345" y1="250.0" x2="585" y2="250.0"/><line class="ax" x1="345" y1="30" x2="345" y2="250"/><line class="ax" x1="345.0" y1="250.0" x2="345.0" y2="254.0"/><text x="345.0" y="267.0" text-anchor="middle">0</text><line class="ax" x1="388.6" y1="250.0" x2="388.6" y2="254.0"/><text x="388.6" y="267.0" text-anchor="middle">1</text><line class="ax" x1="432.3" y1="250.0" x2="432.3" y2="254.0"/><text x="432.3" y="267.0" text-anchor="middle">2</text><line class="ax" x1="475.9" y1="250.0" x2="475.9" y2="254.0"/><text x="475.9" y="267.0" text-anchor="middle">3</text><line class="ax" x1="519.5" y1="250.0" x2="519.5" y2="254.0"/><text x="519.5" y="267.0" text-anchor="middle">4</text><line class="ax" x1="563.2" y1="250.0" x2="563.2" y2="254.0"/><text x="563.2" y="267.0" text-anchor="middle">5</text><line class="ax" x1="341" y1="213.3" x2="345" y2="213.3"/><text x="337" y="217.3" text-anchor="end">-4</text><line class="ax" x1="341" y1="140.0" x2="345" y2="140.0"/><text x="337" y="144.0" text-anchor="end">-2</text><line class="ax" x1="341" y1="66.7" x2="345" y2="66.7"/><text x="337" y="70.7" text-anchor="end">0</text><text x="585" y="242.0" text-anchor="end" class="lbl">x</text><text x="353" y="34" class="lbl">ln y</text><path class="cv" d="M45.0,59.5 L47.0,68.1 L48.9,76.4 L50.9,84.3 L52.9,91.8 L54.8,99.0 L56.8,105.9 L58.7,112.4 L60.7,118.7 L62.7,124.6 L64.6,130.3 L66.6,135.8 L68.6,141.0 L70.5,145.9 L72.5,150.7 L74.5,155.2 L76.4,159.5 L78.4,163.6 L80.3,167.5 L82.3,171.3 L84.3,174.8 L86.2,178.3 L88.2,181.5 L90.2,184.6 L92.1,187.6 L94.1,190.4 L96.1,193.1 L98.0,195.7 L100.0,198.2 L101.9,200.6 L103.9,202.8 L105.9,204.9 L107.8,207.0 L109.8,208.9 L111.8,210.8 L113.7,212.6 L115.7,214.3 L117.7,215.9 L119.6,217.5 L121.6,218.9 L123.5,220.4 L125.5,221.7 L127.5,223.0 L129.4,224.2 L131.4,225.4 L133.4,226.5 L135.3,227.6 L137.3,228.6 L139.3,229.6 L141.2,230.5 L143.2,231.4 L145.1,232.2 L147.1,233.0 L149.1,233.8 L151.0,234.5 L153.0,235.2 L155.0,235.9 L156.9,236.6 L158.9,237.2 L160.9,237.8 L162.8,238.3 L164.8,238.8 L166.7,239.3 L168.7,239.8 L170.7,240.3 L172.6,240.7 L174.6,241.2 L176.6,241.6 L178.5,241.9 L180.5,242.3 L182.5,242.7 L184.4,243.0 L186.4,243.3 L188.3,243.6 L190.3,243.9 L192.3,244.2 L194.2,244.4 L196.2,244.7 L198.2,244.9 L200.1,245.2 L202.1,245.4 L204.1,245.6 L206.0,245.8 L208.0,246.0 L209.9,246.2 L211.9,246.3 L213.9,246.5 L215.8,246.7 L217.8,246.8 L219.8,247.0 L221.7,247.1 L223.7,247.2 L225.7,247.4 L227.6,247.5 L229.6,247.6 L231.5,247.7 L233.5,247.8 L235.5,247.9 L237.4,248.0 L239.4,248.1 L241.4,248.2 L243.3,248.3 L245.3,248.3 L247.3,248.4 L249.2,248.5 L251.2,248.6 L253.1,248.6 L255.1,248.7 L257.1,248.7 L259.0,248.8 L261.0,248.9 L263.0,248.9 L264.9,249.0 L266.9,249.0 L268.9,249.1 L270.8,249.1 L272.8,249.1 L274.7,249.2 L276.7,249.2 L278.7,249.2 L280.6,249.3"/><path class="cv" d="M345.0,43.0 L347.0,44.7 L348.9,46.4 L350.9,48.1 L352.9,49.9 L354.8,51.6 L356.8,53.3 L358.7,55.0 L360.7,56.7 L362.7,58.4 L364.6,60.1 L366.6,61.8 L368.6,63.5 L370.5,65.2 L372.5,66.9 L374.5,68.6 L376.4,70.3 L378.4,72.0 L380.3,73.7 L382.3,75.4 L384.3,77.1 L386.2,78.8 L388.2,80.6 L390.2,82.3 L392.1,84.0 L394.1,85.7 L396.1,87.4 L398.0,89.1 L400.0,90.8 L401.9,92.5 L403.9,94.2 L405.9,95.9 L407.8,97.6 L409.8,99.3 L411.8,101.0 L413.7,102.7 L415.7,104.4 L417.7,106.1 L419.6,107.8 L421.6,109.5 L423.5,111.3 L425.5,113.0 L427.5,114.7 L429.4,116.4 L431.4,118.1 L433.4,119.8 L435.3,121.5 L437.3,123.2 L439.3,124.9 L441.2,126.6 L443.2,128.3 L445.1,130.0 L447.1,131.7 L449.1,133.4 L451.0,135.1 L453.0,136.8 L455.0,138.5 L456.9,140.2 L458.9,142.0 L460.9,143.7 L462.8,145.4 L464.8,147.1 L466.7,148.8 L468.7,150.5 L470.7,152.2 L472.6,153.9 L474.6,155.6 L476.6,157.3 L478.5,159.0 L480.5,160.7 L482.5,162.4 L484.4,164.1 L486.4,165.8 L488.3,167.5 L490.3,169.2 L492.3,170.9 L494.2,172.7 L496.2,174.4 L498.2,176.1 L500.1,177.8 L502.1,179.5 L504.1,181.2 L506.0,182.9 L508.0,184.6 L509.9,186.3 L511.9,188.0 L513.9,189.7 L515.8,191.4 L517.8,193.1 L519.8,194.8 L521.7,196.5 L523.7,198.2 L525.7,199.9 L527.6,201.6 L529.6,203.4 L531.5,205.1 L533.5,206.8 L535.5,208.5 L537.4,210.2 L539.4,211.9 L541.4,213.6 L543.3,215.3 L545.3,217.0 L547.3,218.7 L549.2,220.4 L551.2,222.1 L553.1,223.8 L555.1,225.5 L557.1,227.2 L559.0,228.9 L561.0,230.6 L563.0,232.3 L564.9,234.1 L566.9,235.8 L568.9,237.5 L570.8,239.2 L572.8,240.9 L574.7,242.6 L576.7,244.3 L578.7,246.0 L580.6,247.7"/><circle class="pt" cx="45.0" cy="52.0" r="4.5"/><circle class="pt" cx="345.0" cy="41.6" r="4.5"/><circle class="pt" cx="88.6" cy="190.0" r="4.5"/><circle class="pt" cx="388.6" cy="85.4" r="4.5"/><circle class="pt" cx="132.3" cy="225.0" r="4.5"/><circle class="pt" cx="432.3" cy="117.5" r="4.5"/><circle class="pt" cx="175.9" cy="240.0" r="4.5"/><circle class="pt" cx="475.9" cy="151.1" r="4.5"/><circle class="pt" cx="219.5" cy="247.3" r="4.5"/><circle class="pt" cx="519.5" cy="199.1" r="4.5"/><circle class="pt" cx="263.2" cy="248.9" r="4.5"/><circle class="pt" cx="563.2" cy="232.0" r="4.5"/><text x="165.0" y="16.0" class="lbl" text-anchor="middle">y against x: curved</text><text x="465.0" y="16.0" class="lbl" text-anchor="middle">ln y against x: straight</text></svg><figcaption><b>Why we take logs.</b> The same six points from the exponential example. Plotted as y they curve (left); plotted as ln y they fall on a straight line (right). So we fit a straight line to (x, ln y) with the normal equations we already know, then undo the log at the end.</figcaption></figure><div class="box trap"><b>Trap:</b> after the transform, the sums use the <em>new</em> columns: Σ(ln y), Σx·ln y, and so on, not Σy. Also, for \(ab^x\) you must convert <em>both</em> constants back (\(b = 10^{a_1}\)). Students often forget b.</div>
+<p><b>Lecture example (\(ae^{bx}\)):</b> x = 0…5, y = 1.98, 0.6, 0.25, 0.1, 0.027, 0.011. Σln y = −11.6373, Σx·ln y = −47.1833, n = 6.<br>
+\(6a_0 + 15a_1 = -11.6373,\ 15a_0 + 55a_1 = -47.1833\Rightarrow a_0 = 0.6447,\ a_1 = -1.0337\) → <span class="ans">y = 1.905 e<sup>−1.034x</sup></span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>Turn the curve into a straight line</p>
+\[\begin{aligned} y &= ae^{bx}\\ \ln y &= \ln a + bx\\ Y &= a_0 + a_1x \end{aligned}\]
+<p class="note">where \(Y = \ln y,\ a_0 = \ln a,\ a_1 = b\)</p>
+<p class="pl"><span class="n">2.</span>Make the table (calculator: ln)</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>Y = ln y</th><th>x²</th><th>xY</th></tr></thead><tbody><tr><td>0</td><td>1.98</td><td>0.6831</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0.6</td><td>−0.5108</td><td>1</td><td>−0.5108</td></tr><tr><td>2</td><td>0.25</td><td>−1.3863</td><td>4</td><td>−2.7726</td></tr><tr><td>3</td><td>0.1</td><td>−2.3026</td><td>9</td><td>−6.9078</td></tr><tr><td>4</td><td>0.027</td><td>−3.6119</td><td>16</td><td>−14.4477</td></tr><tr><td>5</td><td>0.011</td><td>−4.5099</td><td>25</td><td>−22.5493</td></tr><tr><td>Σ = 15</td><td></td><td>−11.6384</td><td>55</td><td>−47.1882</td></tr></tbody></table></div>
+<p class="pl"><span class="n">3.</span>Normal equations (n = 6)</p>
+\[\begin{aligned} 6a_0 + 15a_1 &= -11.6384\\ 15a_0 + 55a_1 &= -47.1882 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Solve (EQN mode)</p>
+\[a_0 = 0.6449, \qquad a_1 = -1.0338\]
+<p class="pl"><span class="n">5.</span>Convert back</p>
+\[\begin{aligned} a &= e^{a_0} = e^{0.6449} = 1.9057\\ b &= a_1 = -1.0338 \end{aligned}\]
+<div class="final"><span class="lab">Answer</span>\(y = 1.906\,e^{-1.034x}\)</div>
+<p class="note">The notes' sums differ slightly because they rounded the logs earlier; the answer agrees to 3 figures.</p></div></details>
+
+<p><b>Lecture example (\(ax/(b+x)\)):</b> x = 1, 3, 5, 7, 9; y = 0.85, 1.4, 1.75, 1.68, 1.96 → <span class="ans">a ≈ 2.201, b ≈ 1.597</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>Turn the curve into a straight line</p>
+\[\begin{aligned} y &= \frac{ax}{b+x}\\[4pt] \frac{1}{y} &= \frac{b+x}{ax} = \frac{1}{a} + \frac{b}{a}\cdot\frac{1}{x}\\[4pt] Y &= a_0 + a_1X \end{aligned}\]
+<p class="note">where \(Y = \dfrac1y,\ X = \dfrac1x,\ a_0 = \dfrac1a,\ a_1 = \dfrac ba\)</p>
+<p class="pl"><span class="n">2.</span>Make the table</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>X = 1/x</th><th>Y = 1/y</th><th>X²</th><th>XY</th></tr></thead><tbody><tr><td>1</td><td>0.85</td><td>1</td><td>1.17647</td><td>1</td><td>1.17647</td></tr><tr><td>3</td><td>1.4</td><td>0.33333</td><td>0.71429</td><td>0.11111</td><td>0.23810</td></tr><tr><td>5</td><td>1.75</td><td>0.2</td><td>0.57143</td><td>0.04</td><td>0.11429</td></tr><tr><td>7</td><td>1.68</td><td>0.14286</td><td>0.59524</td><td>0.02041</td><td>0.08503</td></tr><tr><td>9</td><td>1.96</td><td>0.11111</td><td>0.51020</td><td>0.01235</td><td>0.05669</td></tr><tr><td>Σ</td><td></td><td>1.78730</td><td>3.56763</td><td>1.18386</td><td>1.67057</td></tr></tbody></table></div>
+<p class="pl"><span class="n">3.</span>Normal equations (n = 5)</p>
+\[\begin{aligned} 5a_0 + 1.7873a_1 &= 3.56763\\ 1.7873a_0 + 1.18386a_1 &= 1.67057 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Solve</p>
+\[a_0 = 0.45425, \qquad a_1 = 0.72533\]
+<p class="pl"><span class="n">5.</span>Convert back</p>
+\[\begin{aligned} a &= \frac{1}{a_0} = \frac{1}{0.45425} = 2.2014\\[4pt] b &= \frac{a_1}{a_0} = \frac{0.72533}{0.45425} = 1.5968 \end{aligned}\]
+<div class="final"><span class="lab">Answer</span>\(a = 2.2014,\ \ b = 1.5968\)</div></div></details>
+
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Fit y = abˣ</div>
+<p class="wk-seen">Seen in: 2022-23 final (MCQ) and 2021-22 final (written). The most-asked fitting question.</p>
+<div class="wk-problem">Fit the curve \(y = ab^x\) to the data: x = 2, 3, 4, 5, 6; y = 144, 172.3, 207.4, 248.8, 298.5.</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Turn the curve into a straight line (log base 10)</p>
+\[\begin{aligned} y &= ab^x\\ \log y &= \log a + x\log b\\ Y &= a_0 + a_1x \end{aligned}\]
+<p class="note">where \(Y = \log y,\ a_0 = \log a,\ a_1 = \log b\)</p>
+<p class="pl"><span class="n">2.</span>Make the table (calculator: log, not ln)</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>Y = log y</th><th>x²</th><th>xY</th></tr></thead><tbody><tr><td>2</td><td>144</td><td>2.1584</td><td>4</td><td>4.3167</td></tr><tr><td>3</td><td>172.3</td><td>2.2363</td><td>9</td><td>6.7089</td></tr><tr><td>4</td><td>207.4</td><td>2.3168</td><td>16</td><td>9.2672</td></tr><tr><td>5</td><td>248.8</td><td>2.3959</td><td>25</td><td>11.9793</td></tr><tr><td>6</td><td>298.5</td><td>2.4749</td><td>36</td><td>14.8497</td></tr><tr><td>Σ = 20</td><td></td><td>11.5823</td><td>90</td><td>47.1217</td></tr></tbody></table></div>
+<p class="pl"><span class="n">3.</span>Normal equations (n = 5)</p>
+\[\begin{aligned} 5a_0 + 20a_1 &= 11.5823\\ 20a_0 + 90a_1 &= 47.1217 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Solve (EQN mode)</p>
+\[a_0 = 1.99936, \qquad a_1 = 0.07927\]
+<p class="pl"><span class="n">5.</span>Convert back (both constants!)</p>
+\[\begin{aligned} a &= 10^{a_0} = 10^{1.99936} = 99.85 \approx 100\\ b &= 10^{a_1} = 10^{0.07927} = 1.2003 \approx 1.2 \end{aligned}\]
+<div class="final"><span class="lab">Answer</span>\(y = 100\,(1.2)^x\)</div></div></details>
+</div>
+<h3>3. Polynomial of degree two \(y = b_0 + b_1x + b_2x^2\)</h3>
+<div class="box formula">
+\[\begin{aligned} n\,b_0 + b_1\textstyle\sum x + b_2\sum x^2 &= \textstyle\sum y\\ b_0\textstyle\sum x + b_1\sum x^2 + b_2\sum x^3 &= \textstyle\sum xy\\ b_0\textstyle\sum x^2 + b_1\sum x^3 + b_2\sum x^4 &= \textstyle\sum x^2y \end{aligned}\]
+</div>
+<p>Pattern: each row multiplies the first by one more power of x. Table columns: \(x, y, x^2, x^3, x^4, xy, x^2y\).</p>
+<p><b>Lecture example</b> (also last year's midterm Q25): x = 0, 0.5, 1, 1.5, 2; y = 1.005, 1.649, 2.720, 4.199, 6.108. Sums 5, 15.681, 7.5, 12.5, 22.125, 22.059, 37.012 → <span class="ans">y = 1.0047 + 0.8723x + 0.8394x²</span></p>
+<p class="small sol-link">Solved column by column in the <b>“Fit a parabola, every column shown”</b> box below.</p>
+
+<div class="box trap"><b>Easy to confuse:</b> in this example n = 5 <em>and</em> Σx = 5, so the first equation is \(5b_0 + 5b_1 + 7.5b_2 = 15.681\) and the second is \(5b_0 + 7.5b_1 + 12.5b_2 = 22.059\). Label your sums so you don't swap n and Σx in a different data set.</div>
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Fit a parabola, every column shown</div>
+<p class="wk-seen">Seen in: 2022-23 midterm Q25 (word for word) and the 2021-22 MCQ midterm (normal equations).</p>
+<div class="wk-problem">Fit \(y = b_0 + b_1x + b_2x^2\) to x = 0, 0.5, 1, 1.5, 2; y = 1.005, 1.649, 2.720, 4.199, 6.108.</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Make the table: 7 columns</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>x²</th><th>x³</th><th>x⁴</th><th>xy</th><th>x²y</th></tr></thead><tbody><tr><td>0</td><td>1.005</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0.5</td><td>1.649</td><td>0.25</td><td>0.125</td><td>0.0625</td><td>0.8245</td><td>0.4123</td></tr><tr><td>1</td><td>2.720</td><td>1</td><td>1</td><td>1</td><td>2.720</td><td>2.720</td></tr><tr><td>1.5</td><td>4.199</td><td>2.25</td><td>3.375</td><td>5.0625</td><td>6.2985</td><td>9.4478</td></tr><tr><td>2</td><td>6.108</td><td>4</td><td>8</td><td>16</td><td>12.216</td><td>24.432</td></tr><tr><td>Σ = 5</td><td>15.681</td><td>7.5</td><td>12.5</td><td>22.125</td><td>22.059</td><td>37.012</td></tr></tbody></table></div>
+<p class="pl"><span class="n">2.</span>Three normal equations (n = 5)</p>
+\[\begin{aligned} 5b_0 + 5b_1 + 7.5b_2 &= 15.681\\ 5b_0 + 7.5b_1 + 12.5b_2 &= 22.059\\ 7.5b_0 + 12.5b_1 + 22.125b_2 &= 37.012 \end{aligned}\]
+<p class="pl"><span class="n">3.</span>Solve the 3 × 3 system (EQN mode, 3 unknowns)</p>
+\[b_0 = 1.0047, \qquad b_1 = 0.8723, \qquad b_2 = 0.8394\]
+<div class="final"><span class="lab">Answer</span>\(y = 1.0047 + 0.8723x + 0.8394x^2\)</div></div></details>
+</div>
+<!-- ============ L2 ============ -->
+<h2 id="l2"><span class="lec">Lecture 2</span>Solving non-linear equations (roots)</h2>
+<p>Goal: find x where f(x) = 0. First rewrite the equation as f(x) = 0. For example \(x^2 = \ln(1/x)\) becomes \(f(x) = x^2 + \ln x\).</p>
+
+<div class="box plain"><b>In plain words</b>A root is where the graph crosses the x-axis. If f is negative at one point and positive at another, the graph <em>must</em> cross zero somewhere in between, like walking from below sea level to above it. All four methods start from a guess and improve it each round. Bisection and false position trap the root between two points and squeeze. Newton and secant follow straight lines toward the axis and are faster, but can wander off if the start is poor.</div>
+<h3>1. Bisection</h3>
+<div class="box formula">If \(f(a)\cdot f(b) < 0\) there is a root in [a, b]. &nbsp; \(x = \dfrac{a+b}{2}\), then keep the half where the sign changes.</div>
+<ol class="steps">
+  <li>Check signs of f(a) and f(b). They must be opposite.</li>
+  <li>x = midpoint, evaluate f(x).</li>
+  <li>Replace whichever endpoint has the <em>same</em> sign as f(x).</li>
+  <li>Repeat for the number of iterations asked. Present it as a table: n | a | b | x | sign of f(x).</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 600 300" role="img" aria-label="bisection"><line class="ax" x1="50" y1="142.7" x2="580" y2="142.7"/><line class="ax" x1="50" y1="20" x2="50" y2="200"/><line class="ax" x1="94.2" y1="142.7" x2="94.2" y2="146.7"/><text x="94.2" y="159.7" text-anchor="middle">2</text><line class="ax" x1="204.6" y1="142.7" x2="204.6" y2="146.7"/><text x="204.6" y="159.7" text-anchor="middle">2.25</text><line class="ax" x1="315.0" y1="142.7" x2="315.0" y2="146.7"/><text x="315.0" y="159.7" text-anchor="middle">2.5</text><line class="ax" x1="535.8" y1="142.7" x2="535.8" y2="146.7"/><text x="535.8" y="159.7" text-anchor="middle">3</text><line class="ax" x1="46" y1="183.6" x2="50" y2="183.6"/><text x="42" y="187.6" text-anchor="end">-5</text><line class="ax" x1="46" y1="142.7" x2="50" y2="142.7"/><text x="42" y="146.7" text-anchor="end">0</text><line class="ax" x1="46" y1="101.8" x2="50" y2="101.8"/><text x="42" y="105.8" text-anchor="end">5</text><line class="ax" x1="46" y1="60.9" x2="50" y2="60.9"/><text x="42" y="64.9" text-anchor="end">10</text><text x="580" y="134.7" text-anchor="end" class="lbl">x</text><text x="58" y="24" class="lbl">f(x)</text><path class="cv" d="M72.1,188.0 L76.1,187.2 L80.2,186.4 L84.2,185.6 L88.3,184.8 L92.3,184.0 L96.4,183.2 L100.4,182.4 L104.5,181.5 L108.5,180.7 L112.6,179.8 L116.6,178.9 L120.7,178.1 L124.7,177.2 L128.8,176.3 L132.8,175.4 L136.9,174.5 L140.9,173.6 L145.0,172.6 L149.0,171.7 L153.1,170.7 L157.1,169.8 L161.2,168.8 L165.2,167.9 L169.2,166.9 L173.3,165.9 L177.3,164.9 L181.4,163.9 L185.4,162.9 L189.5,161.8 L193.5,160.8 L197.6,159.8 L201.6,158.7 L205.7,157.6 L209.7,156.6 L213.8,155.5 L217.8,154.4 L221.9,153.3 L225.9,152.2 L230.0,151.1 L234.0,150.0 L238.1,148.8 L242.1,147.7 L246.2,146.5 L250.2,145.3 L254.3,144.2 L258.3,143.0 L262.4,141.8 L266.4,140.6 L270.5,139.4 L274.5,138.1 L278.6,136.9 L282.6,135.7 L286.7,134.4 L290.7,133.1 L294.8,131.9 L298.8,130.6 L302.9,129.3 L306.9,128.0 L311.0,126.7 L315.0,125.3 L319.0,124.0 L323.1,122.7 L327.1,121.3 L331.2,119.9 L335.2,118.6 L339.3,117.2 L343.3,115.8 L347.4,114.4 L351.4,112.9 L355.5,111.5 L359.5,110.1 L363.6,108.6 L367.6,107.1 L371.7,105.7 L375.7,104.2 L379.8,102.7 L383.8,101.2 L387.9,99.7 L391.9,98.1 L396.0,96.6 L400.0,95.1 L404.1,93.5 L408.1,91.9 L412.2,90.3 L416.2,88.7 L420.3,87.1 L424.3,85.5 L428.4,83.9 L432.4,82.2 L436.5,80.6 L440.5,78.9 L444.6,77.3 L448.6,75.6 L452.7,73.9 L456.7,72.2 L460.8,70.4 L464.8,68.7 L468.8,67.0 L472.9,65.2 L476.9,63.4 L481.0,61.7 L485.0,59.9 L489.1,58.1 L493.1,56.2 L497.2,54.4 L501.2,52.6 L505.3,50.7 L509.3,48.9 L513.4,47.0 L517.4,45.1 L521.5,43.2 L525.5,41.3 L529.6,39.4 L533.6,37.4 L537.7,35.5 L541.7,33.5 L545.8,31.5 L549.8,29.6 L553.9,27.6 L557.9,25.5"/><line class="guide" x1="94.2" y1="142.7" x2="94.2" y2="183.6"/><circle class="pt" cx="94.2" cy="183.6" r="4"/><line class="guide" x1="535.8" y1="142.7" x2="535.8" y2="36.4"/><circle class="pt" cx="535.8" cy="36.4" r="4"/><line class="guide" x1="315.0" y1="142.7" x2="315.0" y2="125.3"/><circle class="pt" cx="315.0" cy="125.3" r="4"/><line class="guide" x1="204.6" y1="142.7" x2="204.6" y2="157.9"/><circle class="pt" cx="204.6" cy="157.9" r="4"/><text x="103.0" y="187.6" class="lbl red" text-anchor="start">f(2) = −5</text><text x="522.6" y="40.4" class="lbl blue" text-anchor="end">f(3) = 13</text><circle class="root" cx="259.2" cy="142.7" r="5"/><text x="267.2" y="134.7" class="lbl" text-anchor="start">root</text><line class="brk" x1="94.2" y1="232" x2="535.8" y2="232"/><circle class="pt" cx="315.0" cy="232" r="3.5"/><text x="545.8" y="236.0" class="lbl" text-anchor="start">step 1: [2, 3], mid 2.5</text><line class="brk" x1="94.2" y1="254" x2="315.0" y2="254"/><circle class="pt" cx="204.6" cy="254" r="3.5"/><text x="325.0" y="258.0" class="lbl" text-anchor="start">step 2: [2, 2.5], mid 2.25</text><line class="brk" x1="204.6" y1="276" x2="315.0" y2="276"/><circle class="pt" cx="259.8" cy="276" r="3.5"/><text x="325.0" y="280.0" class="lbl" text-anchor="start">step 3: [2.25, 2.5], mid 2.375</text></svg><figcaption><b>Bisection on x³ − x − 11.</b> The curve is below the axis at 2 and above it at 3, so it must cross somewhere between. Each step cuts the interval in half and keeps the half where the sign still changes. The bars at the bottom shrink toward the root (about 2.3736).</figcaption></figure><p><b>Lecture example:</b> \(x^3 - x - 11\) on (2, 3): f(2) = −5, f(3) = 13 → x = <span class="ans">2.5, 2.25, 2.375</span><br>
+\(x^2 + \ln x\) on [0.5, 1]: <span class="ans">0.75, 0.625, 0.6875, 0.65625</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="ex-h">Example 1: \(f(x) = x^3 - x - 11\) on (2, 3).</p>
+<p class="txt"><span class="n">1.</span>f(2) = 8 − 2 − 11 = −5, f(3) = 27 − 3 − 11 = 13. Opposite signs, so a root is inside.</p>
+<p class="pl"><span class="n">2.</span>Iteration 1</p>
+<p class="txt">x = (2 + 3)/2 = 2.5. f(2.5) = 15.625 − 2.5 − 11 = 2.125 (+). Same sign as f(3), so replace b: new interval [2, 2.5].</p>
+<p class="pl"><span class="n">3.</span>Iteration 2</p>
+<p class="txt">x = (2 + 2.5)/2 = 2.25. f(2.25) = 11.3906 − 2.25 − 11 = −1.8594 (−). Same sign as f(2), so replace a: [2.25, 2.5].</p>
+<p class="pl"><span class="n">4.</span>Iteration 3</p>
+<p class="txt">x = (2.25 + 2.5)/2 = <b>2.375</b>. (f(2.375) = 0.0215, very close to 0.)</p>
+<p class="ex-h">Example 2: \(f(x) = x^2 + \ln x\) on [0.5, 1].</p>
+<p class="txt"><span class="n">1.</span>f(0.5) = 0.25 − 0.6931 = −0.4431, f(1) = 1 + 0 = 1.</p>
+<p class="pl plain"><span class="n">2.</span></p>
+<div class='tbl'><table><thead><tr><th>n</th><th>a</th><th>b</th><th>x = (a+b)/2</th><th>f(x)</th><th>keep</th></tr></thead><tbody><tr><td>1</td><td>0.5</td><td>1</td><td>0.75</td><td>+0.2748</td><td>[0.5, 0.75]</td></tr><tr><td>2</td><td>0.5</td><td>0.75</td><td>0.625</td><td>−0.0794</td><td>[0.625, 0.75]</td></tr><tr><td>3</td><td>0.625</td><td>0.75</td><td>0.6875</td><td>+0.0980</td><td>[0.625, 0.6875]</td></tr><tr><td>4</td><td>0.625</td><td>0.6875</td><td><b>0.65625</b></td><td>+0.0095</td><td></td></tr></tbody></table></div></div></details>
+
+<div class="box formula"><b>When no interval or iteration count is given</b> (the revision sheet does this):<br>
+1. <b>Find the bracket yourself:</b> evaluate f at 0, 1, 2, … (or −1, −2, …) until the sign changes. "Smallest positive root" = the first sign change to the right of 0.<br>
+2. <b>Bisection with tolerance ε:</b> the number of iterations needed is \(n \ge \log_2\!\dfrac{b-a}{\varepsilon}\). For [1, 2] and ε = 0.001: \(\log_2 1000 = 9.97\), so <b>n = 10</b>.<br>
+3. <b>Newton / secant / false position with tolerance:</b> keep iterating until \(|x_{i+1} - x_i| &lt; \varepsilon\) (or until the digits asked for stop changing). Add a column \(|x_{i+1}-x_i|\) to your table so the examiner sees why you stopped.</div>
+<div class="box tip"><b>MCQ shortcut:</b> "best second point for bisection if f(4) = 6" → pick the option where f is <em>negative</em> (sign change). That was a real MCQ.</div>
+
+<h3>2. False position (Regula Falsi)</h3>
+<div class="box formula">\[ x = \frac{b\,f(a) - a\,f(b)}{f(a) - f(b)} \]Same bracketing logic as bisection; only the new point changes.</div>
+<figure class="fig"><svg viewBox="0 0 600 270" role="img" aria-label="false position"><line class="ax" x1="50" y1="176.8" x2="580" y2="176.8"/><line class="ax" x1="50" y1="20" x2="50" y2="250"/><line class="ax" x1="94.2" y1="176.8" x2="94.2" y2="180.8"/><text x="94.2" y="193.8" text-anchor="middle">2</text><line class="ax" x1="315.0" y1="176.8" x2="315.0" y2="180.8"/><text x="315.0" y="193.8" text-anchor="middle">2.5</text><line class="ax" x1="535.8" y1="176.8" x2="535.8" y2="180.8"/><text x="535.8" y="193.8" text-anchor="middle">3</text><line class="ax" x1="46" y1="229.1" x2="50" y2="229.1"/><text x="42" y="233.1" text-anchor="end">-5</text><line class="ax" x1="46" y1="176.8" x2="50" y2="176.8"/><text x="42" y="180.8" text-anchor="end">0</text><line class="ax" x1="46" y1="124.5" x2="50" y2="124.5"/><text x="42" y="128.5" text-anchor="end">5</text><line class="ax" x1="46" y1="72.3" x2="50" y2="72.3"/><text x="42" y="76.3" text-anchor="end">10</text><text x="580" y="168.8" text-anchor="end" class="lbl">x</text><text x="58" y="24" class="lbl">f(x)</text><path class="cv" d="M72.1,234.7 L76.1,233.7 L80.2,232.7 L84.2,231.6 L88.3,230.6 L92.3,229.6 L96.4,228.5 L100.4,227.4 L104.5,226.4 L108.5,225.3 L112.6,224.2 L116.6,223.1 L120.7,222.0 L124.7,220.8 L128.8,219.7 L132.8,218.5 L136.9,217.4 L140.9,216.2 L145.0,215.0 L149.0,213.8 L153.1,212.6 L157.1,211.4 L161.2,210.2 L165.2,208.9 L169.2,207.7 L173.3,206.4 L177.3,205.1 L181.4,203.9 L185.4,202.6 L189.5,201.2 L193.5,199.9 L197.6,198.6 L201.6,197.2 L205.7,195.9 L209.7,194.5 L213.8,193.1 L217.8,191.7 L221.9,190.3 L225.9,188.9 L230.0,187.5 L234.0,186.1 L238.1,184.6 L242.1,183.1 L246.2,181.7 L250.2,180.2 L254.3,178.7 L258.3,177.1 L262.4,175.6 L266.4,174.1 L270.5,172.5 L274.5,171.0 L278.6,169.4 L282.6,167.8 L286.7,166.2 L290.7,164.6 L294.8,162.9 L298.8,161.3 L302.9,159.6 L306.9,158.0 L311.0,156.3 L315.0,154.6 L319.0,152.9 L323.1,151.2 L327.1,149.4 L331.2,147.7 L335.2,145.9 L339.3,144.2 L343.3,142.4 L347.4,140.6 L351.4,138.8 L355.5,136.9 L359.5,135.1 L363.6,133.2 L367.6,131.4 L371.7,129.5 L375.7,127.6 L379.8,125.7 L383.8,123.7 L387.9,121.8 L391.9,119.8 L396.0,117.9 L400.0,115.9 L404.1,113.9 L408.1,111.9 L412.2,109.9 L416.2,107.8 L420.3,105.8 L424.3,103.7 L428.4,101.6 L432.4,99.5 L436.5,97.4 L440.5,95.3 L444.6,93.2 L448.6,91.0 L452.7,88.8 L456.7,86.6 L460.8,84.5 L464.8,82.2 L468.8,80.0 L472.9,77.8 L476.9,75.5 L481.0,73.2 L485.0,70.9 L489.1,68.6 L493.1,66.3 L497.2,64.0 L501.2,61.6 L505.3,59.3 L509.3,56.9 L513.4,54.5 L517.4,52.1 L521.5,49.6 L525.5,47.2 L529.6,44.7 L533.6,42.3 L537.7,39.8 L541.7,37.3 L545.8,34.7 L549.8,32.2 L553.9,29.7 L557.9,27.1"/><line class="chord" x1="94.2" y1="229.1" x2="535.8" y2="40.9"/><circle class="pt" cx="94.2" cy="229.1" r="4.5"/><circle class="pt" cx="535.8" cy="40.9" r="4.5"/><circle class="new" cx="216.9" cy="176.8" r="5"/><circle class="root" cx="259.2" cy="176.8" r="5"/><text x="210.9" y="196.8" class="lbl red" text-anchor="end">new x = 2.278</text><text x="267.2" y="168.8" class="lbl" text-anchor="start">true root</text><text x="412.2" y="119.3" class="lbl red" text-anchor="start">straight line (chord)</text></svg><figcaption><b>False position.</b> Instead of the midpoint, join the two end points with a straight line and take where <em>that line</em> crosses the axis. The formula x = [b f(a) − a f(b)] / [f(a) − f(b)] is just that crossing point. Then keep the side with the sign change, as in bisection.</figcaption></figure><p><b>Lecture example:</b> \(x^2+\ln x\) on [0.5, 1]: f(0.5) = −0.4431, f(1) = 1 → <span class="ans">0.6535, 0.6529, 0.6529</span>. It converges faster than bisection.</p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>Start</p>
+<p class="txt">a = 0.5, b = 1, f(a) = −0.44315, f(b) = 1.</p>
+<p class="pl"><span class="n">2.</span>Iteration 1</p>
+\[\begin{aligned} x &= \frac{b f(a) - a f(b)}{f(a) - f(b)} \\[2pt] &= \frac{1(-0.44315) - 0.5(1)}{-0.44315 - 1} \\[2pt] &= \frac{-0.94315}{-1.44315} \\[2pt] &= 0.65353 \end{aligned}\]
+<p class="txt">f(0.65353) = 0.42710 − 0.42535 = +0.00175. Positive like f(b), so b = 0.65353.</p>
+<p class="pl"><span class="n">3.</span>Iteration 2</p>
+\[\begin{aligned} x &= \frac{0.65353(-0.44315) - 0.5(0.00175)}{-0.44315 - 0.00175} \\[2pt] &= \frac{-0.29049}{-0.44490} \\[2pt] &= 0.65293 \end{aligned}\]
+<p class="txt">f = +0.00004, so b = 0.65293.</p>
+<p class="pl"><span class="n">4.</span>Iteration 3</p>
+<p class="txt">same formula gives <b>0.65292</b>. The 4th decimal has stopped changing, so the root is 0.6529.</p></div></details>
+
+
+<h3>3. Newton–Raphson ("method of tangents")</h3>
+<div class="box formula">\[ x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)} \]</div>
+<figure class="fig"><svg viewBox="0 0 600 270" role="img" aria-label="newton tangent"><line class="ax" x1="50" y1="173.3" x2="580" y2="173.3"/><line class="ax" x1="50" y1="20" x2="50" y2="250"/><line class="ax" x1="120.7" y1="173.3" x2="120.7" y2="177.3"/><text x="120.7" y="190.3" text-anchor="middle">2.5</text><line class="ax" x1="474.0" y1="173.3" x2="474.0" y2="177.3"/><text x="474.0" y="190.3" text-anchor="middle">3</text><line class="ax" x1="46" y1="224.4" x2="50" y2="224.4"/><text x="42" y="228.4" text-anchor="end">-1</text><line class="ax" x1="46" y1="173.3" x2="50" y2="173.3"/><text x="42" y="177.3" text-anchor="end">0</text><line class="ax" x1="46" y1="122.2" x2="50" y2="122.2"/><text x="42" y="126.2" text-anchor="end">1</text><line class="ax" x1="46" y1="71.1" x2="50" y2="71.1"/><text x="42" y="75.1" text-anchor="end">2</text><text x="580" y="165.3" text-anchor="end" class="lbl">x</text><text x="58" y="24" class="lbl">f(x)</text><path class="cv" d="M64.1,231.8 L68.3,230.3 L72.4,228.9 L76.5,227.4 L80.6,226.0 L84.7,224.5 L88.9,223.1 L93.0,221.6 L97.1,220.1 L101.2,218.7 L105.4,217.2 L109.5,215.7 L113.6,214.2 L117.7,212.7 L121.8,211.2 L126.0,209.7 L130.1,208.3 L134.2,206.7 L138.3,205.2 L142.5,203.7 L146.6,202.2 L150.7,200.7 L154.8,199.2 L158.9,197.7 L163.1,196.1 L167.2,194.6 L171.3,193.1 L175.4,191.6 L179.6,190.0 L183.7,188.5 L187.8,186.9 L191.9,185.4 L196.0,183.8 L200.2,182.3 L204.3,180.7 L208.4,179.1 L212.5,177.6 L216.7,176.0 L220.8,174.4 L224.9,172.9 L229.0,171.3 L233.1,169.7 L237.3,168.1 L241.4,166.5 L245.5,164.9 L249.6,163.3 L253.8,161.7 L257.9,160.1 L262.0,158.5 L266.1,156.9 L270.2,155.3 L274.4,153.7 L278.5,152.0 L282.6,150.4 L286.7,148.8 L290.9,147.2 L295.0,145.5 L299.1,143.9 L303.2,142.2 L307.3,140.6 L311.5,138.9 L315.6,137.3 L319.7,135.6 L323.8,134.0 L328.0,132.3 L332.1,130.6 L336.2,129.0 L340.3,127.3 L344.4,125.6 L348.6,123.9 L352.7,122.2 L356.8,120.6 L360.9,118.9 L365.1,117.2 L369.2,115.5 L373.3,113.8 L377.4,112.1 L381.5,110.4 L385.7,108.6 L389.8,106.9 L393.9,105.2 L398.0,103.5 L402.2,101.8 L406.3,100.0 L410.4,98.3 L414.5,96.6 L418.6,94.8 L422.8,93.1 L426.9,91.3 L431.0,89.6 L435.1,87.8 L439.3,86.1 L443.4,84.3 L447.5,82.5 L451.6,80.8 L455.7,79.0 L459.9,77.2 L464.0,75.4 L468.1,73.7 L472.2,71.9 L476.4,70.1 L480.5,68.3 L484.6,66.5 L488.7,64.7 L492.8,62.9 L497.0,61.1 L501.1,59.3 L505.2,57.5 L509.3,55.6 L513.5,53.8 L517.6,52.0 L521.7,50.2 L525.8,48.3 L529.9,46.5 L534.1,44.7 L538.2,42.8 L542.3,41.0 L546.4,39.1 L550.6,37.3 L554.7,35.4 L558.8,33.6"/><line class="chord" x1="181.9" y1="197.9" x2="544.7" y2="40.4"/><line class="guide" x1="474.0" y1="173.3" x2="474.0" y2="71.1"/><line class="guide" x1="238.4" y1="173.3" x2="238.4" y2="167.7"/><circle class="pt" cx="474.0" cy="71.1" r="4.5"/><circle class="new" cx="238.4" cy="173.3" r="5"/><circle class="pt" cx="238.4" cy="167.7" r="3.5"/><text x="482.0" y="75.1" class="lbl" text-anchor="start">start x₀ = 3</text><text x="232.4" y="193.3" class="lbl red" text-anchor="end">x₁ = 2.6667</text><text x="424.5" y="137.6" class="lbl red" text-anchor="end">tangent at x₀</text><text x="223.7" y="232.1" class="lbl" text-anchor="middle">true √7 = 2.6458</text></svg><figcaption><b>Newton–Raphson for √7 (f = x² − 7).</b> Stand on the curve at x₀, draw the tangent line, and slide down it to the axis. Where it lands is x₁. The formula x₁ = x₀ − f(x₀)/f′(x₀) is exactly that slide, because f′ is the slope of the tangent. Repeat from x₁ and you're at 2.6458 after two steps.</figcaption></figure><ol class="steps">
+  <li>Write f(x) and differentiate it.</li>
+  <li>Pick x₀ (given, or a nearby number you know: for √7 use x₀ = 3 since √9 = 3).</li>
+  <li>Iterate until the digits stop changing.</li>
+</ol>
+<p><b>Lecture examples:</b><br>
+\(x^2 + \ln x,\ x_0 = 0.5,\ f' = 2x + 1/x\) → <span class="ans">0.6477, 0.6529, 0.6529</span><br>
+\(\sqrt7\): \(f = x^2 - 7,\ x_0 = 3\) → <span class="ans">2.6667, 2.6458, 2.6458</span><br>
+Past MCQ: \(x^2 = 3,\ x_0 = 3/2\), two iterations → 1.75, then <span class="ans">97/56 ≈ 1.7321</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="ex-h">Example 1: \(f = x^2 + \ln x\), \(f' = 2x + 1/x\), \(x_0 = 0.5\).</p>
+<p class="pl plain"><span class="n">1.</span></p>
+\[\begin{aligned} x_1 &= 0.5 - \frac{0.25 + \ln 0.5}{2(0.5) + 1/0.5} \\[2pt] &= 0.5 - \frac{-0.44315}{3} \\[2pt] &= 0.5 + 0.14772 \\[2pt] &= 0.64772 \end{aligned}\]
+<p class="pl plain"><span class="n">2.</span></p>
+\[\begin{aligned} x_2 &= 0.64772 - \frac{0.41954 - 0.43431}{1.29544 + 1.54388} \\[2pt] &= 0.64772 - \frac{-0.01477}{2.83932} \\[2pt] &= 0.64772 + 0.00520 \\[2pt] &= 0.65292 \end{aligned}\]
+<p class="txt"><span class="n">3.</span>\(x_3\): f(0.65292) ≈ −0.000005, so \(x_3 = 0.65292\). Stopped changing: <b>root = 0.6529</b>.</p>
+<p class="ex-h">Example 2: √7.</p>
+<p class="txt"><span class="n">1.</span>Turn it into an equation: x = √7 → x² = 7 → \(f = x^2 - 7\), \(f' = 2x\). Start at x₀ = 3 (since √9 = 3 is close).</p>
+<p class="pl plain"><span class="n">2.</span></p>
+\[\begin{aligned} x_1 &= 3 - \frac{9 - 7}{6} \\[2pt] &= 3 - 0.33333 \\[2pt] &= 2.66667 \end{aligned}\]
+\[\begin{aligned} x_2 &= 2.66667 - \frac{7.11111 - 7}{5.33333} \\[2pt] &= 2.66667 - 0.02083 \\[2pt] &= 2.64583 \end{aligned}\]
+\[\begin{aligned} x_3 &= 2.64583 - \frac{0.00043}{5.29167} \\[2pt] &= 2.64575 \end{aligned}\]
+<p class="txt"><b>√7 ≈ 2.6458</b>.</p>
+<p class="ex-h">Example 3 (past MCQ): x² = 3, x₀ = 1.5.</p>
+<p class="txt"><span class="n">1.</span>\(f = x^2 - 3\), \(f' = 2x\).</p>
+\[\begin{aligned} x_1 &= 1.5 - \frac{2.25 - 3}{3} \\[2pt] &= 1.5 + 0.25 \\[2pt] &= 1.75 \end{aligned}\]
+\[\begin{aligned} x_2 &= 1.75 - \frac{3.0625 - 3}{3.5} \\[2pt] &= 1.75 - 0.017857 \\[2pt] &= 1.732143 \\[2pt] &= 97/56 \end{aligned}\]</div></details>
+
+<div class="box trap"><b>Trap:</b> any sin/cos question needs the calculator in <b>radians</b>. Your notes flag this for \(e^x - x\cos x\).</div>
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Newton–Raphson, every substitution shown</div>
+<p class="wk-seen">Seen in: 2021-22 MCQ midterm Q28.</p>
+<div class="wk-problem">Find the root of \(f(x) = e^{-x} - x\) using Newton–Raphson with \(x_0 = 0\) (two iterations, then continue to 4 decimals).</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Derivative</p>
+<p class="txt">\(f'(x) = -e^{-x} - 1\).</p>
+<p class="pl"><span class="n">2.</span>Iteration 1</p>
+<p class="txt">\(f(0) = e^0 - 0 = 1\), \(f'(0) = -1 - 1 = -2\).</p>
+\[\begin{aligned} x_1 &= 0 - \frac{1}{-2} \\[2pt] &= 0.5 \end{aligned}\]
+<p class="pl"><span class="n">3.</span>Iteration 2</p>
+\[\begin{aligned} f(0.5) &= e^{-0.5} - 0.5 \\[2pt] &= 0.60653 - 0.5 \\[2pt] &= 0.10653 \end{aligned}\]
+\[\begin{aligned} f'(0.5) &= -0.60653 - 1 \\[2pt] &= -1.60653 \end{aligned}\]
+\[\begin{aligned} x_2 &= 0.5 - \frac{0.10653}{-1.60653} \\[2pt] &= 0.5 + 0.06631 \\[2pt] &= 0.56631 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Iteration 3</p>
+\[\begin{aligned} f(0.566311) &= 0.567616 - 0.566311 \\[2pt] &= 0.001305 \end{aligned}\]
+<p class="txt">\(f' = -1.567616\).</p>
+\[\begin{aligned} x_3 &= 0.566311 + \frac{0.001305}{1.567616} \\[2pt] &= 0.566311 + 0.000832 \\[2pt] &= 0.567143 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>Iteration 4</p>
+<p class="txt">\(x_4 = 0.56714\) again, so the 4 decimals have stopped changing.</p><div class="final"><span class="lab">Answer</span>after 2 iterations x = 0.5663 (MCQ option b); the root is 0.5671</div></div></details>
+</div>
+<h3>4. Secant</h3>
+<div class="box formula">\[ x_{i+1} = x_i - \frac{f(x_i)\,(x_i - x_{i-1})}{f(x_i) - f(x_{i-1})} \]Needs two starting values, no derivative, no bracketing.</div>
+<figure class="fig"><svg viewBox="0 0 600 270" role="img" aria-label="secant"><line class="ax" x1="50" y1="187.3" x2="580" y2="187.3"/><line class="ax" x1="50" y1="20" x2="50" y2="250"/><line class="ax" x1="108.9" y1="187.3" x2="108.9" y2="191.3"/><text x="108.9" y="204.3" text-anchor="middle">2.5</text><line class="ax" x1="403.3" y1="187.3" x2="403.3" y2="191.3"/><text x="403.3" y="204.3" text-anchor="middle">3</text><line class="ax" x1="46" y1="229.1" x2="50" y2="229.1"/><text x="42" y="233.1" text-anchor="end">-1</text><line class="ax" x1="46" y1="187.3" x2="50" y2="187.3"/><text x="42" y="191.3" text-anchor="end">0</text><line class="ax" x1="46" y1="145.5" x2="50" y2="145.5"/><text x="42" y="149.5" text-anchor="end">1</text><line class="ax" x1="46" y1="103.6" x2="50" y2="103.6"/><text x="42" y="107.6" text-anchor="end">2</text><line class="ax" x1="46" y1="61.8" x2="50" y2="61.8"/><text x="42" y="65.8" text-anchor="end">3</text><text x="580" y="179.3" text-anchor="end" class="lbl">x</text><text x="58" y="24" class="lbl">f(x)</text><path class="cv" d="M61.8,235.1 L66.0,233.6 L70.2,232.2 L74.4,230.7 L78.7,229.3 L82.9,227.8 L87.1,226.3 L91.3,224.8 L95.5,223.4 L99.8,221.9 L104.0,220.4 L108.2,218.9 L112.4,217.4 L116.6,215.9 L120.9,214.4 L125.1,212.9 L129.3,211.3 L133.5,209.8 L137.7,208.3 L142.0,206.8 L146.2,205.2 L150.4,203.7 L154.6,202.1 L158.8,200.6 L163.1,199.0 L167.3,197.5 L171.5,195.9 L175.7,194.4 L179.9,192.8 L184.2,191.2 L188.4,189.6 L192.6,188.1 L196.8,186.5 L201.0,184.9 L205.3,183.3 L209.5,181.7 L213.7,180.1 L217.9,178.5 L222.2,176.9 L226.4,175.3 L230.6,173.6 L234.8,172.0 L239.0,170.4 L243.3,168.8 L247.5,167.1 L251.7,165.5 L255.9,163.8 L260.1,162.2 L264.4,160.5 L268.6,158.9 L272.8,157.2 L277.0,155.5 L281.2,153.9 L285.5,152.2 L289.7,150.5 L293.9,148.8 L298.1,147.1 L302.3,145.4 L306.6,143.7 L310.8,142.0 L315.0,140.3 L319.2,138.6 L323.4,136.9 L327.7,135.2 L331.9,133.5 L336.1,131.7 L340.3,130.0 L344.5,128.3 L348.8,126.5 L353.0,124.8 L357.2,123.0 L361.4,121.3 L365.6,119.5 L369.9,117.8 L374.1,116.0 L378.3,114.2 L382.5,112.4 L386.7,110.7 L391.0,108.9 L395.2,107.1 L399.4,105.3 L403.6,103.5 L407.8,101.7 L412.1,99.9 L416.3,98.1 L420.5,96.3 L424.7,94.5 L429.0,92.6 L433.2,90.8 L437.4,89.0 L441.6,87.2 L445.8,85.3 L450.1,83.5 L454.3,81.6 L458.5,79.8 L462.7,77.9 L466.9,76.1 L471.2,74.2 L475.4,72.3 L479.6,70.4 L483.8,68.6 L488.0,66.7 L492.3,64.8 L496.5,62.9 L500.7,61.0 L504.9,59.1 L509.1,57.2 L513.4,55.3 L517.6,53.4 L521.8,51.5 L526.0,49.5 L530.2,47.6 L534.5,45.7 L538.7,43.8 L542.9,41.8 L547.1,39.9 L551.3,37.9 L555.6,36.0 L559.8,34.0 L564.0,32.1 L568.2,30.1"/><line class="chord" x1="183.9" y1="200.2" x2="550.6" y2="38.8"/><circle class="pt" cx="521.1" cy="51.8" r="4.5"/><circle class="pt" cx="403.3" cy="103.6" r="4.5"/><circle class="new" cx="213.4" cy="187.3" r="5"/><text x="513.1" y="43.8" class="lbl" text-anchor="end">x₀ = 3.2</text><text x="411.3" y="119.6" class="lbl" text-anchor="start">x₁ = 3</text><text x="207.4" y="207.3" class="lbl red" text-anchor="end">x₂ = 2.6774</text></svg><figcaption><b>Secant.</b> Like Newton, but with no derivative: draw the line through the last <em>two</em> points on the curve and see where it hits the axis. Unlike false position, the sign doesn't have to change; you always use the two newest points.</figcaption></figure><p><b>Lecture example:</b> \(x^2+\ln x,\ x_0 = 0.5,\ x_1 = 0.3\) → <span class="ans">x₂ = 0.6321, x₃ = 0.6507, x₄ = 0.6529, x₅ = 0.6529</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>Values</p>
+<p class="txt">f(0.5) = −0.44315, f(0.3) = 0.09 + ln 0.3 = 0.09 − 1.20397 = −1.11397.</p>
+<p class="pl plain"><span class="n">2.</span></p>
+\[\begin{aligned} x_2 &= x_1 - \frac{f(x_1)(x_1 - x_0)}{f(x_1) - f(x_0)} \\[2pt] &= 0.3 - \frac{(-1.11397)(0.3 - 0.5)}{-1.11397 + 0.44315} \\[2pt] &= 0.3 - \frac{0.22279}{-0.67082} \\[2pt] &= 0.3 + 0.33212 \\[2pt] &= 0.63212 \end{aligned}\]
+<p class="txt"><span class="n">3.</span>f(0.63212) = 0.39958 − 0.45868 = −0.05910.</p>
+\[\begin{aligned} x_3 &= 0.63212 - \frac{(-0.05910)(0.63212 - 0.3)}{-0.05910 + 1.11397} \\[2pt] &= 0.63212 + 0.01861 \\[2pt] &= 0.65073 \end{aligned}\]
+<p class="txt"><span class="n">4.</span>f(0.65073) = −0.00622.</p>
+\[\begin{aligned} x_4 &= 0.65073 - \frac{(-0.00622)(0.65073 - 0.63212)}{-0.00622 + 0.05910} \\[2pt] &= 0.65073 + 0.00219 \\[2pt] &= 0.65292 \end{aligned}\]
+<p class="txt"><span class="n">5.</span>\(x_5 = 0.65292\) again: <b>root = 0.6529</b>, the same root all four methods find.</p></div></details>
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Secant, every substitution shown</div>
+<p class="wk-seen">Seen in: the 2021 final (Dr. El-Zekey), same function as above.</p>
+<div class="wk-problem">Use the secant method on \(f(x) = e^{-x} - x\) with \(x_{-1} = 0,\ x_0 = 1\). Do three iterations.</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Starting values</p>
+<p class="txt">\(f(0) = 1\), \(f(1) = e^{-1} - 1 = -0.63212\).</p>
+<p class="pl"><span class="n">2.</span>Iteration 1</p>
+\[\begin{aligned} x_1 &= x_0 - \frac{f(x_0)(x_0 - x_{-1})}{f(x_0) - f(x_{-1})} \\[2pt] &= 1 - \frac{(-0.63212)(1 - 0)}{-0.63212 - 1} \\[2pt] &= 1 - 0.38730 \\[2pt] &= 0.61270 \end{aligned}\]
+<p class="pl"><span class="n">3.</span>Iteration 2</p>
+\[\begin{aligned} f(0.61270) &= 0.54189 - 0.61270 \\[2pt] &= -0.07081 \end{aligned}\]
+\[\begin{aligned} x_2 &= 0.61270 - \frac{(-0.07081)(0.61270 - 1)}{-0.07081 - (-0.63212)} \\[2pt] &= 0.61270 - 0.04886 \\[2pt] &= 0.56384 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Iteration 3</p>
+\[\begin{aligned} f(0.56384) &= 0.56902 - 0.56384 \\[2pt] &= 0.00518 \end{aligned}\]
+\[\begin{aligned} x_3 &= 0.56384 - \frac{(0.00518)(0.56384 - 0.61270)}{0.00518 - (-0.07081)} \\[2pt] &= 0.56384 + 0.00333 \\[2pt] &= 0.56717 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>Relative error</p>
+<p class="txt">(if asked):</p>
+\[\begin{aligned} |\frac{x_3 - x_2}{x_3}| \times 100 &= 0.59\% \end{aligned}\]<div class="final"><span class="lab">Answer</span>x₁ = 0.61270, x₂ = 0.56384, x₃ = 0.56717</div></div></details>
+</div>
+<div class="box tip"><b>Quick comparison</b> (a favourite theory MCQ): bisection and false position need a bracket [a, b] with a sign change; Newton needs f′; secant needs two points but no f′. Newton = "method of tangent". All four should land on the same root, 0.6529, for \(x^2+\ln x\).</div>
+
+<!-- ============ L3 ============ -->
+<h2 id="l3"><span class="lec">Lecture 3</span>Systems of linear equations</h2>
+<p>A system has a <b>unique</b> solution (enough independent equations), <b>infinitely many</b> (e.g. x + y = 4 and 2x + 2y = 8, same line), or <b>none</b> (x + y = 4 and 2x + 2y = 6, contradiction).</p>
+
+<div class="box plain"><b>In plain words</b>Three equations, three unknowns. <b>Direct</b> methods (Gauss elimination) are the school method made systematic: eliminate unknowns one at a time until the last equation has one unknown, then work backwards. <b>Iterative</b> methods (Jacobi, Gauss–Seidel) guess all the unknowns (often 0), plug the guesses in to get better guesses, and repeat. Each equation is rearranged to "x = …" so it acts like a correction formula. The <b>augmented matrix</b> [A | b] is just the equations written as a grid of numbers: coefficients on the left, answers on the right.</div>
+<h3>1. Gauss elimination (direct method)</h3>
+<ol class="steps">
+  <li>Write the augmented matrix \([A\,|\,b]\).</li>
+  <li>Use row operations to make zeros below each pivot (upper-triangular form).</li>
+  <li>Back-substitute from the last row up.</li>
+</ol>
+<p><b>Lecture example:</b> x − 2y + z = 0, 2y − 8z = 8, −4x + 5y + 9z = −9. Do \(4R_1 + R_3\), then \(\tfrac32R_2 + R_3\) → z = 3, y = 16, <span class="ans">(x, y, z) = (29, 16, 3)</span></p>
+<p class="small sol-link">Solved with every matrix written out in the <b>“Gauss elimination, every matrix shown”</b> box below.</p>
+
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Gauss elimination, every matrix shown</div>
+<p class="wk-seen">The Lecture 3 example written out the way the exam expects.</p>
+<div class="wk-problem">Solve \(x - 2y + z = 0,\ \ 2y - 8z = 8,\ \ -4x + 5y + 9z = -9\) by Gauss elimination.</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Augmented matrix</p>
+<p class="txt">[A | b]:</p>
+\[\left[\begin{array}{ccc|c} 1 & -2 & 1 & 0\\ 0 & 2 & -8 & 8\\ -4 & 5 & 9 & -9 \end{array}\right]\]
+<p class="pl"><span class="n">2.</span>Zero below the first pivot (1)</p>
+<p class="txt">row 2 already starts with 0. For row 3 do \(R_3 \to R_3 + 4R_1\):</p>
+\[\begin{aligned} (-4+4,\ 5-8,\ 9+4\ |\ -9+0) &= (0,\ -3,\ 13\ |\ -9) \end{aligned}\]
+<p class="txt"><br></p>
+\[\left[\begin{array}{ccc|c} 1 & -2 & 1 & 0\\ 0 & 2 & -8 & 8\\ 0 & -3 & 13 & -9 \end{array}\right]\]
+<p class="pl"><span class="n">3.</span>Zero below the second pivot (2)</p>
+<p class="txt">multiplier = −(−3)/2 = 3/2, so \(R_3 \to R_3 + \tfrac32R_2\):</p>
+\[\begin{aligned} (0,\ -3+3,\ 13-12\ |\ -9+12) &= (0,\ 0,\ 1\ |\ 3) \end{aligned}\]
+<p class="txt"><br></p>
+\[\left[\begin{array}{ccc|c} 1 & -2 & 1 & 0\\ 0 & 2 & -8 & 8\\ 0 & 0 & 1 & 3 \end{array}\right]\]
+<p class="pl"><span class="n">4.</span>Back-substitute from the bottom</p>
+<p class="txt">row 3: \(z = 3\). Row 2: \(2y - 8(3) = 8 \Rightarrow 2y = 32 \Rightarrow y = 16\). Row 1: \(x - 2(16) + 3 = 0 \Rightarrow x = 29\).</p>
+<p class="pl"><span class="n">5.</span>Check</p>
+<p class="txt">in equation 3:</p>
+\[\begin{aligned} -4(29) + 5(16) + 9(3) &= -116 + 80 + 27 \\[2pt] &= -9 \end{aligned}\]
+<p class="txt">✓</p><div class="final"><span class="lab">Answer</span>x = 29, y = 16, z = 3</div></div></details>
+</div>
+<h3>2. Partial pivoting</h3>
+<p>Before eliminating in a column, swap rows so the pivot is the <b>largest absolute value</b> in that column. Dividing by a tiny pivot like 0.001 blows up rounding error.</p>
+<p><b>Lecture example</b> (3 decimal places): rows 0.1/0.3/3 in column 1 → swap \(R_1 \leftrightarrow R_3\) so 3 is the pivot → <span class="ans">x = 3, y = −2.5, z = 7</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>Augmented matrix</p>
+<p class="txt">(as given):</p>
+\[\left[\begin{array}{ccc|c} 0.1 & 7 & -0.3 & -19.3\\ 0.3 & -0.2 & 10 & 71.4\\ 3 & -0.1 & -0.2 & 7.85\end{array}\right]\]
+<p class="pl"><span class="n">2.</span>Pivot for column 1</p>
+<p class="txt">the biggest |number| in column 1 is 3 (row 3). Swap \(R_1 \leftrightarrow R_3\):</p>
+\[\left[\begin{array}{ccc|c} 3 & -0.1 & -0.2 & 7.85\\ 0.3 & -0.2 & 10 & 71.4\\ 0.1 & 7 & -0.3 & -19.3\end{array}\right]\]
+<p class="pl"><span class="n">3.</span>Eliminate column 1</p>
+<p class="txt">\(R_2 \to R_2 - \tfrac{0.3}{3}R_1\) gives (0, −0.190, 10.020 | 70.615). \(R_3 \to R_3 - \tfrac{0.1}{3}R_1\) gives (0, 7.003, −0.293 | −19.562).</p>
+<p class="pl"><span class="n">4.</span>Pivot for column 2</p>
+<p class="txt">compare |−0.190| and |7.003|. 7.003 is bigger, so swap \(R_2 \leftrightarrow R_3\):</p>
+\[\left[\begin{array}{ccc|c} 3 & -0.1 & -0.2 & 7.85\\ 0 & 7.003 & -0.293 & -19.562\\ 0 & -0.190 & 10.020 & 70.615\end{array}\right]\]
+<p class="pl"><span class="n">5.</span>Eliminate column 2</p>
+<p class="txt">multiplier = −0.190/7.003 = −0.0271, so \(R_3 \to R_3 + 0.0271R_2\): (0, 0, 10.012 | 70.085).</p>
+<p class="pl"><span class="n">6.</span>Back-substitute</p>
+<p class="txt">z = 70.085/10.012 = <b>7.000</b>. y = (−19.562 + 0.293 × 7)/7.003 = −17.511/7.003 = <b>−2.500</b>. x = (7.85 + 0.1(−2.5) + 0.2(7))/3 = 9/3 = <b>3.000</b>.</p></div></details>
+
+
+<h3>3. Iterative methods: Jacobi and Gauss–Seidel</h3>
+<div class="box formula"><b>Convergence condition (diagonal dominance):</b> in every row, \(|a_{ii}| \ge \sum_{j\ne i}|a_{ij}|\). If it fails, <b>reorder the equations first</b> so the biggest coefficient sits on the diagonal.</div>
+<ol class="steps">
+  <li>Reorder rows for diagonal dominance.</li>
+  <li>Solve row i for its diagonal variable: \(x_1 = \tfrac{1}{a_{11}}(b_1 - a_{12}x_2 - a_{13}x_3)\), etc.</li>
+  <li><b>Jacobi:</b> every new value uses only the <em>previous iteration's</em> values.</li>
+  <li><b>Gauss–Seidel:</b> use each new value <em>immediately</em> in the next equation. That's why it converges faster.</li>
+</ol>
+<p><b>Lecture example:</b> \(2x_1+10x_2-x_3=-32,\ -x_1+2x_2+15x_3=17,\ 10x_1-x_2+2x_3=58\), start (1, 1, 1). Reorder so 10, 10, 15 are on the diagonal:</p>
+<div class="box">\(x_1 = \tfrac1{10}(58 + x_2 - 2x_3),\quad x_2 = \tfrac1{10}(-32 - 2x_1 + x_3),\quad x_3 = \tfrac1{15}(17 + x_1 - 2x_2)\)</div>
+<div class="tbl"><table>
+<thead><tr><th>Iter</th><th>Jacobi x₁</th><th>x₂</th><th>x₃</th><th>Gauss–Seidel x₁</th><th>x₂</th><th>x₃</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>5.7</td><td>−3.3</td><td>1.0667</td><td>5.7</td><td>−4.24</td><td>2.0787</td></tr>
+<tr><td>2</td><td>5.2567</td><td>−4.2333</td><td>1.9533</td><td>4.9603</td><td>−3.9842</td><td>1.9952</td></tr>
+<tr><td>3</td><td>4.9860</td><td>−4.0560</td><td>2.0482</td><td>5.0025</td><td>−4.0010</td><td>2.0003</td></tr>
+</tbody></table></div>
+<p class="small">Exact solution (5, −4, 2). Gauss–Seidel is already almost there after 3 iterations.</p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>Reorder</p>
+<p class="txt">so the big numbers sit on the diagonal: row with 10x₁ first, then 10x₂, then 15x₃. Check: |10| ≥ 1 + 2, |10| ≥ 2 + 1, |15| ≥ 1 + 2. ✓</p>
+<p class="pl"><span class="n">2.</span>Rearrange</p>
+\[\begin{aligned} x_1 &= \frac1{10}(58 + x_2 - 2x_3) \end{aligned}\]
+\[\begin{aligned} x_2 &= \frac1{10}(-32 - 2x_1 + x_3) \end{aligned}\]
+\[\begin{aligned} x_3 &= \frac1{15}(17 + x_1 - 2x_2) \end{aligned}\]
+<p class="pl"><span class="n">3.</span>Jacobi iteration 1</p>
+<p class="txt">(all from the old values 1, 1, 1):</p>
+\[\begin{aligned} x_1 &= \frac{58 + 1 - 2}{10} \\[2pt] &= 5.7 \end{aligned}\]
+\[\begin{aligned} x_2 &= \frac{-32 - 2 + 1}{10} \\[2pt] &= -3.3 \end{aligned}\]
+\[\begin{aligned} x_3 &= \frac{17 + 1 - 2}{15} \\[2pt] &= 1.0667 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Jacobi iteration 2</p>
+<p class="txt">(from 5.7, −3.3, 1.0667):</p>
+\[\begin{aligned} x_1 &= \frac{58 - 3.3 - 2.1333}{10} \\[2pt] &= 5.2567 \end{aligned}\]
+\[\begin{aligned} x_2 &= \frac{-32 - 11.4 + 1.0667}{10} \\[2pt] &= -4.2333 \end{aligned}\]
+\[\begin{aligned} x_3 &= \frac{17 + 5.7 + 6.6}{15} \\[2pt] &= 1.9533 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>Gauss–Seidel iteration 1</p>
+<p class="txt">(use each new value at once): \(x_1 = 5.7\);</p>
+\[\begin{aligned} x_2 &= \frac{-32 - 2(5.7) + 1}{10} \\[2pt] &= -4.24 \end{aligned}\]
+\[\begin{aligned} x_3 &= \frac{17 + 5.7 - 2(-4.24)}{15} \\[2pt] &= \frac{31.18}{15} \\[2pt] &= 2.0787 \end{aligned}\]
+<p class="pl"><span class="n">6.</span>Gauss–Seidel iteration 2</p>
+\[\begin{aligned} x_1 &= \frac{58 - 4.24 - 4.1573}{10} \\[2pt] &= 4.9603 \end{aligned}\]
+\[\begin{aligned} x_2 &= \frac{-32 - 9.9205 + 2.0787}{10} \\[2pt] &= -3.9842 \end{aligned}\]
+\[\begin{aligned} x_3 &= \frac{17 + 4.9603 + 7.9684}{15} \\[2pt] &= 1.9952 \end{aligned}\]</div></details>
+
+<figure class="fig"><svg viewBox="0 0 600 260" role="img" aria-label="convergence"><line class="ax" x1="60" y1="240.0" x2="580" y2="240.0"/><line class="ax" x1="60" y1="20" x2="60" y2="240"/><line class="ax" x1="60.0" y1="240.0" x2="60.0" y2="244.0"/><text x="60.0" y="257.0" text-anchor="middle">0</text><line class="ax" x1="233.3" y1="240.0" x2="233.3" y2="244.0"/><text x="233.3" y="257.0" text-anchor="middle">1</text><line class="ax" x1="406.7" y1="240.0" x2="406.7" y2="244.0"/><text x="406.7" y="257.0" text-anchor="middle">2</text><line class="ax" x1="580.0" y1="240.0" x2="580.0" y2="244.0"/><text x="580.0" y="257.0" text-anchor="middle">3</text><line class="ax" x1="56" y1="206.2" x2="60" y2="206.2"/><text x="52" y="210.2" text-anchor="end">-4</text><line class="ax" x1="56" y1="138.5" x2="60" y2="138.5"/><text x="52" y="142.5" text-anchor="end">-2</text><line class="ax" x1="56" y1="70.8" x2="60" y2="70.8"/><text x="52" y="74.8" text-anchor="end">0</text><line class="ax" x1="56" y1="36.9" x2="60" y2="36.9"/><text x="52" y="40.9" text-anchor="end">1</text><text x="580" y="232.0" text-anchor="end" class="lbl">iteration</text><text x="68" y="24" class="lbl">x₂</text><line class="guide" x1="60.0" y1="206.2" x2="580.0" y2="206.2"/><text x="580.0" y="226.2" class="lbl" text-anchor="end">exact answer −4</text><path class="cvr" d="M60.0,36.9 L233.3,182.5 L406.7,214.1 L580.0,208.0"/><circle class="pr" cx="60.0" cy="36.9" r="4"/><circle class="pr" cx="233.3" cy="182.5" r="4"/><circle class="pr" cx="406.7" cy="214.1" r="4"/><circle class="pr" cx="580.0" cy="208.0" r="4"/><path class="cv" d="M60.0,36.9 L233.3,214.3 L406.7,205.6 L580.0,206.2"/><circle class="pb" cx="60.0" cy="36.9" r="4"/><circle class="pb" cx="233.3" cy="214.3" r="4"/><circle class="pb" cx="406.7" cy="205.6" r="4"/><circle class="pb" cx="580.0" cy="206.2" r="4"/><text x="250.7" y="111.4" class="lbl red" text-anchor="start">Jacobi</text><text x="103.3" y="179.1" class="lbl blue" text-anchor="start">Gauss–Seidel</text></svg><figcaption><b>Jacobi vs Gauss–Seidel, Lecture 3 example (x₂).</b> Both start at 1 and close in on the true value −4. Gauss–Seidel uses each new number straight away, so it's practically there after 3 rounds while Jacobi still overshoots.</figcaption></figure><div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Gauss–Seidel, every substitution shown</div>
+<p class="wk-seen">Seen in: 2021-22 MCQ midterm Q3–Q4 and the 2021-22 final. Same system both times.</p>
+<div class="wk-problem">Solve \(10x - 5y - 2z = 3,\ \ 4x - 10y + 3z = -3,\ \ x + 6y + 10z = -3\) by Gauss–Seidel from (0, 0, 0). Two iterations.</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Check diagonal dominance</p>
+<p class="txt">|10| ≥ 5 + 2, |−10| ≥ 4 + 3, |10| ≥ 1 + 6. ✓ No reordering needed.</p>
+<p class="pl"><span class="n">2.</span>Rearrange each equation for its diagonal unknown</p>
+<p class="txt"><br></p>
+\[\begin{aligned} x &= \frac{1}{10}(3 + 5y + 2z) \end{aligned}\]
+<p class="txt"><br></p>
+\[\begin{aligned} y &= \frac{1}{10}(3 + 4x + 3z) \end{aligned}\]
+<p class="txt">(from \(-10y = -3 - 4x - 3z\))<br></p>
+\[\begin{aligned} z &= \frac{1}{10}(-3 - x - 6y) \end{aligned}\]
+<p class="pl"><span class="n">3.</span>Iteration 1</p>
+<p class="txt">(use each new value immediately):<br></p>
+\[\begin{aligned} x &= \frac{1}{10}(3 + 0 + 0) \\[2pt] &= 0.3 \end{aligned}\]
+<p class="txt"><br></p>
+\[\begin{aligned} y &= \frac{1}{10}(3 + 4(0.3) + 0) \\[2pt] &= \frac{4.2}{10} \\[2pt] &= 0.42 \end{aligned}\]
+<p class="txt"><br></p>
+\[\begin{aligned} z &= \frac{1}{10}(-3 - 0.3 - 6(0.42)) \\[2pt] &= \frac{-5.82}{10} \\[2pt] &= -0.582 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Iteration 2</p>
+<p class="txt"><br></p>
+\[\begin{aligned} x &= \frac{1}{10}(3 + 5(0.42) + 2(-0.582)) \\[2pt] &= \frac{3.936}{10} \\[2pt] &= 0.3936 \end{aligned}\]
+<p class="txt"><br></p>
+\[\begin{aligned} y &= \frac{1}{10}(3 + 4(0.3936) + 3(-0.582)) \\[2pt] &= \frac{2.8284}{10} \\[2pt] &= 0.2828 \end{aligned}\]
+<p class="txt"><br></p>
+\[\begin{aligned} z &= \frac{1}{10}(-3 - 0.3936 - 6(0.2828)) \\[2pt] &= \frac{-5.0906}{10} \\[2pt] &= -0.5091 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>Jacobi version of iteration 1</p>
+<p class="txt">(MCQ Q4): every equation uses the <em>old</em> values (0, 0, 0), so</p>
+\[\begin{aligned} y &= \frac{1}{10}(3 + 0 + 0) \\[2pt] &= 0.3 \end{aligned}\]
+<p class="txt">That's the whole difference between the two methods.</p><div class="final"><span class="lab">Answer</span>after 1 iteration: GS y = 0.42, Jacobi y = 0.3; after 2 GS iterations: (0.3936, 0.2828, −0.5091)</div></div></details>
+</div>
+<div class="box tip"><b>Theory MCQ:</b> "As soon as a new value is found it is used immediately in the next equation." That describes <b>Gauss–Seidel</b>.</div>
+
+<!-- ============ L4 ============ -->
+<h2 id="l4"><span class="lec">Lecture 4</span>Interpolation</h2>
+<p>You know y at some x values and want y at an x in between (or the polynomial through the points). Equal spacing h → Newton forward/backward. Unequal spacing → Lagrange.</p>
+
+<div class="box plain"><b>In plain words</b>You have a table, for example y at x = 0, 0.2, 0.4 …, and you need y at x = 0.15, which isn't in it. Interpolation builds a polynomial that goes exactly through the table points and reads the value from it. Newton's formulas do this using a <em>difference table</em> (how much y changes from one row to the next, then how much those changes change, and so on). Lagrange does it directly from the points and works even when the x values aren't evenly spaced.</div>
+<figure class="fig"><svg viewBox="0 0 600 270" role="img" aria-label="fit vs interpolate"><line class="ax" x1="45" y1="250.0" x2="285" y2="250.0"/><line class="ax" x1="45" y1="30" x2="45" y2="250"/><line class="ax" x1="45.0" y1="250.0" x2="45.0" y2="254.0"/><text x="45.0" y="267.0" text-anchor="middle">0</text><line class="ax" x1="159.3" y1="250.0" x2="159.3" y2="254.0"/><text x="159.3" y="267.0" text-anchor="middle">0.5</text><line class="ax" x1="273.6" y1="250.0" x2="273.6" y2="254.0"/><text x="273.6" y="267.0" text-anchor="middle">1</text><line class="ax" x1="41" y1="206.0" x2="45" y2="206.0"/><text x="37" y="210.0" text-anchor="end">0</text><line class="ax" x1="41" y1="118.0" x2="45" y2="118.0"/><text x="37" y="122.0" text-anchor="end">0.4</text><line class="ax" x1="41" y1="30.0" x2="45" y2="30.0"/><text x="37" y="34.0" text-anchor="end">0.8</text><text x="285" y="242.0" text-anchor="end" class="lbl">x</text><text x="53" y="34" class="lbl">y</text><line class="ax" x1="345" y1="250.0" x2="585" y2="250.0"/><line class="ax" x1="345" y1="30" x2="345" y2="250"/><line class="ax" x1="345.0" y1="250.0" x2="345.0" y2="254.0"/><text x="345.0" y="267.0" text-anchor="middle">0</text><line class="ax" x1="459.3" y1="250.0" x2="459.3" y2="254.0"/><text x="459.3" y="267.0" text-anchor="middle">0.5</text><line class="ax" x1="573.6" y1="250.0" x2="573.6" y2="254.0"/><text x="573.6" y="267.0" text-anchor="middle">1</text><line class="ax" x1="341" y1="206.0" x2="345" y2="206.0"/><text x="337" y="210.0" text-anchor="end">0</text><line class="ax" x1="341" y1="118.0" x2="345" y2="118.0"/><text x="337" y="122.0" text-anchor="end">0.4</text><line class="ax" x1="341" y1="30.0" x2="345" y2="30.0"/><text x="337" y="34.0" text-anchor="end">0.8</text><text x="585" y="242.0" text-anchor="end" class="lbl">x</text><text x="353" y="34" class="lbl">y</text><path class="cvr" d="M45.0,222.6 L47.0,221.3 L48.9,219.9 L50.9,218.6 L52.8,217.2 L54.8,215.9 L56.8,214.6 L58.7,213.2 L60.7,211.9 L62.7,210.6 L64.6,209.2 L66.6,207.9 L68.5,206.5 L70.5,205.2 L72.5,203.9 L74.4,202.5 L76.4,201.2 L78.4,199.8 L80.3,198.5 L82.3,197.2 L84.2,195.8 L86.2,194.5 L88.2,193.1 L90.1,191.8 L92.1,190.5 L94.0,189.1 L96.0,187.8 L98.0,186.4 L99.9,185.1 L101.9,183.8 L103.9,182.4 L105.8,181.1 L107.8,179.7 L109.7,178.4 L111.7,177.1 L113.7,175.7 L115.6,174.4 L117.6,173.0 L119.6,171.7 L121.5,170.4 L123.5,169.0 L125.4,167.7 L127.4,166.4 L129.4,165.0 L131.3,163.7 L133.3,162.3 L135.2,161.0 L137.2,159.7 L139.2,158.3 L141.1,157.0 L143.1,155.6 L145.1,154.3 L147.0,153.0 L149.0,151.6 L150.9,150.3 L152.9,148.9 L154.9,147.6 L156.8,146.3 L158.8,144.9 L160.8,143.6 L162.7,142.2 L164.7,140.9 L166.6,139.6 L168.6,138.2 L170.6,136.9 L172.5,135.5 L174.5,134.2 L176.4,132.9 L178.4,131.5 L180.4,130.2 L182.3,128.8 L184.3,127.5 L186.3,126.2 L188.2,124.8 L190.2,123.5 L192.1,122.2 L194.1,120.8 L196.1,119.5 L198.0,118.1 L200.0,116.8 L202.0,115.5 L203.9,114.1 L205.9,112.8 L207.8,111.4 L209.8,110.1 L211.8,108.8 L213.7,107.4 L215.7,106.1 L217.6,104.7 L219.6,103.4 L221.6,102.1 L223.5,100.7 L225.5,99.4 L227.5,98.0 L229.4,96.7 L231.4,95.4 L233.3,94.0 L235.3,92.7 L237.3,91.3 L239.2,90.0 L241.2,88.7 L243.2,87.3 L245.1,86.0 L247.1,84.6 L249.0,83.3 L251.0,82.0 L253.0,80.6 L254.9,79.3 L256.9,78.0 L258.8,76.6 L260.8,75.3 L262.8,73.9 L264.7,72.6 L266.7,71.3 L268.7,69.9 L270.6,68.6 L272.6,67.2 L274.5,65.9 L276.5,64.6 L278.5,63.2 L280.4,61.9"/><path class="cv" d="M345.0,206.4 L346.9,206.0 L348.8,205.5 L350.7,205.1 L352.6,204.6 L354.5,204.1 L356.4,203.6 L358.3,203.1 L360.2,202.6 L362.1,202.1 L364.0,201.6 L366.0,201.1 L367.9,200.5 L369.8,200.0 L371.7,199.4 L373.6,198.8 L375.5,198.3 L377.4,197.7 L379.3,197.1 L381.2,196.5 L383.1,195.8 L385.0,195.2 L386.9,194.6 L388.8,193.9 L390.7,193.2 L392.6,192.6 L394.5,191.9 L396.4,191.2 L398.3,190.5 L400.2,189.7 L402.1,189.0 L404.0,188.2 L406.0,187.5 L407.9,186.7 L409.8,185.9 L411.7,185.1 L413.6,184.3 L415.5,183.4 L417.4,182.6 L419.3,181.7 L421.2,180.8 L423.1,179.9 L425.0,179.0 L426.9,178.1 L428.8,177.1 L430.7,176.2 L432.6,175.2 L434.5,174.2 L436.4,173.2 L438.3,172.2 L440.2,171.2 L442.1,170.1 L444.0,169.0 L446.0,167.9 L447.9,166.8 L449.8,165.7 L451.7,164.6 L453.6,163.4 L455.5,162.2 L457.4,161.0 L459.3,159.8 L461.2,158.6 L463.1,157.3 L465.0,156.1 L466.9,154.8 L468.8,153.5 L470.7,152.1 L472.6,150.8 L474.5,149.4 L476.4,148.0 L478.3,146.6 L480.2,145.2 L482.1,143.7 L484.0,142.3 L486.0,140.8 L487.9,139.3 L489.8,137.7 L491.7,136.2 L493.6,134.6 L495.5,133.0 L497.4,131.4 L499.3,129.8 L501.2,128.1 L503.1,126.4 L505.0,124.7 L506.9,123.0 L508.8,121.3 L510.7,119.5 L512.6,117.7 L514.5,115.9 L516.4,114.1 L518.3,112.2 L520.2,110.3 L522.1,108.4 L524.0,106.5 L526.0,104.6 L527.9,102.6 L529.8,100.6 L531.7,98.6 L533.6,96.6 L535.5,94.5 L537.4,92.4 L539.3,90.3 L541.2,88.2 L543.1,86.0 L545.0,83.8 L546.9,81.6 L548.8,79.4 L550.7,77.1 L552.6,74.9 L554.5,72.6 L556.4,70.2 L558.3,67.9 L560.2,65.5 L562.1,63.1 L564.0,60.7 L566.0,58.3 L567.9,55.8 L569.8,53.3 L571.7,50.8 L573.6,48.3"/><circle class="pt" cx="45.0" cy="206.4" r="4.5"/><circle class="pt" cx="345.0" cy="206.4" r="4.5"/><circle class="pt" cx="90.7" cy="193.2" r="4.5"/><circle class="pt" cx="390.7" cy="193.2" r="4.5"/><circle class="pt" cx="136.4" cy="173.2" r="4.5"/><circle class="pt" cx="436.4" cy="173.2" r="4.5"/><circle class="pt" cx="182.1" cy="143.7" r="4.5"/><circle class="pt" cx="482.1" cy="143.7" r="4.5"/><circle class="pt" cx="227.9" cy="102.6" r="4.5"/><circle class="pt" cx="527.9" cy="102.6" r="4.5"/><circle class="pt" cx="273.6" cy="48.3" r="4.5"/><circle class="pt" cx="573.6" cy="48.3" r="4.5"/><circle class="new" cx="379.3" cy="197.1" r="5.5"/><text x="383.3" y="167.1" class="lbl red" text-anchor="start">y(0.15) ≈ 0.0406</text><text x="165.0" y="16.0" class="lbl" text-anchor="middle">Fitting (Lecture 1): near the points</text><text x="465.0" y="16.0" class="lbl" text-anchor="middle">Interpolation (Lecture 4): through them</text></svg><figcaption><b>Fitting vs interpolation.</b> Same data. Fitting (left) finds a simple formula that passes <em>near</em> the points, because measured data has noise. Interpolation (right) builds a curve that passes <em>exactly through</em> every point, then reads off a value in between, like y at x = 0.15.</figcaption></figure><h3>1. Forward difference table</h3>
+<p>\(\Delta y_i = y_{i+1} - y_i\), then \(\Delta^2 y_i = \Delta y_{i+1} - \Delta y_i\), and so on. For y = x³ at x = 0…4 you get Δ: 1, 7, 19, 37; Δ²: 6, 12, 18; Δ³: 6, 6; Δ⁴: 0. A cubic has constant third differences.</p>
+
+<h3>2. Newton forward (x near the <em>start</em> of the table)</h3>
+<div class="box formula">\[ p = \frac{x - x_0}{h},\qquad f(x) = y_0 + p\,\Delta y_0 + \frac{p(p-1)}{2!}\Delta^2y_0 + \frac{p(p-1)(p-2)}{3!}\Delta^3y_0 + \cdots \]Uses the <b>top diagonal</b> of the table.</div>
+
+<h3>3. Newton backward (x near the <em>end</em> of the table)</h3>
+<div class="box formula">\[ p = \frac{x - x_n}{h}\ (\text{negative}),\qquad f(x) = y_n + p\,\nabla y_n + \frac{p(p+1)}{2!}\nabla^2y_n + \frac{p(p+1)(p+2)}{3!}\nabla^3y_n + \cdots \]Uses the <b>bottom diagonal</b>. Note the plus signs: p, p+1, p+2.</div>
+<p><b>Lecture example</b> (also midterm Q24): x = 0, 0.2, …, 1; y = −0.002, 0.058, 0.149, 0.283, 0.470, 0.717.</p>
+<p>Here's the difference table for this example. Each column is the difference of the column to its left. <b>Forward</b> (for x near the top) uses the <span style="color:var(--blue);font-weight:700">blue</span> top edge; <b>backward</b> (for x near the bottom) uses the <span style="color:var(--red);font-weight:700">red</span> bottom edge.</p>
+<div class="tbl"><table class="dt">
+<thead><tr><th>x</th><th>y</th><th>Δy</th><th>Δ²y</th><th>Δ³y</th><th>Δ⁴y</th><th>Δ⁵y</th></tr></thead>
+<tbody>
+<tr><td>0</td><td class="fw">−0.002</td><td class="fw">0.060</td><td class="fw">0.031</td><td class="fw">0.012</td><td class="fw">−0.002</td><td class="fw">−0.001</td></tr>
+<tr><td>0.2</td><td>0.058</td><td>0.091</td><td>0.043</td><td>0.010</td><td class="bw">−0.003</td><td></td></tr>
+<tr><td>0.4</td><td>0.149</td><td>0.134</td><td>0.053</td><td class="bw">0.007</td><td></td><td></td></tr>
+<tr><td>0.6</td><td>0.283</td><td>0.187</td><td class="bw">0.060</td><td></td><td></td><td></td></tr>
+<tr><td>0.8</td><td>0.470</td><td class="bw">0.247</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>1.0</td><td class="bw">0.717</td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<p class="small">Written in this compact form, the forward values are the first row and the backward values are the last entry of each column. (Your notes write the same table staggered, with each difference between the two rows it came from.)</p>
+<ul class="list">
+  <li>x = 0.15 (forward): p = 0.75, top diagonal 0.06, 0.031, 0.012, −0.002 → <span class="ans">y ≈ 0.0406</span> (MCQ answer b, 0.0405)</li>
+  <li>x = 0.9 (backward): p = −0.5, bottom diagonal 0.247, 0.06, 0.007, −0.003 → <span class="ans">y ≈ 0.5857</span></li>
+</ul>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>x = 0.15, forward</p>
+\[\begin{aligned} p &= \frac{0.15 - 0}{0.2} \\[2pt] &= 0.75 \end{aligned}\]
+<p class="txt">Top row: \(y_0 = -0.002\), Δ = 0.06, Δ² = 0.031, Δ³ = 0.012, Δ⁴ = −0.002, Δ⁵ = −0.001.</p>
+<p class="txt"><span class="n">2.</span>Terms: \(p\Delta = 0.75(0.06) = 0.045\);</p>
+\[\begin{aligned} \frac{p(p-1)}{2}\Delta^2 &= \frac{0.75(-0.25)}{2}(0.031) \\[2pt] &= -0.002906 \end{aligned}\]
+\[\begin{aligned} \frac{p(p-1)(p-2)}{6}\Delta^3 &= \frac{0.75(-0.25)(-1.25)}{6}(0.012) \\[2pt] &= 0.000469 \end{aligned}\]
+<p class="txt">the Δ⁴ and Δ⁵ terms are +0.000044 and −0.000014.</p>
+<p class="txt"><span class="n">3.</span>Sum: −0.002 + 0.045 − 0.002906 + 0.000469 + 0.000044 − 0.000014 = <b>0.04059</b>.</p>
+<p class="pl"><span class="n">4.</span>x = 0.9, backward</p>
+\[\begin{aligned} p &= \frac{0.9 - 1}{0.2} \\[2pt] &= -0.5 \end{aligned}\]
+<p class="txt">Bottom edge: \(y_n = 0.717\), ∇ = 0.247, ∇² = 0.06, ∇³ = 0.007, ∇⁴ = −0.003, ∇⁵ = −0.001.</p>
+<p class="txt"><span class="n">5.</span>Terms:</p>
+\[\begin{aligned} p\nabla &= -0.5(0.247) \\[2pt] &= -0.1235 \end{aligned}\]
+\[\begin{aligned} \frac{p(p+1)}{2}\nabla^2 &= \frac{(-0.5)(0.5)}{2}(0.06) \\[2pt] &= -0.0075 \end{aligned}\]
+\[\begin{aligned} \frac{p(p+1)(p+2)}{6}\nabla^3 &= \frac{(-0.5)(0.5)(1.5)}{6}(0.007) \\[2pt] &= -0.000438 \end{aligned}\]
+\[\begin{aligned} \frac{p(p+1)(p+2)(p+3)}{24}\nabla^4 &= \frac{(-0.5)(0.5)(1.5)(2.5)}{24}(-0.003) \\[2pt] &= 0.000117 \end{aligned}\]
+<p class="txt">the ∇⁵ term is +0.000027.</p>
+<p class="txt"><span class="n">6.</span>Sum: 0.717 − 0.1235 − 0.0075 − 0.000438 + 0.000117 + 0.000027 = <b>0.58571</b>.</p></div></details>
+
+<p><b>Lecture example:</b> f(1.03) from x = 1, 1.05, …, 1.25: p = 0.6 → <span class="ans">1.1527</span>. &nbsp; <b>Past MCQ:</b> backward f(57) from x = 45…60 → <span class="ans">0.8387</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>Difference table</p>
+<p class="txt">(top row is all you need for forward):</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>Δ</th><th>Δ²</th><th>Δ³</th></tr></thead><tbody><tr><td>1</td><td><b>1</b></td><td><b>0.2576</b></td><td><b>0.0158</b></td><td><b>0.0007</b></td></tr><tr><td>1.05</td><td>1.2576</td><td>0.2734</td><td>0.0165</td><td>0.0007</td></tr><tr><td>1.10</td><td>1.5310</td><td>0.2899</td><td>0.0172</td><td>0.0008</td></tr><tr><td>1.15</td><td>1.8209</td><td>0.3071</td><td>0.0180</td><td></td></tr><tr><td>1.20</td><td>2.1280</td><td>0.3251</td><td></td><td></td></tr><tr><td>1.25</td><td>2.4531</td><td></td><td></td><td></td></tr></tbody></table></div>
+<p class="pl"><span class="n">2.</span>p</p>
+<p class="txt">1.03 is near the start, so forward.</p>
+\[\begin{aligned} p &= \frac{1.03 - 1}{0.05} \\[2pt] &= 0.6 \end{aligned}\]
+<p class="pl"><span class="n">3.</span>Terms</p>
+<p class="txt">\(0.6(0.2576) = 0.15456\);</p>
+\[\begin{aligned} \frac{0.6(-0.4)}{2}(0.0158) &= -0.001896 \end{aligned}\]
+\[\begin{aligned} \frac{0.6(-0.4)(-1.4)}{6}(0.0007) &= 0.000039 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Sum</p>
+<p class="txt">1 + 0.15456 − 0.001896 + 0.000039 = <b>1.1527</b>. (Higher differences are ~0, so stop at Δ³.)</p>
+<p class="pl"><span class="n">5.</span>The f(57) MCQ</p>
+<p class="txt">is solved line by line in the <b>“Newton backward, every term shown”</b> box below.</p></div></details>
+
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Newton backward, every term shown</div>
+<p class="wk-seen">Seen in: 2022-23 final (MCQ). Backward formula with a full difference table.</p>
+<div class="wk-problem">Use Newton's backward difference formula to find f(57): x = 45, 50, 55, 60; f(x) = 0.707, 0.766, 0.8192, 0.866.</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Difference table</p>
+<p class="txt">(each column = next value minus this value):</p>
+<div class='tbl'><table class='dt'><thead><tr><th>x</th><th>f</th><th>∇</th><th>∇²</th><th>∇³</th></tr></thead><tbody><tr><td>45</td><td>0.707</td><td>0.0590</td><td>−0.0058</td><td class='bw'>−0.0006</td></tr><tr><td>50</td><td>0.766</td><td>0.0532</td><td class='bw'>−0.0064</td><td></td></tr><tr><td>55</td><td>0.8192</td><td class='bw'>0.0468</td><td></td><td></td></tr><tr><td>60</td><td class='bw'>0.866</td><td></td><td></td><td></td></tr></tbody></table></div>
+<p class="pl"><span class="n">2.</span>Why backward?</p>
+<p class="txt">57 is near the end of the table. Use the red bottom edge:</p>
+\[\begin{aligned} y_n &= 0.866,\ \nabla \\[2pt] &= 0.0468,\ \nabla^2 \\[2pt] &= -0.0064,\ \nabla^3 \\[2pt] &= -0.0006 \end{aligned}\]
+<p class="pl"><span class="n">3.</span>p</p>
+\[\begin{aligned} p &= \frac{x - x_n}{h} \\[2pt] &= \frac{57 - 60}{5} \\[2pt] &= -0.6 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Each term</p>
+<p class="txt"><br></p>
+\[\begin{aligned} p\nabla y_n &= (-0.6)(0.0468) \\[2pt] &= -0.02808 \end{aligned}\]
+<p class="txt"><br></p>
+\[\begin{aligned} \frac{p(p+1)}{2!}\nabla^2 &= \frac{(-0.6)(0.4)}{2}(-0.0064) \\[2pt] &= (-0.12)(-0.0064) \\[2pt] &= 0.000768 \end{aligned}\]
+<p class="txt"><br></p>
+\[\begin{aligned} \frac{p(p+1)(p+2)}{3!}\nabla^3 &= \frac{(-0.6)(0.4)(1.4)}{6}(-0.0006) \\[2pt] &= (-0.056)(-0.0006) \\[2pt] &= 0.0000336 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>Add</p>
+\[\begin{aligned} 0.866 - 0.02808 + 0.000768 + 0.0000336 &= 0.83872 \end{aligned}\]<div class="final"><span class="lab">Answer</span>f(57) ≈ 0.8387 (MCQ option b, 0.8386)</div></div></details>
+</div>
+<h3>4. Lagrange (any spacing)</h3>
+<div class="box formula">\[ P(x) = \sum_{i} y_i \prod_{j\ne i}\frac{x - x_j}{x_i - x_j} \]Each term: numerator skips its own \(x_i\); denominator is the same product with \(x\) replaced by \(x_i\).</div>
+<p><b>Lecture examples:</b></p>
+<ul class="list">
+  <li>Points (0, 8), (1, 15), (4, 24) → <span class="ans">f(x) = −x² + 8x + 8</span></li>
+  <li>Points (0, 2), (1, 4), (3, 10), (6, 18), find f(2) → <span class="ans">6.8</span></li>
+  <li>Past MCQ: f(1) = 2, f(2) = 4, f(4) = 16 → <span class="ans">f(3) = 26/3</span></li>
+</ul>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="ex-h">Example 1: the polynomial through (0, 8), (1, 15), (4, 24).</p>
+<p class="txt"><span class="n">1.</span>Term 0:</p>
+\[\begin{aligned} 8\cdot\frac{(x-1)(x-4)}{(0-1)(0-4)} &= \frac{8}{4}(x^2 - 5x + 4) \\[2pt] &= 2x^2 - 10x + 8 \end{aligned}\]
+<p class="txt"><span class="n">2.</span>Term 1:</p>
+\[\begin{aligned} 15\cdot\frac{(x-0)(x-4)}{(1-0)(1-4)} &= \frac{15}{-3}(x^2 - 4x) \\[2pt] &= -5x^2 + 20x \end{aligned}\]
+<p class="txt"><span class="n">3.</span>Term 2:</p>
+\[\begin{aligned} 24\cdot\frac{(x-0)(x-1)}{(4-0)(4-1)} &= \frac{24}{12}(x^2 - x) \\[2pt] &= 2x^2 - 2x \end{aligned}\]
+<p class="txt"><span class="n">4.</span>Add like terms:</p>
+\[\begin{aligned} x^2(2 - 5 + 2) + x(-10 + 20 - 2) + 8 &= -x^2 + 8x + 8 \end{aligned}\]
+<p class="txt">Check: f(1) = −1 + 8 + 8 = 15 ✓.</p>
+<p class="ex-h">Example 2: f(2) from (0, 2), (1, 4), (3, 10), (6, 18).</p>
+<p class="txt"><span class="n">1.</span>Put x = 2 straight in:</p>
+<p class="txt"><span class="n">2.</span>Term 0:</p>
+\[\begin{aligned} 2\cdot\frac{(2-1)(2-3)(2-6)}{(0-1)(0-3)(0-6)} &= 2\cdot\frac{4}{-18} \\[2pt] &= -0.4444 \end{aligned}\]
+<p class="txt">Term 1:</p>
+\[\begin{aligned} 4\cdot\frac{(2)(-1)(-4)}{(1)(-2)(-5)} &= 4\cdot\frac{8}{10} \\[2pt] &= 3.2 \end{aligned}\]
+<p class="txt"><span class="n">3.</span>Term 2:</p>
+\[\begin{aligned} 10\cdot\frac{(2)(1)(-4)}{(3)(2)(-3)} &= 10\cdot\frac{-8}{-18} \\[2pt] &= 4.4444 \end{aligned}\]
+<p class="txt">Term 3:</p>
+\[\begin{aligned} 18\cdot\frac{(2)(1)(-1)}{(6)(5)(3)} &= 18\cdot\frac{-2}{90} \\[2pt] &= -0.4 \end{aligned}\]
+<p class="txt"><span class="n">4.</span>Sum: −0.4444 + 3.2 + 4.4444 − 0.4 = <b>6.8</b>.</p>
+<p class="ex-h">Example 3 (MCQ): f(3) from (1, 2), (2, 4), (4, 16).</p>
+<p class="pl plain"><span class="n">1.</span></p>
+\[\begin{aligned} 2\cdot\frac{(1)(-1)}{(-1)(-3)} + 4\cdot\frac{(2)(-1)}{(1)(-2)} + 16\cdot\frac{(2)(1)}{(3)(2)} &= -0.6667 + 4 + 5.3333 \\[2pt] &= 8.6667 \\[2pt] &= 26/3 \end{aligned}\]</div></details>
+
+<div class="box trap"><b>Trap:</b> plug the number in <em>before</em> expanding when the question only asks for one value. Expanding the polynomial is slower and error-prone. Only expand when they ask for f(x) as a formula.</div>
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Lagrange, every term shown</div>
+<p class="wk-seen">Seen in: 2021-22 MCQ midterm Q6.</p>
+<div class="wk-problem">Find f(0.5) using Lagrange's formula: x = 0, 1, 2; f(x) = 3, 2, 7.</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Three points → three terms</p>
+<p class="txt">Term i = yᵢ × (product of (x − other x's)) ÷ (product of (xᵢ − other x's)).</p>
+<p class="pl"><span class="n">2.</span>Term 0</p>
+<p class="txt">(x₀ = 0, y₀ = 3):</p>
+\[\begin{aligned} \frac{(0.5-1)(0.5-2)}{(0-1)(0-2)} &= \frac{(-0.5)(-1.5)}{(-1)(-2)} \\[2pt] &= \frac{0.75}{2} \\[2pt] &= 0.375 \end{aligned}\]
+<p class="txt">Times 3 = 1.125.</p>
+<p class="pl"><span class="n">3.</span>Term 1</p>
+<p class="txt">(x₁ = 1, y₁ = 2):</p>
+\[\begin{aligned} \frac{(0.5-0)(0.5-2)}{(1-0)(1-2)} &= \frac{(0.5)(-1.5)}{(1)(-1)} \\[2pt] &= 0.75 \end{aligned}\]
+<p class="txt">Times 2 = 1.5.</p>
+<p class="pl"><span class="n">4.</span>Term 2</p>
+<p class="txt">(x₂ = 2, y₂ = 7):</p>
+\[\begin{aligned} \frac{(0.5-0)(0.5-1)}{(2-0)(2-1)} &= \frac{(0.5)(-0.5)}{2} \\[2pt] &= -0.125 \end{aligned}\]
+<p class="txt">Times 7 = −0.875.</p>
+<p class="pl"><span class="n">5.</span>Add</p>
+<p class="txt">\(1.125 + 1.5 - 0.875 = 1.75\). Self-check: the three fractions 0.375 + 0.75 − 0.125 always add to 1.</p><div class="final"><span class="lab">Answer</span>f(0.5) = 1.75 (option c)</div></div></details>
+</div>
+<!-- ============ L5 ============ -->
+<h2 id="l5"><span class="lec">Lecture 5</span>Numerical integration</h2>
+<p>Split [a, b] into n equal <b>segments</b> of width \(h = (b-a)/n\), giving n + 1 points \(x_0 … x_n\). Tabulate f at every point.</p>
+
+<div class="box plain"><b>In plain words</b>An integral is the area under a curve. When you can't integrate a function by hand (like e<sup>−x²</sup>), or you only have a table of values, you cut the area into thin vertical strips and add up their areas. Trapezoidal gives each strip a straight top; Simpson gives pairs of strips a curved (parabola) top, which is more accurate.</div>
+<h3>1. Trapezoidal rule (any n)</h3>
+<div class="box formula">\[ I \approx \frac h2\Big[f(x_0) + f(x_n) + 2\big(f(x_1) + \cdots + f(x_{n-1})\big)\Big] \]Ends × 1, everything in the middle × 2.</div>
+<figure class="fig"><svg viewBox="0 0 600 270" role="img" aria-label="trapezoids"><line class="ax" x1="50" y1="250.0" x2="580" y2="250.0"/><line class="ax" x1="50" y1="20" x2="50" y2="250"/><line class="ax" x1="50.0" y1="250.0" x2="50.0" y2="254.0"/><text x="50.0" y="267.0" text-anchor="middle">0</text><line class="ax" x1="151.0" y1="250.0" x2="151.0" y2="254.0"/><text x="151.0" y="267.0" text-anchor="middle">0.2</text><line class="ax" x1="251.9" y1="250.0" x2="251.9" y2="254.0"/><text x="251.9" y="267.0" text-anchor="middle">0.4</text><line class="ax" x1="352.9" y1="250.0" x2="352.9" y2="254.0"/><text x="352.9" y="267.0" text-anchor="middle">0.6</text><line class="ax" x1="453.8" y1="250.0" x2="453.8" y2="254.0"/><text x="453.8" y="267.0" text-anchor="middle">0.8</text><line class="ax" x1="554.8" y1="250.0" x2="554.8" y2="254.0"/><text x="554.8" y="267.0" text-anchor="middle">1</text><line class="ax" x1="46" y1="250.0" x2="50" y2="250.0"/><text x="42" y="254.0" text-anchor="end">0</text><line class="ax" x1="46" y1="195.2" x2="50" y2="195.2"/><text x="42" y="199.2" text-anchor="end">0.1</text><line class="ax" x1="46" y1="140.5" x2="50" y2="140.5"/><text x="42" y="144.5" text-anchor="end">0.2</text><line class="ax" x1="46" y1="85.7" x2="50" y2="85.7"/><text x="42" y="89.7" text-anchor="end">0.3</text><line class="ax" x1="46" y1="31.0" x2="50" y2="31.0"/><text x="42" y="35.0" text-anchor="end">0.4</text><text x="580" y="242.0" text-anchor="end" class="lbl">x</text><text x="58" y="24" class="lbl">f(x)</text><path class="trap" d="M50.0,250.0 L50.0,250.0 L151.0,160.3 L151.0,250.0 Z"/><path class="trap" d="M151.0,250.0 L151.0,160.3 L251.9,103.2 L251.9,250.0 Z"/><path class="trap" d="M251.9,250.0 L251.9,103.2 L352.9,69.7 L352.9,250.0 Z"/><path class="trap" d="M352.9,250.0 L352.9,69.7 L453.8,53.2 L453.8,250.0 Z"/><path class="trap" d="M453.8,250.0 L453.8,53.2 L554.8,48.5 L554.8,250.0 Z"/><path class="cv" d="M50.0,250.0 L54.3,245.4 L58.6,240.8 L62.9,236.4 L67.2,232.0 L71.5,227.7 L75.7,223.5 L80.0,219.3 L84.3,215.2 L88.6,211.2 L92.9,207.2 L97.2,203.4 L101.5,199.6 L105.8,195.8 L110.1,192.1 L114.4,188.5 L118.6,185.0 L122.9,181.5 L127.2,178.1 L131.5,174.7 L135.8,171.5 L140.1,168.2 L144.4,165.1 L148.7,162.0 L153.0,158.9 L157.3,155.9 L161.6,153.0 L165.8,150.1 L170.1,147.3 L174.4,144.5 L178.7,141.8 L183.0,139.1 L187.3,136.5 L191.6,134.0 L195.9,131.5 L200.2,129.0 L204.5,126.6 L208.7,124.2 L213.0,121.9 L217.3,119.7 L221.6,117.5 L225.9,115.3 L230.2,113.2 L234.5,111.1 L238.8,109.1 L243.1,107.1 L247.4,105.2 L251.7,103.3 L255.9,101.4 L260.2,99.6 L264.5,97.8 L268.8,96.1 L273.1,94.4 L277.4,92.8 L281.7,91.2 L286.0,89.6 L290.3,88.1 L294.6,86.6 L298.8,85.1 L303.1,83.7 L307.4,82.3 L311.7,80.9 L316.0,79.6 L320.3,78.3 L324.6,77.1 L328.9,75.9 L333.2,74.7 L337.5,73.5 L341.8,72.4 L346.0,71.3 L350.3,70.3 L354.6,69.3 L358.9,68.3 L363.2,67.3 L367.5,66.4 L371.8,65.5 L376.1,64.6 L380.4,63.7 L384.7,62.9 L388.9,62.1 L393.2,61.3 L397.5,60.6 L401.8,59.9 L406.1,59.2 L410.4,58.5 L414.7,57.9 L419.0,57.3 L423.3,56.7 L427.6,56.1 L431.9,55.6 L436.1,55.1 L440.4,54.6 L444.7,54.1 L449.0,53.6 L453.3,53.2 L457.6,52.8 L461.9,52.4 L466.2,52.0 L470.5,51.7 L474.8,51.4 L479.0,51.0 L483.3,50.8 L487.6,50.5 L491.9,50.2 L496.2,50.0 L500.5,49.8 L504.8,49.6 L509.1,49.4 L513.4,49.3 L517.7,49.1 L522.0,49.0 L526.2,48.9 L530.5,48.8 L534.8,48.7 L539.1,48.6 L543.4,48.6 L547.7,48.6 L552.0,48.5 L556.3,48.5 L560.6,48.6 L564.9,48.6"/><circle class="pt" cx="50.0" cy="250.0" r="3.5"/><circle class="pt" cx="151.0" cy="160.3" r="3.5"/><circle class="pt" cx="251.9" cy="103.2" r="3.5"/><circle class="pt" cx="352.9" cy="69.7" r="3.5"/><circle class="pt" cx="453.8" cy="53.2" r="3.5"/><circle class="pt" cx="554.8" cy="48.5" r="3.5"/><text x="352.9" y="222.6" class="lbl" text-anchor="middle">5 trapezoids, width h = 0.2</text></svg><figcaption><b>Trapezoidal rule, ∫₀¹ x e⁻ˣ dx.</b> The integral is the area under the curve. We chop it into strips of width h and treat each strip as a trapezoid (straight top). One trapezoid's area = h × (left height + right height) / 2. Add them all up and every inside height gets counted twice, the two ends once: that's the formula.</figcaption></figure><p><b>Lecture example:</b> \(\int_0^1 xe^{-x}dx\), 5 segments, h = 0.2 → <span class="ans">0.2609</span> (see <a href="#errata">errata</a>: the notes' 0.2645 doesn't match their own numbers).</p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>h</p>
+<p class="txt">= (1 − 0)/5 = 0.2. Points 0, 0.2, 0.4, 0.6, 0.8, 1.</p>
+<p class="pl"><span class="n">2.</span>Table of f(x) = x e⁻ˣ</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>0</th><th>0.2</th><th>0.4</th><th>0.6</th><th>0.8</th><th>1</th></tr></thead><tbody><tr><td>f</td><td>0</td><td>0.1637</td><td>0.2681</td><td>0.3293</td><td>0.3595</td><td>0.3679</td></tr></tbody></table></div>
+<p class="pl"><span class="n">3.</span>Ends</p>
+<p class="txt">0 + 0.3679 = 0.3679. <b>Middle:</b> 0.1637 + 0.2681 + 0.3293 + 0.3595 = 1.1206.</p>
+<p class="pl plain"><span class="n">4.</span></p>
+\[\begin{aligned} I &= \frac{0.2}{2}[0.3679 + 2(1.1206)] \\[2pt] &= 0.1 \times 2.6091 \\[2pt] &= 0.2609 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>Absolute error</p>
+<p class="txt">(exact = 1 − 2/e = 0.2642): |0.2642 − 0.2609| = 0.0033.</p></div></details>
+
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Trapezoidal rule, every value shown</div>
+<p class="wk-seen">Seen in: 2021-22 final, including "can you use Simpson? Give reason."</p>
+<div class="wk-problem">Evaluate \(\int_1^2 \dfrac{dx}{1+x^2}\) taking h = 0.2, using the trapezoidal rule. Can you use Simpson's rule?</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Number of strips</p>
+<p class="txt">n = (2 − 1)/0.2 = 5, so the points are x = 1, 1.2, 1.4, 1.6, 1.8, 2.</p>
+<p class="pl"><span class="n">2.</span>Table of f(x) = 1/(1 + x²)</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>1</th><th>1.2</th><th>1.4</th><th>1.6</th><th>1.8</th><th>2</th></tr></thead><tbody><tr><td>f</td><td>0.5</td><td>0.409836</td><td>0.337838</td><td>0.280899</td><td>0.235849</td><td>0.2</td></tr></tbody></table></div>
+<p class="pl"><span class="n">3.</span>Ends</p>
+<p class="txt">0.5 + 0.2 = 0.7. <b>Middle:</b> 0.409836 + 0.337838 + 0.280899 + 0.235849 = 1.264422.</p>
+<p class="pl"><span class="n">4.</span>Formula</p>
+\[\begin{aligned} I &= \frac{0.2}{2}[0.7 + 2(1.264422)] \\[2pt] &= 0.1 \times 3.228844 \\[2pt] &= 0.322884 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>Simpson?</p>
+<p class="txt">No: n = 5 strips is odd, and Simpson 1/3 needs an even number of strips.</p><div class="final"><span class="lab">Answer</span>I ≈ 0.3229; Simpson 1/3 can't be used because n = 5 is odd</div></div></details>
+</div>
+<h3>2. Simpson 1/3 (n must be <em>even</em>)</h3>
+<div class="box formula">\[ I \approx \frac h3\Big[f(x_0) + f(x_n) + 4(\text{odd-index } f) + 2(\text{even-index interior } f)\Big] \]Pattern of weights: 1, 4, 2, 4, 2, …, 4, 1.</div>
+<figure class="fig"><svg viewBox="0 0 600 270" role="img" aria-label="simpson"><line class="ax" x1="50" y1="250.0" x2="580" y2="250.0"/><line class="ax" x1="50" y1="20" x2="50" y2="250"/><line class="ax" x1="50.0" y1="250.0" x2="50.0" y2="254.0"/><text x="50.0" y="267.0" text-anchor="middle">0</text><line class="ax" x1="302.4" y1="250.0" x2="302.4" y2="254.0"/><text x="302.4" y="267.0" text-anchor="middle">1</text><line class="ax" x1="554.8" y1="250.0" x2="554.8" y2="254.0"/><text x="554.8" y="267.0" text-anchor="middle">2</text><line class="ax" x1="46" y1="250.0" x2="50" y2="250.0"/><text x="42" y="254.0" text-anchor="end">0</text><line class="ax" x1="46" y1="198.9" x2="50" y2="198.9"/><text x="42" y="202.9" text-anchor="end">0.1</text><line class="ax" x1="46" y1="147.8" x2="50" y2="147.8"/><text x="42" y="151.8" text-anchor="end">0.2</text><line class="ax" x1="46" y1="96.7" x2="50" y2="96.7"/><text x="42" y="100.7" text-anchor="end">0.3</text><line class="ax" x1="46" y1="45.6" x2="50" y2="45.6"/><text x="42" y="49.6" text-anchor="end">0.4</text><text x="580" y="242.0" text-anchor="end" class="lbl">x</text><text x="58" y="24" class="lbl">f(x)</text><path class="trap" d="M50.0,250.0 L50.0,250.0 L302.4,62.0 L554.8,111.7 L554.8,250.0 Z"/><path class="cv" d="M50.0,250.0 L54.3,241.4 L58.6,233.1 L62.9,225.1 L67.2,217.4 L71.6,209.9 L75.9,202.7 L80.2,195.8 L84.5,189.1 L88.8,182.6 L93.1,176.4 L97.4,170.4 L101.7,164.6 L106.0,159.1 L110.4,153.8 L114.7,148.6 L119.0,143.7 L123.3,139.0 L127.6,134.4 L131.9,130.1 L136.2,125.9 L140.5,121.9 L144.9,118.1 L149.2,114.4 L153.5,110.9 L157.8,107.6 L162.1,104.4 L166.4,101.4 L170.7,98.5 L175.0,95.7 L179.3,93.1 L183.7,90.6 L188.0,88.3 L192.3,86.0 L196.6,83.9 L200.9,81.9 L205.2,80.1 L209.5,78.3 L213.8,76.6 L218.1,75.1 L222.5,73.6 L226.8,72.3 L231.1,71.1 L235.4,69.9 L239.7,68.8 L244.0,67.8 L248.3,67.0 L252.6,66.1 L257.0,65.4 L261.3,64.8 L265.6,64.2 L269.9,63.7 L274.2,63.2 L278.5,62.9 L282.8,62.6 L287.1,62.3 L291.4,62.2 L295.8,62.0 L300.1,62.0 L304.4,62.0 L308.7,62.0 L313.0,62.1 L317.3,62.3 L321.6,62.5 L325.9,62.7 L330.2,63.0 L334.6,63.4 L338.9,63.8 L343.2,64.2 L347.5,64.6 L351.8,65.1 L356.1,65.7 L360.4,66.2 L364.7,66.8 L369.1,67.5 L373.4,68.2 L377.7,68.8 L382.0,69.6 L386.3,70.3 L390.6,71.1 L394.9,71.9 L399.2,72.7 L403.5,73.6 L407.9,74.5 L412.2,75.4 L416.5,76.3 L420.8,77.2 L425.1,78.2 L429.4,79.1 L433.7,80.1 L438.0,81.1 L442.3,82.1 L446.7,83.2 L451.0,84.2 L455.3,85.3 L459.6,86.3 L463.9,87.4 L468.2,88.5 L472.5,89.6 L476.8,90.7 L481.2,91.8 L485.5,92.9 L489.8,94.1 L494.1,95.2 L498.4,96.4 L502.7,97.5 L507.0,98.7 L511.3,99.8 L515.6,101.0 L520.0,102.1 L524.3,103.3 L528.6,104.5 L532.9,105.7 L537.2,106.8 L541.5,108.0 L545.8,109.2 L550.1,110.4 L554.4,111.6 L558.8,112.8 L563.1,113.9 L567.4,115.1"/><path class="cvd" d="M50.0,250.0 L54.2,244.9 L58.4,239.9 L62.6,235.0 L66.8,230.1 L71.0,225.3 L75.2,220.5 L79.4,215.8 L83.7,211.2 L87.9,206.6 L92.1,202.2 L96.3,197.7 L100.5,193.4 L104.7,189.1 L108.9,184.9 L113.1,180.7 L117.3,176.6 L121.5,172.6 L125.7,168.6 L129.9,164.7 L134.1,160.9 L138.3,157.2 L142.5,153.5 L146.7,149.8 L151.0,146.3 L155.2,142.8 L159.4,139.3 L163.6,136.0 L167.8,132.7 L172.0,129.4 L176.2,126.3 L180.4,123.2 L184.6,120.1 L188.8,117.2 L193.0,114.3 L197.2,111.4 L201.4,108.7 L205.6,106.0 L209.8,103.3 L214.0,100.7 L218.3,98.2 L222.5,95.8 L226.7,93.4 L230.9,91.1 L235.1,88.9 L239.3,86.7 L243.5,84.6 L247.7,82.5 L251.9,80.6 L256.1,78.6 L260.3,76.8 L264.5,75.0 L268.7,73.3 L272.9,71.7 L277.1,70.1 L281.3,68.6 L285.6,67.1 L289.8,65.7 L294.0,64.4 L298.2,63.2 L302.4,62.0 L306.6,60.9 L310.8,59.8 L315.0,58.8 L319.2,57.9 L323.4,57.0 L327.6,56.2 L331.8,55.5 L336.0,54.9 L340.2,54.3 L344.4,53.7 L348.7,53.3 L352.9,52.9 L357.1,52.6 L361.3,52.3 L365.5,52.1 L369.7,52.0 L373.9,51.9 L378.1,51.9 L382.3,52.0 L386.5,52.1 L390.7,52.3 L394.9,52.6 L399.1,52.9 L403.3,53.3 L407.5,53.8 L411.7,54.3 L416.0,54.9 L420.2,55.6 L424.4,56.3 L428.6,57.1 L432.8,58.0 L437.0,58.9 L441.2,59.9 L445.4,60.9 L449.6,62.1 L453.8,63.3 L458.0,64.5 L462.2,65.8 L466.4,67.2 L470.6,68.7 L474.8,70.2 L479.0,71.8 L483.3,73.4 L487.5,75.2 L491.7,77.0 L495.9,78.8 L500.1,80.7 L504.3,82.7 L508.5,84.8 L512.7,86.9 L516.9,89.1 L521.1,91.3 L525.3,93.6 L529.5,96.0 L533.7,98.4 L537.9,100.9 L542.1,103.5 L546.3,106.2 L550.6,108.9 L554.8,111.7"/><circle class="pt" cx="50.0" cy="250.0" r="4.5"/><circle class="pt" cx="302.4" cy="62.0" r="4.5"/><circle class="pt" cx="554.8" cy="111.7" r="4.5"/><text x="302.4" y="35.3" class="lbl red" text-anchor="middle">red dashed: parabola through the 3 points (Simpson)</text><text x="428.6" y="209.1" class="lbl" text-anchor="middle">shaded: straight tops (trapezoid)</text></svg><figcaption><b>Simpson's idea.</b> Take three neighbouring points (two strips) and pass a <em>parabola</em> through them instead of straight lines. A parabola hugs the curve much better than the straight tops, so the area is far more accurate. That's why Simpson 1/3 needs strips in pairs (an even number); 3/8 uses a cubic through four points (strips in threes).</figcaption></figure><p><b>Lecture example:</b> \(\int_0^2 x\cos(e^x)dx\), h = 0.25 (8 segments), radians → <span class="ans">−0.135</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>h</p>
+<p class="txt">= 0.25, so n = 2/0.25 = 8 strips (even ✓). Calculator in <b>radians</b>.</p>
+<p class="pl"><span class="n">2.</span>Table of f(x) = x cos(eˣ)</p>
+<div class='tbl'><table><thead><tr><th>i</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr></thead><tbody><tr><td>x</td><td>0</td><td>0.25</td><td>0.5</td><td>0.75</td><td>1</td><td>1.25</td><td>1.5</td><td>1.75</td><td>2</td></tr><tr><td>f</td><td>0</td><td>0.0707</td><td>−0.0389</td><td>−0.3896</td><td>−0.9117</td><td>−1.1748</td><td>−0.3430</td><td>1.5112</td><td>0.8967</td></tr></tbody></table></div>
+<p class="pl"><span class="n">3.</span>Odd i</p>
+<p class="txt">(×4): 0.0707 − 0.3896 − 1.1748 + 1.5112 = 0.0175. <b>Even inside i</b> (×2): −0.0389 − 0.9117 − 0.3430 = −1.2936.</p>
+<p class="pl plain"><span class="n">4.</span></p>
+\[\begin{aligned} I &= \frac{0.25}{3}[0 + 0.8967 + 4(0.0175) + 2(-1.2936)] \\[2pt] &= 0.08333 \times (-1.6205) \\[2pt] &= -0.135 \end{aligned}\]</div></details>
+
+
+<h3>3. Simpson 3/8 (n must be a multiple of 3)</h3>
+<div class="box formula">\[ I \approx \frac{3h}{8}\Big[f(x_0) + 3f(x_1) + 3f(x_2) + f(x_3)\Big] \]For more blocks, weights go 1, 3, 3, 2, 3, 3, 2, …, 3, 3, 1.</div>
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Simpson 1/3 and 3/8, every value shown</div>
+<p class="wk-seen">Seen in: 2021-22 MCQ midterm Q9–Q10 ("n = 7" means 7 points).</p>
+<div class="wk-problem">Evaluate \(\int_0^6 \dfrac{dx}{1+x}\) with n = 7 using Simpson's 1/3 rule and Simpson's 3/8 rule.</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Points and h</p>
+<p class="txt">7 points → 6 strips, h = (6 − 0)/6 = 1. 6 is even (1/3 works) and a multiple of 3 (3/8 works).</p>
+<p class="pl"><span class="n">2.</span>Table</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead><tbody><tr><td>f</td><td>1</td><td>0.5</td><td>0.333333</td><td>0.25</td><td>0.2</td><td>0.166667</td><td>0.142857</td></tr></tbody></table></div>
+<p class="pl"><span class="n">3.</span>Simpson 1/3</p>
+<p class="txt">(weights 1, 4, 2, 4, 2, 4, 1): odd positions 0.5 + 0.25 + 0.166667 = 0.916667; even inside 0.333333 + 0.2 = 0.533333.<br></p>
+\[\begin{aligned} I &= \frac13[1 + 0.142857 + 4(0.916667) + 2(0.533333)] \\[2pt] &= \frac13[5.876190] \\[2pt] &= 1.958730 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>Simpson 3/8</p>
+<p class="txt">(weights 1, 3, 3, 2, 3, 3, 1):</p>
+\[\begin{aligned} I &= \frac{3}{8}[1 + 0.142857 + 3(0.5 + 0.333333 + 0.2 + 0.166667) + 2(0.25)] \\[2pt] &= \frac38[5.242857] \\[2pt] &= 1.966071 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>Trapezoidal for comparison</p>
+<p class="txt">(MCQ Q9):</p>
+\[\begin{aligned} \frac12[1 + 0.142857 + 2(1.45)] &= 2.021429 \end{aligned}\]
+<p class="txt">The exact value is ln 7 = 1.945910, so Simpson is closer.</p><div class="final"><span class="lab">Answer</span>Simpson 1/3 = 1.958730 (option d); Simpson 3/8 = 1.966071</div></div></details>
+</div>
+<h3>4. Combining them (odd number of segments)</h3>
+<p>5 segments = 3 (use 3/8) + 2 (use 1/3). 7 = 3 + 2 + 2. 8 = 3 + 3 + 2. The two parts share the boundary point.</p>
+<p><b>Lecture example:</b> \(\int_0^1 e^{-x^2}dx\), 5 segments, h = 0.2 → \(I_1 = \tfrac{3(0.2)}{8}[1 + 3(0.9608) + 3(0.8521) + 0.6977]\), \(I_2 = \tfrac{0.2}{3}[0.6977 + 4(0.5273) + 0.3679]\) → <span class="ans">I ≈ 0.7469</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl"><span class="n">1.</span>h</p>
+<p class="txt">= 0.2, 5 strips (odd). Split: first 3 strips (x = 0 → 0.6) with 3/8, last 2 strips (0.6 → 1) with 1/3.</p>
+<p class="pl"><span class="n">2.</span>Table of \(e^{-x^2}\)</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>0</th><th>0.2</th><th>0.4</th><th>0.6</th><th>0.8</th><th>1</th></tr></thead><tbody><tr><td>f</td><td>1</td><td>0.9608</td><td>0.8521</td><td>0.6977</td><td>0.5273</td><td>0.3679</td></tr></tbody></table></div>
+<p class="pl"><span class="n">3.</span>3/8 part</p>
+\[\begin{aligned} I_1 &= \frac{3(0.2)}{8}[1 + 3(0.9608) + 3(0.8521) + 0.6977] \\[2pt] &= 0.075 \times 7.1364 \\[2pt] &= 0.53523 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>1/3 part</p>
+\[\begin{aligned} I_2 &= \frac{0.2}{3}[0.6977 + 4(0.5273) + 0.3679] \\[2pt] &= 0.06667 \times 3.1748 \\[2pt] &= 0.21165 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>Total</p>
+<p class="txt">0.53523 + 0.21165 = <b>0.7469</b> (exact 0.7468).</p></div></details>
+
+<div class="box trap"><b>Two traps the doctor tests:</b><br>
+1. "Can you use Simpson's rule? Give reason." With \(\int_1^2\) and h = 0.2, n = 5 segments, which is <em>odd</em>, so Simpson 1/3 cannot be used alone.<br>
+2. "Taking 7 points" means 7 points = <b>6 segments</b>, not 7. <b>In her midterms "n = 7" also means 7 points</b>: ∫₀⁶ 1/(1+x) with n = 7 uses h = 1, and ∫₄^5.2 ln x with n = 7 uses h = 0.2. Only the h = 1 answer (2.021429, printed as 2.021428 in option b) appears in the options.</div>
+<p><b>Absolute error</b> = |exact − approximate|, when the integral can be done exactly.</p>
+
+<!-- ============ L6 ============ -->
+<h2 id="l6"><span class="lec">Lecture 6</span>Numerical solution of ODEs</h2>
+<p>Given \(y' = f(x, y)\) and a starting value \(y(x_0) = y_0\), step forward in x by h. All four methods march one step at a time; the answer at one step is the starting value for the next.</p>
+
+<div class="box plain"><b>In plain words</b>A differential equation like y′ = x + y doesn't tell you y directly; it tells you the <em>slope</em> of y at any point. Starting from a known point, you take a small step h forward using the slope, land on a new point, read the new slope there, and step again. The methods differ only in how cleverly they choose the slope for each step. Euler uses the slope at the start; Modified Euler averages start and end; RK4 averages four slopes; Taylor uses higher derivatives.</div>
+<figure class="fig"><svg viewBox="0 0 600 270" role="img" aria-label="ode methods"><line class="ax" x1="50" y1="250.0" x2="580" y2="250.0"/><line class="ax" x1="50" y1="20" x2="50" y2="250"/><line class="ax" x1="50.0" y1="250.0" x2="50.0" y2="254.0"/><text x="50.0" y="267.0" text-anchor="middle">0</text><line class="ax" x1="221.0" y1="250.0" x2="221.0" y2="254.0"/><text x="221.0" y="267.0" text-anchor="middle">0.5</text><line class="ax" x1="391.9" y1="250.0" x2="391.9" y2="254.0"/><text x="391.9" y="267.0" text-anchor="middle">1</text><line class="ax" x1="562.9" y1="250.0" x2="562.9" y2="254.0"/><text x="562.9" y="267.0" text-anchor="middle">1.5</text><line class="ax" x1="46" y1="204.0" x2="50" y2="204.0"/><text x="42" y="208.0" text-anchor="end">1</text><line class="ax" x1="46" y1="158.0" x2="50" y2="158.0"/><text x="42" y="162.0" text-anchor="end">2</text><line class="ax" x1="46" y1="112.0" x2="50" y2="112.0"/><text x="42" y="116.0" text-anchor="end">3</text><line class="ax" x1="46" y1="66.0" x2="50" y2="66.0"/><text x="42" y="70.0" text-anchor="end">4</text><line class="ax" x1="46" y1="20.0" x2="50" y2="20.0"/><text x="42" y="24.0" text-anchor="end">5</text><text x="580" y="242.0" text-anchor="end" class="lbl">x</text><text x="58" y="24" class="lbl">y</text><path class="cv" d="M50.0,204.0 L54.3,203.4 L58.7,202.8 L63.0,202.2 L67.3,201.6 L71.7,201.0 L76.0,200.4 L80.3,199.7 L84.6,199.1 L89.0,198.4 L93.3,197.8 L97.6,197.1 L102.0,196.4 L106.3,195.8 L110.6,195.1 L115.0,194.4 L119.3,193.7 L123.6,192.9 L128.0,192.2 L132.3,191.5 L136.6,190.7 L141.0,190.0 L145.3,189.2 L149.6,188.4 L153.9,187.7 L158.3,186.9 L162.6,186.1 L166.9,185.2 L171.3,184.4 L175.6,183.6 L179.9,182.7 L184.3,181.9 L188.6,181.0 L192.9,180.1 L197.3,179.2 L201.6,178.3 L205.9,177.4 L210.3,176.5 L214.6,175.6 L218.9,174.6 L223.2,173.7 L227.6,172.7 L231.9,171.7 L236.2,170.7 L240.6,169.7 L244.9,168.7 L249.2,167.6 L253.6,166.6 L257.9,165.5 L262.2,164.4 L266.6,163.3 L270.9,162.2 L275.2,161.1 L279.6,160.0 L283.9,158.8 L288.2,157.7 L292.5,156.5 L296.9,155.3 L301.2,154.1 L305.5,152.9 L309.9,151.6 L314.2,150.4 L318.5,149.1 L322.9,147.8 L327.2,146.5 L331.5,145.2 L335.9,143.9 L340.2,142.5 L344.5,141.1 L348.9,139.8 L353.2,138.4 L357.5,136.9 L361.8,135.5 L366.2,134.0 L370.5,132.6 L374.8,131.1 L379.2,129.5 L383.5,128.0 L387.8,126.5 L392.2,124.9 L396.5,123.3 L400.8,121.7 L405.2,120.0 L409.5,118.4 L413.8,116.7 L418.2,115.0 L422.5,113.3 L426.8,111.5 L431.1,109.8 L435.5,108.0 L439.8,106.2 L444.1,104.3 L448.5,102.5 L452.8,100.6 L457.1,98.7 L461.5,96.8 L465.8,94.8 L470.1,92.8 L474.5,90.8 L478.8,88.8 L483.1,86.7 L487.4,84.7 L491.8,82.6 L496.1,80.4 L500.4,78.3 L504.8,76.1 L509.1,73.9 L513.4,71.6 L517.8,69.3 L522.1,67.0 L526.4,64.7 L530.8,62.3 L535.1,59.9 L539.4,57.5 L543.8,55.1 L548.1,52.6 L552.4,50.1 L556.7,47.5 L561.1,44.9 L565.4,42.3 L569.7,39.7"/><path class="cvr" d="M50.0,204.0 L221.0,181.0 L391.9,146.5 L562.9,94.8"/><circle class="cvrd" cx="50.0" cy="204.0" r="4"/><circle class="cvrd" cx="221.0" cy="181.0" r="4"/><circle class="cvrd" cx="391.9" cy="146.5" r="4"/><circle class="cvrd" cx="562.9" cy="94.8" r="4"/><path class="cvo" d="M50.0,204.0 L221.0,175.2 L391.9,128.5 L562.9,52.6"/><circle class="cvod" cx="50.0" cy="204.0" r="4"/><circle class="cvod" cx="221.0" cy="175.2" r="4"/><circle class="cvod" cx="391.9" cy="128.5" r="4"/><circle class="cvod" cx="562.9" cy="52.6" r="4"/><path class="cvg" d="M50.0,204.0 L221.0,174.2 L391.9,125.0 L562.9,43.9"/><circle class="cvgd" cx="50.0" cy="204.0" r="4"/><circle class="cvgd" cx="221.0" cy="174.2" r="4"/><circle class="cvgd" cx="391.9" cy="125.0" r="4"/><circle class="cvgd" cx="562.9" cy="43.9" r="4"/><line class="cv" x1="70" y1="40" x2="94" y2="40"/><text x="100.0" y="44.0" class="lbl" text-anchor="start">true answer y = eˣ: 4.482 at x = 1.5</text><line class="cvr" x1="70" y1="60" x2="94" y2="60"/><text x="100.0" y="64.0" class="lbl" text-anchor="start">Euler: 3.375</text><line class="cvo" x1="70" y1="80" x2="94" y2="80"/><text x="100.0" y="84.0" class="lbl" text-anchor="start">Modified Euler: 4.291</text><line class="cvg" x1="70" y1="100" x2="94" y2="100"/><text x="100.0" y="104.0" class="lbl" text-anchor="start">RK4: 4.479</text></svg><figcaption><b>Same problem, four answers.</b> Solving y′ = y, y(0) = 1 with a big step h = 0.5 (the true answer is eˣ). Euler follows the slope at the start of each step, so it falls behind. Modified Euler averages the start and end slopes and does much better. RK4 blends four slopes and is almost exact.</figcaption></figure><h3>1. Taylor series method</h3>
+<div class="box formula">\[ y_{n+1} = y_n + h\,y'_n + \frac{h^2}{2!}y''_n + \frac{h^3}{3!}y'''_n + \cdots \]Differentiate y′ = f(x, y) implicitly (y is a function of x, so use the chain rule).</div>
+<p><b>Lecture example:</b> \(y' = x + y,\ y(0) = 0,\ h = 0.2\): \(y'' = 1 + y',\ y''' = y''\). At 0: y′ = 0, y″ = 1, y‴ = 1 → <span class="ans">y(0.2) = 0.0213</span>; next step from 0.2 → <span class="ans">y(0.4) ≈ 0.0917</span><br>
+\(y' = \sin y + x,\ y(0) = 0\): \(y'' = \cos y\cdot y' + 1,\ y''' = -\sin y\,(y')^2 + \cos y\cdot y''\) → <span class="ans">y(0.2) ≈ 0.02133</span><br>
+Past MCQ: \(y' = y^2 - x^2,\ y(0) = 1\), first four non-zero terms → <span class="ans">y(0.1) ≈ 1.1107</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="ex-h">Example 1: y′ = x + y, y(0) = 0, h = 0.2.</p>
+<p class="txt"><span class="n">1.</span>Derivatives: y″ = 1 + y′, y‴ = y″.</p>
+<p class="txt"><span class="n">2.</span>At x = 0: y′ = 0 + 0 = 0; y″ = 1 + 0 = 1; y‴ = 1. So</p>
+\[\begin{aligned} y(0.2) &= 0 + 0.2(0) + \frac{0.04}{2}(1) + \frac{0.008}{6}(1) \\[2pt] &= 0.02 + 0.001333 \\[2pt] &= 0.021333 \end{aligned}\]
+<p class="txt"><span class="n">3.</span>Step 2, at x = 0.2, y = 0.021333: y′ = 0.2 + 0.021333 = 0.221333; y″ = 1.221333; y‴ = 1.221333.</p>
+<p class="pl plain"><span class="n">4.</span></p>
+\[\begin{aligned} y(0.4) &= 0.021333 + 0.2(0.221333) + \frac{0.04}{2}(1.221333) + \frac{0.008}{6}(1.221333) \\[2pt] &= 0.021333 + 0.044267 + 0.024427 + 0.001628 \\[2pt] &= 0.091655 \end{aligned}\]
+<p class="ex-h">Example 2: y′ = sin y + x, y(0) = 0, h = 0.2.</p>
+<p class="txt"><span class="n">1.</span>y″ = cos y · y′ + 1; y‴ = −sin y (y′)² + cos y · y″.</p>
+<p class="txt"><span class="n">2.</span>At 0: y′ = sin 0 + 0 = 0; y″ = 1(0) + 1 = 1; y‴ = 0 + 1(1) = 1.</p>
+\[\begin{aligned} y(0.2) &= 0 + 0 + 0.02(1) + 0.001333(1) \\[2pt] &= 0.021333 \end{aligned}\]
+<p class="ex-h">Example 3 (MCQ): y′ = y² − x², y(0) = 1, y(0.1).</p>
+<p class="txt"><span class="n">1.</span>y″ = 2yy′ − 2x; y‴ = 2(y′)² + 2yy″ − 2.</p>
+<p class="txt"><span class="n">2.</span>At 0: y′ = 1; y″ = 2(1)(1) − 0 = 2; y‴ = 2 + 2(1)(2) − 2 = 4.</p>
+\[\begin{aligned} y(0.1) &= 1 + 0.1 + \frac{0.01}{2}(2) + \frac{0.001}{6}(4) \\[2pt] &= 1 + 0.1 + 0.01 + 0.000667 \\[2pt] &= 1.1107 \end{aligned}\]</div></details>
+
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Taylor method, every derivative shown</div>
+<p class="wk-seen">Seen in: 2021-22 MCQ midterm Q14.</p>
+<div class="wk-problem">Use the Taylor series method to find y(0.1), given \(y' = x^2y - 1,\ y(0) = 1\).</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>h</p>
+<p class="txt">= 0.1 − 0 = 0.1. Start: x₀ = 0, y₀ = 1.</p>
+<p class="pl"><span class="n">2.</span>y′ at 0</p>
+<p class="txt">\(y' = x^2y - 1 = 0 - 1 = -1\).</p>
+<p class="pl"><span class="n">3.</span>Differentiate once</p>
+<p class="txt">(product rule on x²y): \(y'' = 2xy + x^2y'\). At 0: \(0 + 0 = 0\).</p>
+<p class="pl"><span class="n">4.</span>Differentiate again</p>
+\[\begin{aligned} y''' &= 2y + 2xy' + 2xy' + x^2y'' \\[2pt] &= 2y + 4xy' + x^2y'' \end{aligned}\]
+<p class="txt">At 0: \(2(1) + 0 + 0 = 2\).</p>
+<p class="pl"><span class="n">5.</span>Plug into Taylor</p>
+\[\begin{aligned} y(0.1) &= 1 + 0.1(-1) + \frac{0.01}{2}(0) + \frac{0.001}{6}(2) \\[2pt] &= 1 - 0.1 + 0 + 0.000333 \\[2pt] &= 0.900333 \end{aligned}\]<div class="final"><span class="lab">Answer</span>y(0.1) ≈ 0.9003 (option a)</div></div></details>
+</div>
+<h3>2. Euler</h3>
+<div class="box formula">\[ y_{n+1} = y_n + h\,f(x_n, y_n) \]</div>
+<p><b>Lecture examples:</b> \(y' = x^2 + y,\ y(0) = 1,\ h = 0.02\) → <span class="ans">1.02, 1.0408, 1.0612</span><br>
+\(y' = x^2 + y^2,\ y(0) = 1\), y(0.3): h = 0.1 → <span class="ans">1.375</span>; h = 0.05 → <span class="ans">1.4039</span> (exact 1.41). Smaller h = more accurate.<br>
+Past MCQ: \(y' = xy,\ y(0) = 1,\ h = 0.1\) → <span class="ans">y(0.5) ≈ 1.1035</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="ex-h">Example 1: y′ = x² + y, y(0) = 1, h = 0.02.</p>
+<p class="txt"><span class="n">1.</span>Step 1: slope f(0, 1) = 0 + 1 = 1. y(0.02) = 1 + 0.02(1) = 1.02.</p>
+<p class="txt"><span class="n">2.</span>Step 2: slope f(0.02, 1.02) = 0.0004 + 1.02 = 1.0204. y(0.04) = 1.02 + 0.02(1.0204) = 1.040408.</p>
+<p class="txt"><span class="n">3.</span>Step 3: slope f(0.04, 1.040408) = 0.0016 + 1.040408 = 1.042008. y(0.06) = 1.040408 + 0.02(1.042008) = 1.061248.</p>
+<p class="ex-h">Example 2: y′ = x² + y², y(0) = 1, find y(0.3).</p>
+<p class="txt"><span class="n">1.</span>h = 0.1:</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>slope x² + y²</th><th>new y = y + 0.1 × slope</th></tr></thead><tbody><tr><td>0</td><td>1</td><td>1</td><td>1.1</td></tr><tr><td>0.1</td><td>1.1</td><td>0.01 + 1.21 = 1.22</td><td>1.222</td></tr><tr><td>0.2</td><td>1.222</td><td>0.04 + 1.49328 = 1.53328</td><td><b>1.37533</b></td></tr></tbody></table></div>
+<p class="txt"><span class="n">2.</span>h = 0.05 (six steps, same method):</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>slope</th><th>new y</th></tr></thead><tbody><tr><td>0</td><td>1</td><td>1</td><td>1.05</td></tr><tr><td>0.05</td><td>1.05</td><td>1.105</td><td>1.10525</td></tr><tr><td>0.1</td><td>1.10525</td><td>1.23158</td><td>1.16683</td></tr><tr><td>0.15</td><td>1.16683</td><td>1.38399</td><td>1.23603</td></tr><tr><td>0.2</td><td>1.23603</td><td>1.56777</td><td>1.31442</td></tr><tr><td>0.25</td><td>1.31442</td><td>1.79019</td><td><b>1.40393</b></td></tr></tbody></table></div>
+<p class="ex-h">Example 3 (MCQ): y′ = xy, y(0) = 1, h = 0.1, y(0.5).</p>
+<p class="pl plain"><span class="n">1.</span></p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>slope xy</th><th>new y</th></tr></thead><tbody><tr><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>0.1</td><td>1</td><td>0.1</td><td>1.01</td></tr><tr><td>0.2</td><td>1.01</td><td>0.202</td><td>1.0302</td></tr><tr><td>0.3</td><td>1.0302</td><td>0.30906</td><td>1.06111</td></tr><tr><td>0.4</td><td>1.06111</td><td>0.42444</td><td><b>1.10355</b></td></tr></tbody></table></div></div></details>
+
+
+<h3>3. Modified Euler (predict, then correct)</h3>
+<div class="box formula">\[ y^{(0)}_{n+1} = y_n + h f(x_n, y_n) \qquad y^{(k+1)}_{n+1} = y_n + \frac h2\Big[f(x_n, y_n) + f\big(x_{n+1}, y^{(k)}_{n+1}\big)\Big] \]Repeat the corrector until it stops changing (or as many times as asked).</div>
+<p><b>Lecture examples:</b> \(y' = x^2 + y,\ y(0) = 1,\ h = 0.1\): 1.1 → 1.1055 → <span class="ans">1.105775</span><br>
+\(y' = \dfrac{x^2 + y^2}{2xy},\ y(1) = 0.5\): 0.625 → 0.6207 → <span class="ans">y(1.1) ≈ 0.6209</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="ex-h">Example 1: y′ = x² + y, y(0) = 1, h = 0.1.</p>
+<p class="txt"><span class="n">1.</span>Start slope f(0, 1) = 1.</p>
+<p class="txt"><span class="n">2.</span>Predict (Euler): \(y^{(0)} = 1 + 0.1(1) = 1.1\).</p>
+<p class="txt"><span class="n">3.</span>Correct:</p>
+\[\begin{aligned} y^{(1)} &= 1 + \frac{0.1}{2}[1 + (0.01 + 1.1)] \\[2pt] &= 1 + 0.05(2.11) \\[2pt] &= 1.1055 \end{aligned}\]
+<p class="txt"><span class="n">4.</span>Correct again:</p>
+\[\begin{aligned} y^{(2)} &= 1 + 0.05[1 + (0.01 + 1.1055)] \\[2pt] &= 1 + 0.05(2.1155) \\[2pt] &= 1.105775 \end{aligned}\]
+<p class="ex-h">Example 2: \(y' = \tfrac{x^2 + y^2}{2xy}\), y(1) = 0.5, h = 0.1.</p>
+<p class="txt"><span class="n">1.</span>Start slope f(1, 0.5) = (1 + 0.25)/(2 × 0.5) = 1.25.</p>
+<p class="txt"><span class="n">2.</span>Predict:</p>
+\[\begin{aligned} y^{(0)} &= 0.5 + 0.1(1.25) \\[2pt] &= 0.625 \end{aligned}\]
+<p class="txt"><span class="n">3.</span>Correct: f(1.1, 0.625) = (1.21 + 0.390625)/(2 × 1.1 × 0.625) = 1.600625/1.375 = 1.16409.</p>
+\[\begin{aligned} y^{(1)} &= 0.5 + 0.05(1.25 + 1.16409) \\[2pt] &= 0.62070 \end{aligned}\]
+<p class="txt"><span class="n">4.</span>Again: f(1.1, 0.62070) = 1.16823.</p>
+\[\begin{aligned} y^{(2)} &= 0.5 + 0.05(1.25 + 1.16823) \\[2pt] &= 0.62091 \end{aligned}\]
+<p class="txt">Once more gives 0.62090, so <b>y(1.1) = 0.6209</b>.</p></div></details>
+
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Euler → Modified Euler → Euler again (a 3-question chain)</div>
+<p class="wk-seen">Seen in: 2021-22 MCQ midterm Q16, Q17, Q18.</p>
+<div class="wk-problem">Given \(y' = y - x^2,\ y(0) = 1\): (a) Euler for y(0.2); (b) Modified Euler for y(0.2); (c) Euler for y(0.4).</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>(a) Euler, h = 0.2</p>
+<p class="txt">\(f(0, 1) = 1 - 0 = 1\). \(y(0.2) = 1 + 0.2(1) = 1.2\).</p>
+<p class="pl"><span class="n">2.</span>(b) Modified Euler</p>
+<p class="txt">Predictor (from part a): \(y^{(0)} = 1.2\). Corrector:</p>
+\[\begin{aligned} y^{(1)} &= 1 + \frac{0.2}{2}[f(0,1) + f(0.2, 1.2)] \\[2pt] &= 1 + 0.1[1 + (1.2 - 0.04)] \\[2pt] &= 1 + 0.1(2.16) \\[2pt] &= 1.216 \end{aligned}\]
+<p class="txt"><span class="n">3.</span>Correct again with the new value:</p>
+\[\begin{aligned} y^{(2)} &= 1 + 0.1[1 + (1.216 - 0.04)] \\[2pt] &= 1 + 0.1(2.176) \\[2pt] &= 1.2176 \end{aligned}\]
+<p class="txt">Again: \(1 + 0.1[1 + 1.1776] = 1.21776\). It's settled at <b>1.218</b>.</p>
+<p class="pl"><span class="n">4.</span>(c) Euler from x = 0.2 to 0.4</p>
+<p class="txt">, starting from the Modified Euler value 1.218:</p>
+\[\begin{aligned} f(0.2, 1.218) &= 1.218 - 0.04 \\[2pt] &= 1.178 \end{aligned}\]
+\[\begin{aligned} y(0.4) &= 1.218 + 0.2(1.178) \\[2pt] &= 1.4536 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>Exam lesson</p>
+<p class="txt">starting part (c) from the plain Euler value 1.2 gives 1.432, which isn't an option. "In the previous problem" means carry the previous answer forward.</p><div class="final"><span class="lab">Answer</span>(a) 1.2  (b) 1.218  (c) 1.454</div></div></details>
+</div>
+<h3>4. Runge–Kutta 4th order</h3>
+<div class="box formula">\[\begin{aligned} k_1 &= h\,f(x_n,\ y_n) & k_2 &= h\,f\big(x_n + \tfrac h2,\ y_n + \tfrac{k_1}2\big)\\ k_3 &= h\,f\big(x_n + \tfrac h2,\ y_n + \tfrac{k_2}2\big) & k_4 &= h\,f(x_n + h,\ y_n + k_3) \end{aligned}\]
+\[ y_{n+1} = y_n + \tfrac16\,(k_1 + 2k_2 + 2k_3 + k_4) \]</div>
+<p><b>Lecture example:</b> \(y' = x^2 + y^2,\ y(0) = 0,\ h = 0.2\): k₁ = 0, k₂ = 0.002, k₃ = 0.0020002, k₄ = 0.0080008 → <span class="ans">y(0.2) = 0.0026669</span></p>
+<details class="sol"><summary>Show step-by-step solution</summary><div class="paper"><p class="pl plain"><span class="n">1.</span></p>
+\[\begin{aligned} k_1 &= 0.2 f(0, 0) \\[2pt] &= 0.2(0 + 0) \\[2pt] &= 0 \end{aligned}\]
+<p class="pl plain"><span class="n">2.</span></p>
+\[\begin{aligned} k_2 &= 0.2 f(0.1,\ 0 + 0) \\[2pt] &= 0.2(0.01 + 0) \\[2pt] &= 0.002 \end{aligned}\]
+<p class="pl plain"><span class="n">3.</span></p>
+\[\begin{aligned} k_3 &= 0.2 f(0.1,\ 0 + 0.001) \\[2pt] &= 0.2(0.01 + 0.000001) \\[2pt] &= 0.0020002 \end{aligned}\]
+<p class="pl plain"><span class="n">4.</span></p>
+\[\begin{aligned} k_4 &= 0.2 f(0.2,\ 0 + 0.0020002) \\[2pt] &= 0.2(0.04 + 0.000004) \\[2pt] &= 0.0080008 \end{aligned}\]
+<p class="pl plain"><span class="n">5.</span></p>
+\[\begin{aligned} y(0.2) &= 0 + \frac16[0 + 2(0.002) + 2(0.0020002) + 0.0080008] \\[2pt] &= \frac16(0.0160012) \\[2pt] &= 0.0026669 \end{aligned}\]</div></details>
+
+<div class="box trap"><b>Trap:</b> k₂ and k₃ both use \(x_n + h/2\); only k₄ uses \(x_n + h\). And the k's already include h. Don't multiply by h again in the final line.</div>
+
+<div class="worked">
+<div class="wk-tag">Solve it yourself · exam pick</div>
+<div class="wk-title">Runge–Kutta 4, every k shown</div>
+<p class="wk-seen">Seen in: 2021-22 final (10 marks, written).</p>
+<div class="wk-problem">Use RK4 to solve \(\dfrac{dy}{dx} = \dfrac{y^2 - x^2}{y^2 + x^2}\) at x = 0.2, given y(0) = 1. Take h = 0.2.</div>
+<details><summary>Show the full solution, line by line</summary><div class="paper"><p class="pl"><span class="n">1.</span>Setup</p>
+<p class="txt">x₀ = 0, y₀ = 1, h = 0.2,</p>
+\[\begin{aligned} f(x, y) &= \frac{y^2 - x^2}{y^2 + x^2} \end{aligned}\]
+<p class="pl"><span class="n">2.</span>k₁</p>
+\[\begin{aligned}  &= h f(x_0, y_0) \\[2pt] &= 0.2 \times \frac{1 - 0}{1 + 0} \\[2pt] &= 0.2 \end{aligned}\]
+<p class="pl"><span class="n">3.</span>k₂</p>
+\[\begin{aligned}  &= h f(x_0 + \frac h2,\ y_0 + \frac{k_1}{2}) \\[2pt] &= 0.2 f(0.1,\ 1.1) \\[2pt] &= 0.2 \times \frac{1.21 - 0.01}{1.21 + 0.01} \\[2pt] &= 0.2 \times 0.98361 \\[2pt] &= 0.19672 \end{aligned}\]
+<p class="pl"><span class="n">4.</span>k₃</p>
+\[\begin{aligned}  &= h f(0.1,\ 1 + \frac{0.19672}{2}) \\[2pt] &= 0.2 f(0.1,\ 1.09836) \\[2pt] &= 0.2 \times \frac{1.20640 - 0.01}{1.20640 + 0.01} \\[2pt] &= 0.2 \times 0.98356 \\[2pt] &= 0.19671 \end{aligned}\]
+<p class="pl"><span class="n">5.</span>k₄</p>
+\[\begin{aligned}  &= h f(x_0 + h,\ y_0 + k_3) \\[2pt] &= 0.2 f(0.2,\ 1.19671) \\[2pt] &= 0.2 \times \frac{1.43212 - 0.04}{1.43212 + 0.04} \\[2pt] &= 0.2 \times 0.94566 \\[2pt] &= 0.18913 \end{aligned}\]
+<p class="pl"><span class="n">6.</span>Combine</p>
+\[\begin{aligned} y(0.2) &= 1 + \frac16[0.2 + 2(0.19672) + 2(0.19671) + 0.18913] \\[2pt] &= 1 + \frac16(1.17599) \\[2pt] &= 1.19600 \end{aligned}\]<div class="final"><span class="lab">Answer</span>y(0.2) ≈ 1.1960</div></div></details>
+</div>
+<!-- ============ L7 ============ -->
+<h2 id="l7"><span class="lec">Lecture 7</span>Higher-order ODEs</h2>
+<p>Now the equation gives \(y'' = f(x, y, y')\) with two starting values, \(y(x_0)\) and \(y'(x_0)\). The key difference from Lecture 6: you must march <b>two</b> quantities forward each step, y and y′, because the next step needs both.</p>
+
+<div class="box plain"><b>In plain words</b>Now the equation gives y″ (how the slope itself changes), so you need to know two things at the start: where you are (y) and which way you're heading (y′). Think of a ball: to predict where it goes next you need its position <em>and</em> its speed. Each step updates both, then the next step uses both.</div>
+<h3>1. Taylor method (three terms)</h3>
+<div class="box formula">\[ y_{n+1} = y_n + h\,y'_n + \frac{h^2}{2!}\,y''_n \qquad\qquad y'_{n+1} = y'_n + h\,y''_n + \frac{h^2}{2!}\,y'''_n \]
+\(y''\) comes straight from the equation; differentiate it once more to get \(y'''\).</div>
+<ol class="steps">
+  <li>Compute \(y''_0\) from the equation and \(y'''_0\) from its derivative.</li>
+  <li>Use the first formula for \(y_1\) and the second for \(y'_1\).</li>
+  <li>Recompute \(y''_1\) from the equation using \(x_1, y_1, y'_1\), then step again.</li>
+</ol>
+<p><b>Lecture example 1:</b> \(y'' = 13\cos x - 45y,\ y(0) = y'(0) = 0,\ h = 0.01\). Then \(y''' = -13\sin x - 45y'\).</p>
+<div class="paper"><p class="txt"><span class="n">1.</span>\(y''(0) = 13\) → \(y(0.01) = 0.00005 \times 13 =\) <span class="ans">6.5 × 10⁻⁴</span></p>
+<p class="txt"><span class="n">2.</span>\(y'''(0) = 0\) → \(y'(0.01) = 0 + 0.01(13) + 0 =\) <span class="ans">0.13</span></p>
+<p class="pl plain"><span class="n">3.</span></p>
+\[\begin{aligned} y''(0.01) &= 13\cos 0.01 - 45(6.5\times10^{-4}) \\[2pt] &= 12.9701 \end{aligned}\]
+<p class="txt">→</p>
+\[\begin{aligned} y(0.02) &= 0.00065 + 0.0013 + 0.00005(12.9701) \\[2pt] &=  \end{aligned}\]
+<p class="txt"><span class="ans">2.5985 × 10⁻³</span> (the notes say 3.5999 × 10⁻³; see <a href="#errata">errata</a>)</p></div>
+<p><b>Lecture example 2:</b> \(y'' = -xy' - 2y,\ y(0) = 3,\ y'(0) = -2,\ h = 0.1\). Then \(y''' = -xy'' - y' - 2y' = -xy'' - 3y'\).</p>
+<div class="paper"><p class="txt"><span class="n">1.</span>\(y''(0) = -6,\ y'''(0) = 6\) → \(y(0.1) = 3 - 0.2 - 0.03 =\) <span class="ans">2.77</span>, \(y'(0.1) = -2 - 0.6 + 0.03 =\) <span class="ans">−2.57</span></p>
+<p class="pl plain"><span class="n">2.</span></p>
+\[\begin{aligned} y''(0.1) &= -(0.1)(-2.57) - 2(2.77) \\[2pt] &= -5.283 \end{aligned}\]
+<p class="txt">→</p>
+\[\begin{aligned} y(0.2) &= 2.77 - 0.257 - 0.0264 \\[2pt] &=  \end{aligned}\]
+<p class="txt"><span class="ans">2.4866</span> (the notes say 2.74; see <a href="#errata">errata</a>)</p></div>
+
+<h3>2. Euler method: turn it into two first-order equations</h3>
+<div class="box formula">Let \(z = y'\), so \(z' = y'' = f(x, y, z)\). Then step both together:
+\[ y_{n+1} = y_n + h\,z_n \qquad\qquad z_{n+1} = z_n + h\,f(x_n, y_n, z_n) \]</div>
+<p><b>Lecture example:</b> \(y'' = \dfrac{24y - 50y^3}{25},\ y(0) = 0,\ y'(0) = 0.04,\ h = 0.1\), find y(0.2).</p>
+<div class="tbl"><table>
+<thead><tr><th>x</th><th>y</th><th>z = y′</th><th>f = (24y − 50y³)/25</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>0</td><td>0.04</td><td>0</td></tr>
+<tr><td>0.1</td><td>0.004</td><td>0.04</td><td>0.00384</td></tr>
+<tr><td>0.2</td><td><span class="ans">0.008</span></td><td>0.040384</td><td>—</td></tr>
+</tbody></table></div>
+<div class="box trap"><b>Trap:</b> always use the <em>old</em> values (\(y_n, z_n\)) on the right-hand side of both updates. And every time y″ appears in a step, recompute it from the equation with the newest x, y and y′; don't reuse the previous step's y″.</div>
+
+<!-- ============ MIDTERM ============ -->
+<hr>
+<h2 id="mid"><span class="lec">Practice</span>Last year's midterm (2022-23), numerical part solved</h2>
+<p>Questions 21–25 were the numerical questions. Try each before opening the answer.</p>
+<details><summary class="q">Q21. Fit a straight line to x = 0, 0.25, 0.5, 0.75, 1; y = −2.52, −2.06, −1.61, −1.15, −0.69</summary><div><p>Σx = 2.5, Σy = −8.03, Σx² = 1.875, Σxy = −2.8725 → <span class="ans">y = −2.52 + 1.828x (option a)</span></p></div></details>
+<details><summary class="q">Q22. In the previous problem, compute the square error</summary><div><p>Residuals are tiny (±0.005 or less); Σ(residual)² = <span class="ans">3 × 10⁻⁵ (option b)</span></p></div></details>
+<details><summary class="q">Q23. Lagrange: f(2) = 4.1, f(3) = 5.25, f(5) = 10.75. Find f(4)</summary><div><p>\(4.1\cdot\frac{(1)(-1)}{(-1)(-3)} + 5.25\cdot\frac{(2)(-1)}{(1)(-2)} + 10.75\cdot\frac{(2)(1)}{(3)(2)} = -1.3667 + 5.25 + 3.5833\) = <span class="ans">7.4667</span>. None of 8.46667 / 6.46667 / 5.46667 match, so the answer is "other" (unless the printed options had a typo).</p></div></details>
+<details><summary class="q">Q24. Find y at x = 0.15 from the lecture table (−0.002 … 0.717)</summary><div><p>Newton forward with p = 0.75 → <span class="ans">0.0405 (option b)</span>. This is the lecture example.</p></div></details>
+<details><summary class="q">Q25. Which parabola passes through (0, 1.005) … (2, 6.108)?</summary><div><p><span class="ans">y = 1.0047 + 0.8723x + 0.8394x² (option c)</span>. This is the lecture example.</p></div></details>
+
+<h2 id="mid2"><span class="lec">Practice</span>2021-22 MCQ midterm (model A), all 30 solved</h2>
+<p>The best mock you have: fully numerical, the same style you're likely to get. Do it in 60 minutes, then check.</p>
+<details><summary class="q">Answer key with working</summary><div>
+<div class="tbl"><table class="wide"><thead><tr><th>Q</th><th>Question (short)</th><th>Working</th><th>Answer</th></tr></thead><tbody>
+<tr><td>1</td><td>Iterative method</td><td>Gauss–Seidel iterates; the others are direct</td><td>a</td></tr>
+<tr><td>2</td><td>Direct method</td><td>Cramer's rule</td><td>c</td></tr>
+<tr><td>3</td><td>Gauss–Seidel, 1 iteration, y</td><td>x = 0.3; y = (3 + 4x + 3z)/10 = (3 + 1.2)/10</td><td>0.42 (b)</td></tr>
+<tr><td>4</td><td>Same, Jacobi, y</td><td>uses old x = 0: y = 3/10</td><td>0.3 (a)</td></tr>
+<tr><td>5</td><td>Linear form of ae^(bx)</td><td>Y = ln y, A = ln a, B = b, X = x</td><td>d</td></tr>
+<tr><td>6</td><td>Lagrange f(0.5), points (0,3) (1,2) (2,7)</td><td>3(0.375) + 2(0.75) + 7(−0.125)</td><td>1.75 (c)</td></tr>
+<tr><td>7</td><td>Bisection x − cos x, 2 iterations</td><td>0.75, then 0.625</td><td>0.625 (c)</td></tr>
+<tr><td>8</td><td>RK4 formula</td><td>yₙ + (k₁ + 2k₂ + 2k₃ + k₄)/6</td><td>a</td></tr>
+<tr><td>9</td><td>Trapezoidal ∫₀⁶ 1/(1+x), n = 7</td><td>7 points, h = 1</td><td>2.021429 → option b (printed 2.021428)</td></tr>
+<tr><td>10</td><td>Simpson 1/3, same</td><td>h = 1, 6 segments</td><td>1.958730 (d)</td></tr>
+<tr><td>11</td><td>"Euler's method is a numerical integration"</td><td>Euler is an ODE method in her course; integration = trapezoid/Simpson. Ambiguous wording, so ask the TA.</td><td>False (likely)</td></tr>
+<tr><td>12</td><td>Used for numerical integration</td><td></td><td>Simpson's rule (c)</td></tr>
+<tr><td>13</td><td>Trapezoid ∫₀² from f = 4, 3, 12</td><td>½[4 + 12 + 2(3)]</td><td>11 (a)</td></tr>
+<tr><td>14</td><td>Taylor y′ = x²y − 1, y(0) = 1, y(0.1)</td><td>y′ = −1, y″ = 0, y‴ = 2 → 1 − 0.1 + 0.000333</td><td>0.9003 (a)</td></tr>
+<tr><td>15</td><td>Trapezoid needs…</td><td></td><td>any number of equal subintervals (b)</td></tr>
+<tr><td>16</td><td>Euler y′ = y − x², y(0) = 1, y(0.2)</td><td>one step h = 0.2: 1 + 0.2(1)</td><td>1.2 (b)</td></tr>
+<tr><td>17</td><td>Modified Euler, y(0.2)</td><td>1 + 0.1[1 + (1.2 − 0.04)] = 1.216 → repeat → 1.2176</td><td>1.218 (a)</td></tr>
+<tr><td>18</td><td>Euler y(0.4)</td><td>continue from 1.218: 1.218 + 0.2(1.218 − 0.04). Starting from 1.2 gives 1.432, which isn't an option.</td><td>1.454 (b)</td></tr>
+<tr><td>19</td><td>Straight line, x = 1…8</td><td>a₀ = 1.976, a₁ = 0.506</td><td>y = 1.976 + 0.506x (d)</td></tr>
+<tr><td>20</td><td>Method of tangent</td><td></td><td>Newton–Raphson (b)</td></tr>
+<tr><td>21</td><td>Parabola normal eq. Σy =</td><td></td><td>nb₀ + b₁Σx + b₂Σx² (a)</td></tr>
+<tr><td>22</td><td>Line normal eq. Σy =</td><td></td><td>na + bΣx (b)</td></tr>
+<tr><td>23</td><td>Not interpolation</td><td></td><td>least squares (d)</td></tr>
+<tr><td>24</td><td>Numerical techniques mostly involve</td><td></td><td>iterative method (c)</td></tr>
+<tr><td>25</td><td>Bisection: f(a)·f(b) is</td><td></td><td>&lt; 0 (a)</td></tr>
+<tr><td>26</td><td>Newton formula</td><td></td><td>xᵢ − f(xᵢ)/f′(xᵢ) (b)</td></tr>
+<tr><td>27</td><td>First Lagrange term</td><td>(x−x₁)…(x−xₙ) / (x₀−x₁)…(x₀−xₙ) · f(x₀)</td><td>a</td></tr>
+<tr><td>28</td><td>Newton e⁻ˣ − x, x₀ = 0, 2 iterations</td><td>0.5, then 0.5663</td><td>0.566 (b)</td></tr>
+<tr><td>29</td><td>Bisection is iterative</td><td></td><td>True</td></tr>
+<tr><td>30</td><td>Jacobi converges faster than Gauss–Seidel</td><td>Gauss–Seidel is faster</td><td>False</td></tr>
+</tbody></table></div></div></details>
+
+<h2 id="mid3"><span class="lec">Practice</span>2021-22 written midterm (1st semester)</h2>
+<p>Five long questions; all appear worked in this guide:</p>
+<ul class="list">
+  <li>Fit y = a + bxy (X = xy) to x = −4, 1, 2, 3; y = 4, 6, 10, 8 → <span class="ans">y = 5.906 + 0.1287xy</span></li>
+  <li>Newton on 3x − cos x − 1, x₀ = 0.5 → <span class="ans">0.607102</span> (practice P6)</li>
+  <li>sin 30.2° (forward, p = 0.4) → <span class="ans">0.50302</span>; sin 31.3° (backward, p = −0.4) → <span class="ans">0.51952</span></li>
+  <li>∫₄^5.2 ln x, n = 7 (7 points) → <span class="ans">Simpson 1/3 1.827847, Simpson 3/8 1.827847, trapezoid 1.827655</span> (practice P12)</li>
+  <li>Modified Euler y′ = √(x² + 4y²), y(2.2) = 1.5 → <span class="ans">y(2.4) ≈ 2.4053</span> (practice P14)</li>
+</ul>
+
+<h2 id="theory"><span class="lec">Practice</span>Theory quick-fire list</h2>
+<p>Every one of these was asked as an MCQ or true/false. Memorise them.</p>
+<ul class="list">
+  <li><b>Direct</b> methods (exact in a fixed number of steps): Gauss elimination, Gauss–Jordan, Cramer's rule. <b>Iterative</b>: Jacobi, Gauss–Seidel, bisection, Newton, secant.</li>
+  <li>Gauss–Seidel converges <b>faster</b> than Jacobi because it uses new values immediately.</li>
+  <li>Iterative methods need <b>diagonal dominance</b> to guarantee convergence.</li>
+  <li>Bisection needs \(f(a)\cdot f(b) &lt; 0\). Newton–Raphson is the <b>method of tangents</b>; secant uses two points and no derivative.</li>
+  <li>Least squares is curve <b>fitting</b>, not interpolation. Interpolation formulas: Lagrange, Newton forward, Newton backward.</li>
+  <li>Normal equations: line Σy = na + bΣx; parabola Σy = nb₀ + b₁Σx + b₂Σx².</li>
+  <li>Trapezoid: any number of equal subintervals. Simpson 1/3: even number. Simpson 3/8: multiple of 3.</li>
+  <li>Numerical integration: trapezoid, Simpson. ODE methods: Taylor, Euler, Modified Euler, Runge–Kutta.</li>
+  <li>RK4: \(y_{n+1} = y_n + \tfrac16(k_1 + 2k_2 + 2k_3 + k_4)\).</li>
+</ul>
+
+<h2 id="rev"><span class="lec">Practice</span>Revision sheet, fully solved</h2>
+<p>These came with the course, so they're the strongest hint of what this term's exam looks like. Each one is longer than past MCQs: they test tolerances, finding your own interval, and bigger systems.</p>
+
+<details><summary class="q">R1. Fit \(y = \dfrac{x}{a+bx}\) to x = 1, 2, 4, 6; y = 3.4, 5.7, 8.5, 11.9</summary><div class="paper"><p class="pl">Linearise</p>
+\[\begin{aligned} \frac1y &= \frac{a+bx}{x} \\[2pt] &= b + a\cdot\frac1x \end{aligned}\]
+<p class="txt">So Y = 1/y, X = 1/x, and the line is \(Y = a_0 + a_1X\) with \(a_0 = b,\ a_1 = a\).</p>
+<div class="tbl"><table><thead><tr><th>x</th><th>y</th><th>X = 1/x</th><th>Y = 1/y</th><th>X²</th><th>XY</th></tr></thead><tbody>
+<tr><td>1</td><td>3.4</td><td>1</td><td>0.29412</td><td>1</td><td>0.29412</td></tr>
+<tr><td>2</td><td>5.7</td><td>0.5</td><td>0.17544</td><td>0.25</td><td>0.08772</td></tr>
+<tr><td>4</td><td>8.5</td><td>0.25</td><td>0.11765</td><td>0.0625</td><td>0.02941</td></tr>
+<tr><td>6</td><td>11.9</td><td>0.16667</td><td>0.08403</td><td>0.02778</td><td>0.01401</td></tr>
+<tr><td>Σ</td><td></td><td>1.91667</td><td>0.67124</td><td>1.34028</td><td>0.42525</td></tr>
+</tbody></table></div>
+\[\begin{aligned} 4a_0 + 1.91667a_1 &= 0.67124,\quad 1.91667a_0 + 1.34028a_1 \\[2pt] &= 0.42525 \end{aligned}\]
+<p class="txt">→ \(a_0 = 0.0501,\ a_1 = 0.2456\)</p>
+<div class="final"><span class="lab">Answer</span>a ≈ 0.2456, b ≈ 0.0501, so y = x / (0.2456 + 0.0501x)</div></div></details>
+
+<details><summary class="q">R2. Lagrange: x = 0.31, 0.85, 1.25, 2.55; y = 7.45, 5.65, 3.25, 2.45. Find f(0.4) and f(2.5)</summary><div class="paper"><p class="txt">Four points → four terms, each a cubic. Denominators (compute once, reuse for both x values):</p>
+<div class="tbl"><table><thead><tr><th>i</th><th>xᵢ</th><th>∏(xᵢ − xⱼ)</th></tr></thead><tbody>
+<tr><td>0</td><td>0.31</td><td>(−0.54)(−0.94)(−2.24) = −1.13702</td></tr>
+<tr><td>1</td><td>0.85</td><td>(0.54)(−0.40)(−1.70) = 0.36720</td></tr>
+<tr><td>2</td><td>1.25</td><td>(0.94)(0.40)(−1.30) = −0.48880</td></tr>
+<tr><td>3</td><td>2.55</td><td>(2.24)(1.70)(1.30) = 4.95040</td></tr>
+</tbody></table></div>
+<p class="txt">Then for each x, numerator of term i = product of (x − xⱼ) for j ≠ i.</p>
+<div class="final"><span class="lab">Answer</span>f(0.4) ≈ 7.3572, f(2.5) ≈ 2.0064</div></div></details>
+
+<details><summary class="q">R3. f(x) = x⁴ − x³ + x² − x + 1 for x = −2 … 3: table, difference table, then f(1.8) and f(−1.8) by Newton</summary><div class="paper"><p class="pl">a) Data</p>
+<p class="txt">f(−2) = 31, f(−1) = 5, f(0) = 1, f(1) = 1, f(2) = 11, f(3) = 61</p>
+<p class="pl">b) Forward differences</p>
+<div class="tbl"><table><thead><tr><th>x</th><th>y</th><th>Δ</th><th>Δ²</th><th>Δ³</th><th>Δ⁴</th><th>Δ⁵</th></tr></thead><tbody>
+<tr><td>−2</td><td>31</td><td>−26</td><td>22</td><td>−18</td><td>24</td><td>0</td></tr>
+<tr><td>−1</td><td>5</td><td>−4</td><td>4</td><td>6</td><td>24</td><td></td></tr>
+<tr><td>0</td><td>1</td><td>0</td><td>10</td><td>30</td><td></td><td></td></tr>
+<tr><td>1</td><td>1</td><td>10</td><td>40</td><td></td><td></td><td></td></tr>
+<tr><td>2</td><td>11</td><td>50</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>3</td><td>61</td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<p class="note">Each row lists the differences that start at that x. Δ⁴ is constant (24 = 4!) and Δ⁵ = 0, as it must be for a degree-4 polynomial. That's your self-check.</p>
+<p class="txt"><b>c) f(1.8):</b> near the end → <b>backward</b>, p = (1.8 − 3)/1 = −1.2, bottom diagonal 61, 50, 40, 30, 24:<br>
+\(61 + (-1.2)(50) + \frac{(-1.2)(-0.2)}{2}(40) + \frac{(-1.2)(-0.2)(0.8)}{6}(30) + \frac{(-1.2)(-0.2)(0.8)(1.8)}{24}(24)\) =</p>
+<div class="final"><span class="lab">Answer</span>7.1056</div>
+<p class="note"><br>
+<b>f(−1.8):</b> near the start → <b>forward</b>, p = (−1.8 + 2)/1 = 0.2, top diagonal 31, −26, 22, −18, 24 → <span class="ans">22.3696</span></p>
+<p class="note">Both match the exact polynomial, because 6 points determine a degree-4 polynomial exactly.</p></div></details>
+
+<details><summary class="q">R4. Bisection: smallest positive root of x⁶ − x − 1 = 0, accurate to ε ≤ 0.001</summary><div class="paper"><p class="pl">Bracket</p>
+<p class="txt">f(0) = −1, f(1) = −1, f(2) = 61 → root in [1, 2]. <b>Iterations:</b> \(n \ge \log_2(1/0.001) = 9.97\) → 10.</p>
+<div class="tbl"><table><thead><tr><th>n</th><th>a</th><th>b</th><th>x</th><th>f(x)</th></tr></thead><tbody>
+<tr><td>1</td><td>1</td><td>2</td><td>1.5</td><td>+8.8906</td></tr>
+<tr><td>2</td><td>1</td><td>1.5</td><td>1.25</td><td>+1.5647</td></tr>
+<tr><td>3</td><td>1</td><td>1.25</td><td>1.125</td><td>−0.0977</td></tr>
+<tr><td>4</td><td>1.125</td><td>1.25</td><td>1.1875</td><td>+0.6167</td></tr>
+<tr><td>5</td><td>1.125</td><td>1.1875</td><td>1.15625</td><td>+0.2333</td></tr>
+<tr><td>6</td><td>1.125</td><td>1.15625</td><td>1.140625</td><td>+0.0616</td></tr>
+<tr><td>7</td><td>1.125</td><td>1.140625</td><td>1.1328125</td><td>−0.0196</td></tr>
+<tr><td>8</td><td>1.1328125</td><td>1.140625</td><td>1.1367188</td><td>+0.0206</td></tr>
+<tr><td>9</td><td>1.1328125</td><td>1.1367188</td><td>1.1347656</td><td>+0.0004</td></tr>
+<tr><td>10</td><td>1.1328125</td><td>1.1347656</td><td>1.1337891</td><td>−0.0096</td></tr>
+</tbody></table></div>
+<div class="final"><span class="lab">Answer</span>x ≈ 1.1338</div>
+<p class="note">(true root 1.13472, within 0.001)</p></div></details>
+
+<details><summary class="q">R5. Jacobi and Gauss–Seidel, 4×4 system, 6 iterations, 4 decimals</summary><div class="paper">\[\begin{aligned} 10x_1 - x_2 + 2x_3 &= 6,\ -x_1 + 11x_2 - x_3 + 3x_4 \\[2pt] &= 25,\ 2x_1 - x_2 + 10x_3 - x_4 \\[2pt] &= -11,\ 3x_2 - x_3 + 8x_4 \\[2pt] &= 15 \end{aligned}\]
+<p class="txt">Already diagonally dominant. Start from 0.</p>
+<div class="box">\(x_1 = \tfrac1{10}(6 + x_2 - 2x_3)\qquad x_2 = \tfrac1{11}(25 + x_1 + x_3 - 3x_4)\)<br>\(x_3 = \tfrac1{10}(-11 - 2x_1 + x_2 + x_4)\qquad x_4 = \tfrac18(15 - 3x_2 + x_3)\)</div>
+<div class="tbl"><table><thead><tr><th>k</th><th>Jacobi x₁</th><th>x₂</th><th>x₃</th><th>x₄</th><th>G–S x₁</th><th>x₂</th><th>x₃</th><th>x₄</th></tr></thead><tbody>
+<tr><td>1</td><td>0.6</td><td>2.2727</td><td>−1.1</td><td>1.875</td><td>0.6</td><td>2.3273</td><td>−0.9873</td><td>0.8789</td></tr>
+<tr><td>2</td><td>1.0473</td><td>1.7159</td><td>−0.8052</td><td>0.8852</td><td>1.0302</td><td>2.0369</td><td>−1.0145</td><td>0.9843</td></tr>
+<tr><td>3</td><td>0.9326</td><td>2.0533</td><td>−1.0493</td><td>1.1309</td><td>1.0066</td><td>2.0036</td><td>−1.0025</td><td>0.9984</td></tr>
+<tr><td>4</td><td>1.0152</td><td>1.9537</td><td>−0.9681</td><td>0.9738</td><td>1.0009</td><td>2.0003</td><td>−1.0003</td><td>0.9998</td></tr>
+<tr><td>5</td><td>0.9890</td><td>2.0114</td><td>−1.0103</td><td>1.0214</td><td>1.0001</td><td>2.0000</td><td>−1.0000</td><td>1.0000</td></tr>
+<tr><td>6</td><td>1.0032</td><td>1.9922</td><td>−0.9945</td><td>0.9944</td><td>1.0000</td><td>2.0000</td><td>−1.0000</td><td>1.0000</td></tr>
+</tbody></table></div>
+<div class="final"><span class="lab">Answer</span>Exact solution (1, 2, −1, 1).</div>
+<p class="note">Gauss–Seidel hits it to 4 decimals by iteration 5; Jacobi is still off in the 2nd–3rd decimal after 6. That's the "Gauss–Seidel is faster" fact in action.</p></div></details>
+
+<details><summary class="q">R6. Newton: root near 2 of x⁴ − 11x + 8 = 0, |xᵢ₊₁ − xᵢ| &lt; 10⁻⁴</summary><div class="paper"><p class="txt">f′ = 4x³ − 11, x₀ = 2.</p>
+<div class="tbl"><table><thead><tr><th>i</th><th>xᵢ₊₁</th><th>|xᵢ₊₁ − xᵢ|</th></tr></thead><tbody>
+<tr><td>0</td><td>1.904762</td><td>0.0952</td></tr>
+<tr><td>1</td><td>1.892092</td><td>0.0127</td></tr>
+<tr><td>2</td><td>1.891876</td><td>0.00022</td></tr>
+<tr><td>3</td><td>1.891876</td><td>6 × 10⁻⁸ &lt; 10⁻⁴, stop</td></tr>
+</tbody></table></div>
+<div class="final"><span class="lab">Answer</span>x ≈ 1.8919</div></div></details>
+
+<details><summary class="q">R7. Newton: largest negative root near −1 of x³ − 2x² + 0.25x + 0.75, |xᵢ₊₁ − xᵢ| &lt; 10⁻⁴</summary><div class="paper"><p class="txt">f′ = 3x² − 4x + 0.25, x₀ = −1.</p>
+<div class="tbl"><table><thead><tr><th>i</th><th>xᵢ₊₁</th><th>|xᵢ₊₁ − xᵢ|</th></tr></thead><tbody>
+<tr><td>0</td><td>−0.655172</td><td>0.3448</td></tr>
+<tr><td>1</td><td>−0.522063</td><td>0.1331</td></tr>
+<tr><td>2</td><td>−0.500547</td><td>0.0215</td></tr>
+<tr><td>3</td><td>−0.500000</td><td>0.00055</td></tr>
+<tr><td>4</td><td>−0.500000</td><td>3 × 10⁻⁷ &lt; 10⁻⁴, stop</td></tr>
+</tbody></table></div>
+<div class="final"><span class="lab">Answer</span>x = −0.5</div>
+<p class="note">(check: f(−0.5) = −0.125 − 0.5 − 0.125 + 0.75 = 0 exactly)</p></div></details>
+
+<details><summary class="q">R8. False position: real root of cos x − 3x + 5 = 0 to 4 decimals</summary><div class="paper"><p class="txt">Radians! f(1) = 2.5403, f(2) = −1.4161 → root in [1, 2].</p>
+<div class="tbl"><table><thead><tr><th>n</th><th>a</th><th>b</th><th>f(a)</th><th>f(b)</th><th>x</th><th>f(x)</th></tr></thead><tbody>
+<tr><td>1</td><td>1</td><td>2</td><td>2.5403</td><td>−1.4161</td><td>1.642066</td><td>+0.00259</td></tr>
+<tr><td>2</td><td>1.642066</td><td>2</td><td>0.00259</td><td>−1.4161</td><td>1.642720</td><td>−0.00002</td></tr>
+<tr><td>3</td><td>1.642066</td><td>1.642720</td><td>0.00259</td><td>−0.00002</td><td>1.642715</td><td>≈ 0</td></tr>
+</tbody></table></div>
+<div class="final"><span class="lab">Answer</span>x ≈ 1.6427</div>
+<p class="note">(the 4th decimal stopped changing)</p></div></details>
+
+<!-- ============ PRACTICE ============ -->
+<h2 id="practice"><span class="lec">Practice</span>Practice set from her past finals</h2>
+<p>All taken from the papers in your file. Answers verified numerically.</p>
+<details><summary class="q">P1. Fit \(y = ab^x\): x = 1…6, y = 151, 100, 61, 50, 20, 8</summary><div><p>Columns x, log y, x², x·log y. Line on (x, log y), then \(a = 10^{a_0},\ b = 10^{a_1}\) → <span class="ans">a ≈ 316.8, b ≈ 0.569, so y = 316.8(0.569)<sup>x</sup></span></p>
+<details class="sol"><summary>Show working</summary><div class="paper"><p class="txt"><span class="n">1.</span>Linearise with log₁₀: Y = log y.</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>Y</th><th>x²</th><th>xY</th></tr></thead><tbody><tr><td>1</td><td>151</td><td>2.1790</td><td>1</td><td>2.1790</td></tr><tr><td>2</td><td>100</td><td>2.0000</td><td>4</td><td>4.0000</td></tr><tr><td>3</td><td>61</td><td>1.7853</td><td>9</td><td>5.3559</td></tr><tr><td>4</td><td>50</td><td>1.6990</td><td>16</td><td>6.7960</td></tr><tr><td>5</td><td>20</td><td>1.3010</td><td>25</td><td>6.5050</td></tr><tr><td>6</td><td>8</td><td>0.9031</td><td>36</td><td>5.4186</td></tr><tr><td>Σ = 21</td><td></td><td>9.8674</td><td>91</td><td>30.2545</td></tr></tbody></table></div>
+<p class="txt"><span class="n">2.</span>\(6a_0 + 21a_1 = 9.8674\), \(21a_0 + 91a_1 = 30.2545\) → \(a_0 = 2.50085,\ a_1 = -0.24465\).</p>
+<p class="txt"><span class="n">3.</span>\(a = 10^{2.50085} = 316.8\), \(b = 10^{-0.24465} = 0.5693\).</p></div></details>
+</div></details>
+<details><summary class="q">P2. Fit \(y = ab^x\): x = 2…6, y = 144, 172.3, 207.4, 248.8, 298.5 (MCQ)</summary><div><p><span class="ans">y = 100(1.2)<sup>x</sup></span></p>
+<p class="small sol-link">Solved line by line in the Lecture 1 box <b>“Fit y = abˣ”</b>.</p>
+</div></details>
+<details><summary class="q">P3. Fit \(y = ae^{bx}\): x = 1…4, y = 1.65, 2.7, 4.5, 7.35</summary><div><p><span class="ans">a ≈ 1.000, b ≈ 0.4993</span></p>
+<details class="sol"><summary>Show working</summary><div class="paper"><p class="txt"><span class="n">1.</span>Y = ln y.</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>y</th><th>Y</th><th>x²</th><th>xY</th></tr></thead><tbody><tr><td>1</td><td>1.65</td><td>0.5008</td><td>1</td><td>0.5008</td></tr><tr><td>2</td><td>2.7</td><td>0.9933</td><td>4</td><td>1.9866</td></tr><tr><td>3</td><td>4.5</td><td>1.5041</td><td>9</td><td>4.5123</td></tr><tr><td>4</td><td>7.35</td><td>1.9947</td><td>16</td><td>7.9788</td></tr><tr><td>Σ = 10</td><td></td><td>4.9929</td><td>30</td><td>14.9785</td></tr></tbody></table></div>
+<p class="txt"><span class="n">2.</span>\(4a_0 + 10a_1 = 4.9929\), \(10a_0 + 30a_1 = 14.9785\) → \(a_0 = 0.0001,\ a_1 = 0.4993\).</p>
+<p class="txt"><span class="n">3.</span>\(a = e^{0.0001} = 1.000\), \(b = 0.4993\).</p></div></details>
+</div></details>
+<details><summary class="q">P4. Bisection, 3 iterations: positive root of x − cos x = 0 in (0.5, 1)</summary><div><p>Radians. f(0.5) &lt; 0, f(1) &gt; 0 → <span class="ans">0.75, 0.625, 0.6875</span></p>
+<details class="sol"><summary>Show working</summary><div class="paper"><p class="txt"><span class="n">1.</span>f(0.5) = 0.5 − cos 0.5 = −0.3776; f(1) = 1 − 0.5403 = +0.4597.</p>
+<p class="txt"><span class="n">2.</span>x₁ = 0.75, f = +0.0183 → keep [0.5, 0.75]. x₂ = 0.625, f = −0.1860 → keep [0.625, 0.75]. x₃ = <b>0.6875</b>.</p></div></details>
+</div></details>
+<details><summary class="q">P5. Bisection, 3 iterations: eˣ − 3x in (1.5, 1.6)</summary><div><p><span class="ans">1.55, 1.525, 1.5125</span></p>
+<details class="sol"><summary>Show working</summary><div class="paper"><p class="txt"><span class="n">1.</span>f(1.5) = e^1.5 − 4.5 = −0.0183; f(1.6) = 4.9530 − 4.8 = +0.1530.</p>
+<p class="txt"><span class="n">2.</span>x₁ = 1.55, f = +0.0615 → [1.5, 1.55]. x₂ = 1.525, f = +0.0201 → [1.5, 1.525]. x₃ = <b>1.5125</b>.</p></div></details>
+</div></details>
+<details><summary class="q">P6. Newton: f(x) = 3x − cos x − 1, x₀ = 0.5</summary><div><p>f′ = 3 + sin x → <span class="ans">0.608519, 0.607102, 0.607102</span></p>
+<details class="sol"><summary>Show working</summary><div class="paper"><p class="txt"><span class="n">1.</span>f = 3x − cos x − 1, f′ = 3 + sin x.</p>
+<p class="pl plain"><span class="n">2.</span></p>
+\[\begin{aligned} x_1 &= 0.5 - \frac{1.5 - 0.877583 - 1}{3 + 0.479426} \\[2pt] &= 0.5 - \frac{-0.377583}{3.479426} \\[2pt] &= 0.608519 \end{aligned}\]
+<p class="pl plain"><span class="n">3.</span></p>
+\[\begin{aligned} x_2 &= 0.608519 - \frac{0.005060}{3.571653} \\[2pt] &= 0.607102 \end{aligned}\]
+\[\begin{aligned} x_3 &= 0.607102 - \frac{0.000001}{3.570490} \\[2pt] &= 0.607102 \end{aligned}\]</div></details>
+</div></details>
+<details><summary class="q">P7. False position, first approximation: x log₁₀x − 1.2 = 0 between 2.7 and 2.8</summary><div><p>f(2.7) = −0.0353, f(2.8) = 0.0520 → <span class="ans">x ≈ 2.7404</span></p>
+<details class="sol"><summary>Show working</summary><div class="paper"><p class="txt"><span class="n">1.</span>f(2.7) = 2.7 × 0.431364 − 1.2 = −0.035318; f(2.8) = 2.8 × 0.447158 − 1.2 = 0.052042.</p>
+<p class="pl plain"><span class="n">2.</span></p>
+\[\begin{aligned} x &= \frac{2.8(-0.035318) - 2.7(0.052042)}{-0.035318 - 0.052042} \\[2pt] &= \frac{-0.239404}{-0.087360} \\[2pt] &= 2.7404 \end{aligned}\]</div></details>
+</div></details>
+<details><summary class="q">P8. Gauss–Seidel, 3 iterations from (0, 0, 0): 10x − 5y − 2z = 3, 4x − 10y + 3z = −3, x + 6y + 10z = −3</summary><div><p>Already diagonally dominant.</p>
+<div class="tbl"><table><thead><tr><th>Iter</th><th>x</th><th>y</th><th>z</th></tr></thead><tbody>
+<tr><td>1</td><td>0.3</td><td>0.42</td><td>−0.582</td></tr><tr><td>2</td><td>0.3936</td><td>0.2828</td><td>−0.5091</td></tr><tr><td>3</td><td>0.3396</td><td>0.2831</td><td>−0.5038</td></tr></tbody></table></div>
+<p class="small sol-link">Solved line by line in the Lecture 3 box <b>“Gauss–Seidel, every substitution shown”</b>.</p>
+</div></details>
+<details><summary class="q">P9. Jacobi, 3 iterations from 0: 8x₁ + x₂ − x₃ = 8, x₁ − 7x₂ + 2x₃ = −4, 2x₁ + x₂ + 9x₃ = 12</summary><div><p>Iter 1: (1, 0.5714, 1.3333). Iter 2: (1.0952, 1.0952, 1.0476). Iter 3: <span class="ans">(0.994, 1.0272, 0.968)</span>. Gauss–Seidel, 2 iterations: <span class="ans">(1.0397, 1.0147, 0.9895)</span></p>
+<details class="sol"><summary>Show working</summary><div class="paper"><p class="txt"><span class="n">1.</span>Diagonally dominant already. Rearrange:</p>
+\[\begin{aligned} x_1 &= \frac18(8 - x_2 + x_3) \end{aligned}\]
+\[\begin{aligned} x_2 &= \frac17(4 + x_1 + 2x_3) \end{aligned}\]
+\[\begin{aligned} x_3 &= \frac19(12 - 2x_1 - x_2) \end{aligned}\]
+<p class="txt"><span class="n">2.</span>Jacobi 1 (from 0): x₁ = 1, x₂ = 4/7 = 0.5714, x₃ = 12/9 = 1.3333.</p>
+<p class="txt"><span class="n">3.</span>Jacobi 2: x₁ = (8 − 0.5714 + 1.3333)/8 = 1.0952; x₂ = (4 + 1 + 2.6667)/7 = 1.0952; x₃ = (12 − 2 − 0.5714)/9 = 1.0476.</p>
+<p class="txt"><span class="n">4.</span>Jacobi 3: x₁ = (8 − 1.0952 + 1.0476)/8 = 0.9940; x₂ = (4 + 1.0952 + 2.0952)/7 = 1.0272; x₃ = (12 − 2.1905 − 1.0952)/9 = 0.9683.</p></div></details>
+</div></details>
+<details><summary class="q">P10. \(\int_1^2 \frac{dx}{1+x^2}\), h = 0.2, trapezoidal. Can you use Simpson?</summary><div><p>n = 5 → <span class="ans">I ≈ 0.3229</span> (exact 0.3218). Simpson 1/3 <b>cannot</b> be used because n = 5 is odd; it needs an even number of segments.</p>
+<p class="small sol-link">Solved line by line in the Lecture 5 box <b>“Trapezoidal rule, every value shown”</b>.</p>
+</div></details>
+<details><summary class="q">P11. \(\int_0^{1.2}(e^x + \cos x)\,dx\) with 7 points: trapezoidal, Simpson 1/3, Simpson 3/8</summary><div><p>7 points → 6 segments, h = 0.2 → <span class="ans">3.2568, 3.2522, 3.2522</span></p>
+<details class="sol"><summary>Show working</summary><div class="paper"><p class="txt"><span class="n">1.</span>7 points → 6 strips, h = 0.2.</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>0</th><th>0.2</th><th>0.4</th><th>0.6</th><th>0.8</th><th>1.0</th><th>1.2</th></tr></thead><tbody><tr><td>eˣ + cos x</td><td>2</td><td>2.2015</td><td>2.4129</td><td>2.6475</td><td>2.9222</td><td>3.2586</td><td>3.6825</td></tr></tbody></table></div>
+<p class="txt"><span class="n">2.</span>Trapezoid: 0.1[2 + 3.6825 + 2(13.4427)] = <b>3.2568</b>.</p>
+<p class="txt"><span class="n">3.</span>Simpson 1/3: (0.2/3)[5.6825 + 4(2.2015 + 2.6475 + 3.2586) + 2(2.4129 + 2.9222)] = <b>3.2522</b>.</p>
+<p class="txt"><span class="n">4.</span>Simpson 3/8: (0.6/8)[5.6825 + 3(2.2015 + 2.4129 + 2.9222 + 3.2586) + 2(2.6475)] = <b>3.2522</b>.</p></div></details>
+</div></details>
+<details><summary class="q">P12. \(\int_4^{5.2}\ln x\,dx\), 7 points: Simpson 1/3 and trapezoidal</summary><div><p><span class="ans">1.82785 and 1.82766</span>. Note the model answer listed ln 4.4 as 1.435085; it is actually 1.481605 (copied the 4.2 value), so its intermediate lines are off but the final numbers are right.</p>
+<details class="sol"><summary>Show working</summary><div class="paper"><p class="txt"><span class="n">1.</span>7 points → h = 0.2.</p>
+<div class='tbl'><table><thead><tr><th>x</th><th>4</th><th>4.2</th><th>4.4</th><th>4.6</th><th>4.8</th><th>5.0</th><th>5.2</th></tr></thead><tbody><tr><td>ln x</td><td>1.386294</td><td>1.435085</td><td>1.481605</td><td>1.526056</td><td>1.568616</td><td>1.609438</td><td>1.648659</td></tr></tbody></table></div>
+<p class="txt"><span class="n">2.</span>Simpson 1/3: (0.2/3)[3.034953 + 4(1.435085 + 1.526056 + 1.609438) + 2(1.481605 + 1.568616)] = <b>1.827847</b>.</p>
+<p class="txt"><span class="n">3.</span>Trapezoid: 0.1[3.034953 + 2(7.620800)] = <b>1.827655</b>.</p></div></details>
+</div></details>
+<details><summary class="q">P13. RK4: \(y' = \frac{y^2 - x^2}{y^2 + x^2}\), y(0) = 1, find y(0.2)</summary><div><p>k₁ = 0.2, k₂ = 0.19672, k₃ = 0.19671, k₄ = 0.18913 → <span class="ans">y(0.2) ≈ 1.1960</span></p>
+<p class="small sol-link">Solved line by line in the Lecture 6 box <b>“Runge–Kutta 4, every k shown”</b>.</p>
+</div></details>
+<details><summary class="q">P14. Modified Euler, h = 0.2: \(y' = \sqrt{x^2 + 4y^2}\), y(2.2) = 1.5, find y(2.4)</summary><div><p>Predictor 2.244, corrector 2.3809 → <span class="ans">2.4053</span></p>
+<details class="sol"><summary>Show working</summary><div class="paper"><p class="txt"><span class="n">1.</span>Start slope: f(2.2, 1.5) = √(4.84 + 9) = 3.72022. Predict: 1.5 + 0.2(3.72022) = 2.24404.</p>
+<p class="txt"><span class="n">2.</span>Correct: f(2.4, 2.24404) = √(5.76 + 20.1430) = 5.08949. y = 1.5 + 0.1(3.72022 + 5.08949) = 2.38097.</p>
+<p class="txt"><span class="n">3.</span>Again: f(2.4, 2.38097) = 5.33255. y = 1.5 + 0.1(3.72022 + 5.33255) = <b>2.40528</b>.</p></div></details>
+</div></details>
+<details><summary class="q">P15 (Lecture 7 style). Redo the y″ = −xy′ − 2y example yourself: y(0) = 3, y′(0) = −2, h = 0.1, three-term Taylor, find y(0.2) and y′(0.2)</summary><div><p>y(0.1) = 2.77, y′(0.1) = −2.57; y″(0.1) = −5.283, y‴(0.1) = 8.239 → <span class="ans">y(0.2) ≈ 2.4866, y′(0.2) ≈ −3.0571</span></p></div></details>
+
+<!-- ============ PROBABILITY ============ -->
+<h2 id="prob"><span class="lec">Check scope first</span>Counting &amp; probability crash sheet</h2>
+<div class="box warn"><b>Not in your midterm (it stops at Lecture 7).</b> Kept here only for reference. None of your lectures cover this. It was 20 of 25 questions on the 2022-23 midterm but absent from both 2021-22 midterms, and it's a full section of every final. Ask before you skip it.</div>
+<div class="box formula">
+<b>Multiplication rule:</b> independent choices multiply (6 coats × 5 belts × 4 caps = 120).<br>
+<b>Permutations</b> (order matters): \(^nP_r = \dfrac{n!}{(n-r)!}\) &nbsp; e.g. president + vice from 36 = 36 × 35 = 1260.<br>
+<b>Combinations</b> (order doesn't matter): \(^nC_r = \dfrac{n!}{r!(n-r)!}\) &nbsp; e.g. choose 3 of 7 = 35.<br>
+<b>Binomial:</b> \(P(X = k) = {}^nC_k\,p^k(1-p)^{n-k}\) &nbsp; e.g. exactly 2 heads in 6 tosses = 15/64.<br>
+<b>Independent:</b> \(P(A\cap B) = P(A)P(B)\). &nbsp; <b>Union:</b> \(P(A\cup B) = P(A) + P(B) - P(A\cap B)\).<br>
+<b>Total probability &amp; Bayes:</b> \(P(D) = \sum P(B_i)P(D|B_i)\), \(P(B_i|D) = \dfrac{P(B_i)P(D|B_i)}{P(D)}\).<br>
+<b>Random variables:</b> \(\sum P = 1\) or \(\int f = 1\); \(E[X] = \sum xP\) or \(\int xf\); \(\mathrm{Var} = E[X^2] - (E[X])^2\); \(F(x) = \int_{-\infty}^x f\).
+</div>
+<details><summary class="q">Answers to last year's midterm Q1–Q20</summary><div>
+<div class="tbl"><table class="wide"><thead><tr><th>Q</th><th>Working</th><th>Answer</th></tr></thead><tbody>
+<tr><td>1</td><td>4-digit, digits 1–9, no repeats: 9·8·7·6</td><td>3024 → other</td></tr>
+<tr><td>2</td><td>6·5·4</td><td>120 → other</td></tr>
+<tr><td>3</td><td>⁶C₂ / 2⁶</td><td>15/64 (b)</td></tr>
+<tr><td>4</td><td>100–999, distinct digits: 9·9·8</td><td>648 (c)</td></tr>
+<tr><td>5</td><td>36·35</td><td>1260 (a)</td></tr>
+<tr><td>6</td><td>⁷C₃</td><td>35 (b)</td></tr>
+<tr><td>7</td><td>odd 3-digit from 1–6, repeats allowed: 6·6·3</td><td>108 (c)</td></tr>
+<tr><td>8</td><td>0.2(0.5) + 0.1(3)</td><td>0.4 (c)</td></tr>
+<tr><td>9</td><td>definition</td><td>E(x²) − (E(x))² (a)</td></tr>
+<tr><td>10</td><td>E = 3, E[x²] = 10, Var = 1</td><td>3 and 1 (b)</td></tr>
+<tr><td>11</td><td>½ + k/2 = 1</td><td>k = 1 (a)</td></tr>
+<tr><td>12</td><td>F = ½e²ˣ, (1+x²)/2, 1</td><td>(c)</td></tr>
+<tr><td>13</td><td>F(0.5) − F(−0.5) = 0.625 − 0.184</td><td>0.44 (a)</td></tr>
+<tr><td>14</td><td>DELHI starting with D: 4!</td><td>24 → other</td></tr>
+<tr><td>15</td><td>either/or: 6 + 5</td><td>11 (b)</td></tr>
+<tr><td>16</td><td>(½)³(³C₁ + ³C₂)</td><td>(b)</td></tr>
+<tr><td>17</td><td>0.6 = P(A) + 0.4 − 0.4P(A)</td><td>1/3 (c)</td></tr>
+<tr><td>18</td><td>(3·3)/⁶C₂</td><td>3/5 (b)</td></tr>
+<tr><td>19</td><td>at least one head in the other two tosses</td><td>3/4 (a)</td></tr>
+<tr><td>20</td><td>8 × 10⁶</td><td>(c)</td></tr>
+</tbody></table></div></div></details>
+
+<!-- ============ ERRATA ============ -->
+<h2 id="errata"><span class="lec">Watch out</span>Mistakes in the lecture notes</h2>
+<p>I recomputed every example. These are the places where the notes differ, so you don't memorise a wrong number.</p>
+<ul class="list">
+  <li><b>L1, page 1:</b> second normal equation is written "a₀Σx + <em>b</em>Σx²". It should be \(a_1\sum x^2\).</li>
+  <li><b>L2, √7:</b> notes write "x² = √7"; it should be x² = 7, so f(x) = x² − 7. The iterations shown are correct.</li>
+  <li><b>L2, Newton on eˣ − x cos x from x₀ = 1:</b> the numbers (0.2787, −2.1338, −1.7183) are right, but the iterates jump around because eˣ − x cos x has no positive root at all (eˣ &gt; x cos x for every x ≥ 0), so Newton runs off toward a negative root near −1.68. It shows Newton failing from a poor start, not a typical answer.</li>
+  <li><b>L5, trapezoidal ∫xe⁻ˣ:</b> the notes' own table gives 0.1 × 2.6091 = <b>0.2609</b>, not 0.2645 (the exact value is 1 − 2/e ≈ 0.2642).</li>
+  <li><b>L5, Simpson ∫x cos(eˣ):</b> the result is <b>−0.135</b>; the minus sign was dropped.</li>
+  <li><b>L5, combined Simpson ∫e^(−x²):</b> f(0.6) = e^(−0.36) = <b>0.6977</b> (notes wrote 0.9677), and I₁ uses 3h/<b>8</b>, not 3h/h. The final 0.7469 is correct.</li>
+  <li><b>L6, Taylor y′ = sin y + x:</b> y(0.2) = 0.02 + 0.008/6 = <b>0.021333</b>, not 0.021466.</li>
+  <li><b>L7, Taylor y″ = 13 cos x − 45y:</b> y(0.02) = 0.00065 + 0.0013 + 0.000649 = <b>2.5985 × 10⁻³</b>, not 3.5999 × 10⁻³. The setup in the notes is right; the addition is off by 0.001.</li>
+  <li><b>L7, Taylor y″ = −xy′ − 2y:</b> y(0.2) = 2.77 − 0.257 − 0.0264 = <b>2.4866</b>, not 2.74. The step 0.1 × (−2.57) = −0.257 has to be <em>subtracted</em>, and y″(0.1) = −5.283 is negative too.</li>
+</ul>
+
+<!-- ============ CALC ============ -->
+<h2 id="calc"><span class="lec">Exam day</span>Calculator drill</h2>
+<ul class="list">
+  <li><b>Radians</b> for sin/cos/tan every time. Switch back to degrees only if a question gives angles in degrees (like sin 30.2°).</li>
+  <li><b>EQN mode</b> solves the 2×2 and 3×3 normal equations directly. Practise entering them fast.</li>
+  <li><b>TABLE mode</b> (f(x) with start, end, step = h) fills an integration or bisection table in seconds.</li>
+  <li><b>STAT / regression mode</b> on most Casio models gives a and b for y = a + bx directly, and for exponential/power fits. Use it to check, but still write the table: marks are for the working.</li>
+  <li><b>Iteration with ANS:</b> type the Newton formula once using Ans for x, then press = repeatedly. Same trick for Euler steps.</li>
+  <li><b>Don't round between steps.</b> Keep 4–5 decimals in tables; round only the final answer. MCQ options can differ in the third decimal.</li>
+</ul>
+<p class="small">Sources: your seven lecture-note PDFs and the "math 5 reham" past-paper pack (2021, 2021-22, 2022-23 finals; 2022-23 midterm; a 2021-22 model answer), the three midterm PDFs (2021-22 first and second semester, 2022-23 model A), and this term's revision sheet. Everything you need from them is on this page.</p>
+</main>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, KEY="m5-theme", btn=document.getElementById("theme-toggle");
+  try{var saved=localStorage.getItem(KEY); if(saved==="light"||saved==="dark") root.setAttribute("data-theme",saved);}catch(e){}
+  function current(){var t=root.getAttribute("data-theme"); if(t==="light"||t==="dark") return t;
+    return window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}
+  function label(){btn.textContent=current()==="dark"?"\u2600 Light mode":"\u263E Dark mode";}
+  btn.addEventListener("click",function(){var next=current()==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next); try{localStorage.setItem(KEY,next);}catch(e){} label();});
+  label();
+})();
+</script>
+
+</body>
+</html>
